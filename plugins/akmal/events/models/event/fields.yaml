@@ -1,0 +1,36 @@
+fields:
+    title:
+        label: Заголовок
+        span: auto
+        type: text
+    slug:
+        label: Слаг
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    img:
+        label: Изображение
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    date:
+        label: Дата
+        mode: datetime
+        format: d-m-y
+        span: auto
+        type: datepicker
+    location:
+        label: 'Место расположения'
+        span: left
+        type: text
+    content:
+        label: Описание
+        size: ''
+        span: right
+        type: richeditor

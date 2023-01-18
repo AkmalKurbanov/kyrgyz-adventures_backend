@@ -1,0 +1,4 @@
+title: Location
+modelClass: Akmal\Members\Models\Location
+toolbar:
+    buttons: reorder_toolbar

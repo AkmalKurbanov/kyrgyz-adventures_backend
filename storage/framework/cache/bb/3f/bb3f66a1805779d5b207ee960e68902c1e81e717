@@ -1,0 +1,51 @@
+1674041192a:1:{s:17:"site/partners.htm";a:7:{s:8:"fileName";s:17:"site/partners.htm";s:7:"content";s:952:"[viewBag]
+
+[builderList]
+modelClass = "Akmal\Partners\Models\Partner"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="brand-slider">
+        {% for record in records %}
+        <div class="brant-item">
+          <img src="{{record.img.path | resize(200, false, { mode: 'crop', quality: '80', extension: 'png' })}}" alt="{{record.name}}">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>";s:5:"mtime";i:1671596000;s:6:"markup";s:706:"{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="brand-slider">
+        {% for record in records %}
+        <div class="brant-item">
+          <img src="{{record.img.path | resize(200, false, { mode: 'crop', quality: '80', extension: 'png' })}}" alt="{{record.name}}">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}s:11:"builderList";a:8:{s:10:"modelClass";s:29:"Akmal\Partners\Models\Partner";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:4:"name";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}}}

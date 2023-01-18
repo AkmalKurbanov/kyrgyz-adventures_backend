@@ -1,0 +1,11 @@
+name: Events
+form: $/akmal/events/models/event/fields.yaml
+modelClass: Akmal\Events\Models\Event
+defaultRedirect: akmal/events/events
+create:
+    redirect: 'akmal/events/events/update/:id'
+    redirectClose: akmal/events/events
+update:
+    redirect: akmal/events/events
+    redirectClose: akmal/events/events
+

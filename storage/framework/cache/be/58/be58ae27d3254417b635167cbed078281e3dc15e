@@ -1,0 +1,293 @@
+1674041192a:1:{s:12:"contacts.htm";a:20:{s:8:"fileName";s:12:"contacts.htm";s:7:"content";s:6023:"title = "Contacts"
+url = "/contacts"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "Контакты"
+localeTitle[en] = "Байланыштар"
+localeUrl[en] = "/contacts"
+
+[genericForm contactsForm]
+rules[email] = "required|email"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_recipients[250296a@gmail.com] = "Tourism"
+mail_resp_field = "250296a@gmail.com"
+mail_resp_from = "250296a@gmail.com"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[siteSearchInclude]
+
+[contenteditor]
+
+[genericForm sidebar]
+rules[email] = "required|email"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_recipients[250296a@gmail.com] = "Tourism"
+mail_resp_field = "250296a@gmail.com"
+mail_resp_from = "250296a@gmail.com"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+<div class="contact-info-area margin-top-120 margin-bottom-90">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="icon-box-style-04 text-center margin-bottom-30">
+          <div class="sb-icon">
+            <a href="#"><i class="flaticon-phone"></i></a>
+          </div>
+          <div class="sb-content">
+            <h4 class="title">{{'We are available at any time'|_}}</h4>
+
+            {% for contact in this.theme.contacts %}
+
+            {% if contact.phone1 == true %}
+            <span><i class="fa fa-phone"></i>&nbsp; (+996) {{contact.phone1}}</span> <br>
+            {% else %}
+            {% endif %}
+
+            {% if contact.phone2 == true %}
+            <span><i class="fa fa-phone"></i>&nbsp; (+996) {{contact.phone2}}</span> <br>
+            {% else %}
+            {% endif %}
+
+            {% endfor %}
+
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="icon-box-style-04 text-center margin-bottom-30">
+          <div class="sb-icon">
+            <a href="#"><i class="flaticon-sent-mail"></i></a>
+          </div>
+          <div class="sb-content">
+            <h4 class="title">{{'Submit applications by email'|_}}</h4>
+            {% for contact in this.theme.contacts %}
+
+            {% if contact.user_email1 == true %}
+            <span><i class="fa fa-envelope-o"></i>&nbsp; {{contact.user_email1}}</span> <br>
+            {% else %}`
+            {% endif %}
+
+            {% if contact.user_email2 == true %}
+            <span><i class="fa fa-envelope-o"></i>&nbsp; {{contact.user_email2}}</span> <br>
+            {% else %}
+            {% endif %}
+
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="icon-box-style-04 text-center margin-bottom-30">
+          <div class="sb-icon">
+            <a href="#"><i class="flaticon-place"></i></a>
+          </div>
+          <div class="sb-content">
+            <h4 class="title">{{'Come to our office'|_}}</h4>
+            {% for contact in this.theme.contacts %}
+
+            {% if contact.address == true %}
+            <span><i class="fa fa-map-marker"></i>&nbsp; 
+              
+              {{contact.address}}
+
+            </span> <br>
+            {% else %}`
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mapouter">
+  <div class="gmap_canvas">
+    <iframe src="{{this.theme.map}}&amp;hl=en&amp;z=9" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+  </div>
+</div>
+
+<div class="politx-content-area padding-top-70">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+
+        <form class="contact-form" data-request="{{ contactsForm }}::onFormSubmit">
+          <div id="{{ contactsForm }}_forms_flash"></div>
+          {{ form_token() }}
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" name="Имя" placeholder="{{'Name'|_}}" >
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="number" name="телефон" placeholder="{{'Phone'|_}}">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" name="email" placeholder="{{'Email'|_}}">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="comments" name="Комментарий" cols="30" rows="5"
+              placeholder="{{'Message'|_}}"></textarea>
+          </div>
+          <div class="btn-wrapper padding-top-33">
+            <button id="simpleContactSubmitButton" type="submit"
+              class="btn btn-custom-primary btn-block">{{'Send'|_}}</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-6 offset-lg-1 d-flex align-self-center">
+        <div class="content-box-style-01 margin-top-45">
+          {% component 'contenteditor' file="form_text/form_subtitle.htm" class="section-subtitle contacts_subtitle" %}
+          {% component 'contenteditor' file="form_text/form_title.htm" fixture="h2" class="title" %}
+          {% component 'contenteditor' file="form_text/form_desc.htm" fixture="p" class="para" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>";s:5:"mtime";i:1673948965;s:6:"markup";s:4476:"<div class="contact-info-area margin-top-120 margin-bottom-90">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="icon-box-style-04 text-center margin-bottom-30">
+          <div class="sb-icon">
+            <a href="#"><i class="flaticon-phone"></i></a>
+          </div>
+          <div class="sb-content">
+            <h4 class="title">{{'We are available at any time'|_}}</h4>
+
+            {% for contact in this.theme.contacts %}
+
+            {% if contact.phone1 == true %}
+            <span><i class="fa fa-phone"></i>&nbsp; (+996) {{contact.phone1}}</span> <br>
+            {% else %}
+            {% endif %}
+
+            {% if contact.phone2 == true %}
+            <span><i class="fa fa-phone"></i>&nbsp; (+996) {{contact.phone2}}</span> <br>
+            {% else %}
+            {% endif %}
+
+            {% endfor %}
+
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="icon-box-style-04 text-center margin-bottom-30">
+          <div class="sb-icon">
+            <a href="#"><i class="flaticon-sent-mail"></i></a>
+          </div>
+          <div class="sb-content">
+            <h4 class="title">{{'Submit applications by email'|_}}</h4>
+            {% for contact in this.theme.contacts %}
+
+            {% if contact.user_email1 == true %}
+            <span><i class="fa fa-envelope-o"></i>&nbsp; {{contact.user_email1}}</span> <br>
+            {% else %}`
+            {% endif %}
+
+            {% if contact.user_email2 == true %}
+            <span><i class="fa fa-envelope-o"></i>&nbsp; {{contact.user_email2}}</span> <br>
+            {% else %}
+            {% endif %}
+
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="icon-box-style-04 text-center margin-bottom-30">
+          <div class="sb-icon">
+            <a href="#"><i class="flaticon-place"></i></a>
+          </div>
+          <div class="sb-content">
+            <h4 class="title">{{'Come to our office'|_}}</h4>
+            {% for contact in this.theme.contacts %}
+
+            {% if contact.address == true %}
+            <span><i class="fa fa-map-marker"></i>&nbsp; 
+              
+              {{contact.address}}
+
+            </span> <br>
+            {% else %}`
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mapouter">
+  <div class="gmap_canvas">
+    <iframe src="{{this.theme.map}}&amp;hl=en&amp;z=9" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+  </div>
+</div>
+
+<div class="politx-content-area padding-top-70">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+
+        <form class="contact-form" data-request="{{ contactsForm }}::onFormSubmit">
+          <div id="{{ contactsForm }}_forms_flash"></div>
+          {{ form_token() }}
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" name="Имя" placeholder="{{'Name'|_}}" >
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="number" name="телефон" placeholder="{{'Phone'|_}}">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" name="email" placeholder="{{'Email'|_}}">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="comments" name="Комментарий" cols="30" rows="5"
+              placeholder="{{'Message'|_}}"></textarea>
+          </div>
+          <div class="btn-wrapper padding-top-33">
+            <button id="simpleContactSubmitButton" type="submit"
+              class="btn btn-custom-primary btn-block">{{'Send'|_}}</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-6 offset-lg-1 d-flex align-self-center">
+        <div class="content-box-style-01 margin-top-45">
+          {% component 'contenteditor' file="form_text/form_subtitle.htm" class="section-subtitle contacts_subtitle" %}
+          {% component 'contenteditor' file="form_text/form_title.htm" fixture="h2" class="title" %}
+          {% component 'contenteditor' file="form_text/form_desc.htm" fixture="p" class="para" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>";s:4:"code";N;s:5:"title";s:8:"Contacts";s:3:"url";s:9:"/contacts";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:2:{s:2:"ru";s:16:"Контакты";s:2:"en";s:22:"Байланыштар";}s:9:"localeUrl";a:1:{s:2:"en";s:9:"/contacts";}}s:24:"genericForm contactsForm";a:15:{s:5:"rules";a:1:{s:5:"email";s:14:"required|email";}s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:12:"mail_enabled";s:1:"1";s:15:"mail_recipients";a:1:{s:17:"250296a@gmail.com";s:7:"Tourism";}s:15:"mail_resp_field";s:17:"250296a@gmail.com";s:14:"mail_resp_from";s:17:"250296a@gmail.com";s:10:"reset_form";s:1:"1";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}s:13:"contenteditor";a:0:{}s:19:"genericForm sidebar";a:15:{s:5:"rules";a:1:{s:5:"email";s:14:"required|email";}s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:12:"mail_enabled";s:1:"1";s:15:"mail_recipients";a:1:{s:17:"250296a@gmail.com";s:7:"Tourism";}s:15:"mail_resp_field";s:17:"250296a@gmail.com";s:14:"mail_resp_from";s:17:"250296a@gmail.com";s:10:"reset_form";s:1:"1";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

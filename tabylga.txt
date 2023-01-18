@@ -1,0 +1,7 @@
+Admin Login  	 tabylga
+Admin Password	 tabylga
+
+Database 
+Database Name    tabylga
+MySQL Login      root	
+MySQL Password   root

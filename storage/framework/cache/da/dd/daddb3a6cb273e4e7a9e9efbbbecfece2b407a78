@@ -1,0 +1,87 @@
+1674041192a:1:{s:16:"menu-header.yaml";a:7:{s:8:"fileName";s:16:"menu-header.yaml";s:7:"content";s:1966:"items:
+    -
+        title: Home
+        type: cms-page
+        code: ''
+        reference: home
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Tours
+        type: cms-page
+        code: ''
+        reference: tours
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'Summer tours'
+                type: cms-page
+                code: ''
+                reference: summer-tours
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Winter tours'
+                type: cms-page
+                code: ''
+                reference: winter-tours
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: About
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: about
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Blog
+        type: cms-page
+        code: ''
+        reference: blog
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Events
+        type: cms-page
+        code: ''
+        reference: events
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Contacts
+        type: cms-page
+        code: ''
+        reference: contacts
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Guest houses'
+        type: cms-page
+        code: ''
+        reference: guest-houses
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: Меню
+";s:5:"mtime";i:1673946520;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}

@@ -1,0 +1,14 @@
+fields:
+    title:
+        label: 'Заголовок слайда'
+        span: auto
+        type: text
+    description:
+        label: 'Описание слайда'
+        size: ''
+        span: auto
+        type: richeditor
+    link:
+        label: Ссылка
+        span: left
+        type: text

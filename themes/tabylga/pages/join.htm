@@ -1,0 +1,92 @@
+title = "Join"
+url = "/join"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "Присоединиться"
+localeTitle[en] = "Кошулуу"
+localeUrl[en] = "/join"
+
+[genericForm genericJoinForm]
+group = "Присоединиться к партнерству"
+rules[email] = "required|email"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_recipients[250296a@gmail.com] = "Tourism"
+mail_resp_field = "250296a@gmail.com"
+mail_resp_from = "250296a@gmail.com"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[siteSearchInclude]
+
+[genericForm sidebar]
+rules[email] = "required|email"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_recipients[250296a@gmail.com] = "Tourism"
+mail_resp_field = "250296a@gmail.com"
+mail_resp_from = "250296a@gmail.com"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+<div class="politx-content-area padding-top-115">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="section-subtitle">{{'Join'|_}}</p>
+        <h2 class="title">{{'Join a partnership'|_}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+
+        <form class="donate-form" data-request="{{ genericJoinForm }}::onFormSubmit">
+          <div id="{{ genericJoinForm }}_forms_flash"></div>
+          {{ form_token() }}
+          <div class="row">
+            <div class="col">
+              <input type="hidden" class="form-control" id="joinPartners" name="Заявка по партнерству"
+                value="Присоединиться к партнерству">
+              <input type="text" class="form-control" id="name" name="Имя" placeholder="{{'Name'|_}}">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id="email" name="email" placeholder="{{'Email'|_}}"
+                >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" id="number" name="телефон" placeholder="{{'Phone'|_}}" >
+            </div>
+            <div class="col">
+              <button class="btn btn-custom-primary" id="simpleContactSubmitButton" type="submit"
+                style="width: 100%; border: 1px solid rgba(4, 51, 129, 0.2)">{{'Send'|_}}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,136 @@
+title = "Blog"
+url = "/blog/:page?"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "Блог"
+localeTitle[en] = "Блог"
+localeUrl[en] = "/blog/:page?"
+
+[siteSearchInclude]
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = ":slug"
+postsPerPage = 3
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "blog-category"
+postPage = "post"
+
+[genericForm sidebar]
+rules[email] = "required|email"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_recipients[250296a@gmail.com] = "Tourism"
+mail_resp_field = "250296a@gmail.com"
+mail_resp_from = "250296a@gmail.com"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+<!-- blog area start -->
+<div class="blog-area margin-top-120">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row">
+
+          {% set posts = blogPosts.posts %}
+
+          {% for post in posts %}
+
+          <div class="col-md-12">
+            <div class="blog-item-style-01 margin-bottom-30">
+              <div class="b-img">
+                <a href="{{ post.url }}">
+                  {% for image in post.featured_images|slice(0,1) %}
+                  <img src="{{image.path | resize(810, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}"
+                    alt="{{ post.title }}">
+                    
+                  {% endfor %}
+                </a>
+                <div class="blog-date-box">
+                  <h4>{{ post.published_at |date('d') }}<br><span>
+                    {% if activeLocale == 'ru' %}
+                    {{ post.published_at |rudate('%BP') }}
+                    {% else %}
+                    {{ post.published_at |date('M') }}
+                    {% endif %}
+                  </span></h4>
+                </div>
+              </div>
+              <div class="b-content">
+                <div class="blog-meta flex-column flex-lg-row">
+                  <span class="causes-tag mr-3">
+                    {% for cat in post.categories %}
+                    <a href="{{cat.url}}">{{cat.name}}</a>
+                    {%endfor %}
+                  </span>
+                  <ul>
+                    <li><span>{{'Share'|_}}</span></li>
+                    <li>
+                      <script src="https://yastatic.net/share2/share.js"></script>
+                      <div class="ya-share2" data-curtain data-size="s" data-shape="round" data-limit="0"
+                        data-more-button-type="short"
+                        data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype"></div>
+                    </li>
+                  </ul>
+                </div>
+                <h4 class="section-title"><a href="{{ post.url }}">{{ post.title }}</a>
+                </h4>
+                <p>{{ str_words(post.content_html | raw, 30) }}</p>
+                <div class="btn-wrapper">
+                  <a href="{{ post.url }}">{{'More'|_}}</a> ➝
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+        </div>
+        <div class="blog-pagination">
+
+          {% if posts.lastPage > 1 %}
+          <ul class="pagination">
+            {% if posts.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}">&larr;
+              </a></li>
+            {% endif %}
+
+            {% for page in 1..posts.lastPage %}
+            <li class="{{ posts.currentPage == page ? 'active' : null }}">
+              <a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): page }) }}">{{ page }}</a>
+            </li>
+            {% endfor %}
+
+            {% if posts.lastPage > posts.currentPage %}
+            <li><a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}">
+                &rarr;</a></li>
+            {% endif %}
+          </ul>
+          {% endif %}
+
+        </div>
+
+      </div>
+      <div class="col-lg-4">
+        {% partial 'site/sidebar_blog' %}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- blog area end -->

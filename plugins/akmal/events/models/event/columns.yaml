@@ -1,0 +1,25 @@
+columns:
+    title:
+        label: Заголовок
+        type: text
+        searchable: true
+        sortable: true
+    date:
+        label: Дата
+        type: datetime
+        searchable: true
+        sortable: true
+    location:
+        label: 'Место расположения'
+        type: text
+        searchable: true
+    created_at:
+        label: Создано
+        type: datetime
+    updated_at:
+        label: Обновлено
+        type: datetime
+    sort_order:
+        label: 'Порядковый номер'
+        type: number
+        sortable: true

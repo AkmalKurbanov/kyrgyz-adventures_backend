@@ -1,0 +1,36 @@
+fields:
+    name:
+        label: Имя
+        span: left
+        type: text
+    status:
+        label: Статус
+        span: right
+        type: text
+    img:
+        label: Изображение
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    location:
+        label: Месторасположение
+        nameFrom: location_title
+        descriptionFrom: description
+        span: right
+        type: relation
+    facebook:
+        label: Facebook
+        span: left
+        type: text
+    twitter:
+        label: Twitter
+        span: auto
+        type: text
+    instagram:
+        label: Instagram
+        span: left
+        type: text

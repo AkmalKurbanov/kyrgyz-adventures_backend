@@ -1,0 +1,113 @@
+name: Kyrgyz Adventures
+code: ''
+form:
+  fields:
+    site_name: 
+      label: Имя сайта
+      placeholder: Tourism
+      size: small
+      span: left
+    main_banner_img:
+      label: Изображение главного экрана
+      type: fileupload
+      mode: image
+      span: left  
+    site_description: 
+      label: Краткое описание сайта
+      placeholder: Девиз компании или что-то в этом роде. Или цитата
+      type: richeditor 
+      size: small
+      span: right
+      translatable: true
+    
+    address: 
+      label: Адрес
+      placeholder: г.Каракол, ул. Королькова 55
+      translatable: true
+    phone1: 
+      label: Телефон  
+      placeholder: +996 702 939 156
+      span: auto
+    phone2: 
+      label: Телефон второй, если имеется
+      placeholder: +996 702 939 156 
+      span: auto
+    user_email1:
+      label: Email адрес
+      type: email
+      placeholder: email@tourism.com
+      span: auto
+    user_email2:
+      label: Втрая Email почта, если имеется 
+      type: email
+      placeholder: email@tourism.com
+      span: auto
+      
+  
+    map:
+      label: Карта (ссылка карты)                
+      placeholder: https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed
+    logoLight:
+      type: fileupload
+      label: Лого светлого оттенка (Шапка сайта) 
+      mode: image
+      span: left
+    logoDark:
+      type: fileupload
+      label: Лого темного оттенка (Подвал сайта, сайдбар сайта) 
+      mode: image
+      span: right
+    # logoHeaderRu:
+    #   label: Русская версия логотипа в шапке сайта 
+    #   type: fileupload
+    #   mode: image
+    #   span: left
+    # logoHeaderKg:
+    #   label: Кыргызская версия логотипа в шапке сайта 
+    #   type: fileupload
+    #   mode: image
+    #   span: right
+    # logoFooterRu:
+    #   label: Русская версия логотипа в подвале сайта
+    #   type: fileupload
+    #   mode: image
+    #   span: left
+    # logoFooterKg:
+    #   label: Кыргызская версия логотипа в подвале сайта
+    #   type: fileupload
+    #   mode: image
+    #   span: right
+    # logoSidebarRu:
+    #   label: Русская версия логотипа в сайдбаре сайта
+    #   type: fileupload
+    #   mode: image
+    #   span: left  
+    # logoSidebarKg:
+    #   label: Кыргызская версия логотипа в сайдбаре сайта
+    #   type: fileupload
+    #   mode: image
+    #   span: right  
+    social:
+      type: repeater
+      label: Социальные сети
+      titleFrom: name  
+      form:
+        fields:
+          awesome_icon:
+            label: Социальная сеть ( Иконка )
+            type: awesomeiconslist
+            unicodeValue: false
+            emptyOption: false
+            iconTypes: brands
+            placeholder: Выбрать иконку
+            span: left 
+          url:
+            label: Ссылка социальной сети
+            type: text
+            placeholder: https://www.instagram.com/
+            span: right 
+          social_name:
+            label: Название социальной сети
+            type: text
+            placeholder: Facebook
+            span: left 

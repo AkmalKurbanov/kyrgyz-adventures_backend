@@ -1,0 +1,19 @@
+fields:
+    location_title:
+        label: Месторасположение
+        span: left
+        type: text
+    slug:
+        label: Slug
+        span: right
+        preset:
+            field: location_title
+            type: slug
+        type: text
+    display_city:
+        label: 'Отображение на карте'
+        options:
+            city_visible: 'Отобразить на карте'
+            city_hidden: 'Не отображать на карте'
+        span: left
+        type: radio

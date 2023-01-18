@@ -1,0 +1,87 @@
+title = "Blog categories"
+url = "/blog/category/:slug/:page?"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "Категории блога"
+localeTitle[en] = "Блог категориялары"
+localeUrl[en] = "/blog/category/:slug/:page?"
+
+[siteSearchInclude]
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "blog-category"
+postPage = "post"
+
+[genericForm sidebar]
+rules[email] = "required|email"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_recipients[250296a@gmail.com] = "Tourism"
+mail_resp_field = "250296a@gmail.com"
+mail_resp_from = "250296a@gmail.com"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+<div class="blog-area margin-top-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+
+        {% set posts = blogPosts.posts %}
+
+        {% for post in posts %}
+        
+        <div class="blog-details-style-01 margin-bottom-30">
+          <div class="post-wrap">
+            <div class="post-preview">
+              {% for image in post.featured_images %}
+              <a href="{{post.url}}"
+                style="background-image: url('{{image.path | resize(810, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}')">
+              </a>
+              {% endfor %}
+              <div class="post-info">
+                <span class="causes-tag mr-3">
+                  {% for cat in post.categories %}
+                  <a href="{{cat.url}}">{{cat.name}}</a>
+                  {%endfor %}
+                </span>
+                <div class="blog-date-box">
+                  <h4>{{ post.published_at |date('d') }}<br><span>{{ post.published_at |rudate('%BP')}}</span></h4>
+                </div>
+              </div>
+            </div>
+            <div class="post-content">
+              <h2><a href="#">{{post.title}}</a></h2>
+              {{ str_words(post.content_html | raw, 20) }}
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="col-lg-4">
+        {% partial 'site/sidebar_blog' %}
+      </div>
+    </div>
+  </div>
+</div>

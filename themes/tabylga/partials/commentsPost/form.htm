@@ -1,0 +1,45 @@
+<div id="wrap-comment-form">
+  <div id="comment-form" class="comment-respond">
+    <form class="commentform">
+      <div id="comment_flash_message"></div>
+      <div class="row">
+        {% if(user == false) %}
+
+        <!-- Name Field -->
+        <div class="col-sm-6">
+          <div class="form-group">
+            <input placeholder="{{'Name'|_}}" class="form-control" name="author" type="text">
+          </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="col-sm-6">
+          <div class="form-group">
+            <input placeholder="Email" class="form-control" name="email" type="text">
+          </div>
+        </div>
+        {% endif %}
+        <!-- Content Field -->
+        <div class="col-sm-12">
+          <div class="form-group">
+            <textarea placeholder="{{'Comment'|_}} ..." class="form-control" id="comment-text" name="content" cols="50"
+              rows="10"></textarea>
+          </div>
+        </div>
+
+        <input name="post_id" type="hidden" value="{{__SELF__.post_id}}">
+
+        {% if (__SELF__.settings.recaptcha_enabled) %}
+        <div class="g-recaptcha" data-sitekey="{{ __SELF__.settings.site_key }}"></div>
+        <br>
+        {% endif %}
+
+        <!-- Submit Field -->
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-custom-primary"
+          onclick="Comment.saveButton(event)">{{'Send'|_}}</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+[viewBag]
+
+[builderList]
+modelClass = "Akmal\Partners\Models\Partner"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="brand-slider">
+        {% for record in records %}
+        <div class="brant-item">
+          <img src="{{record.img.path | resize(200, false, { mode: 'crop', quality: '80', extension: 'png' })}}" alt="{{record.name}}">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

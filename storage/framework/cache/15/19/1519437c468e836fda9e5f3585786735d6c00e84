@@ -1,0 +1,34 @@
+1674041192a:1:{s:7:"404.htm";a:16:{s:8:"fileName";s:7:"404.htm";s:7:"content";s:687:"title = "Page not found (404)"
+url = "/404"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[en] = "Page not found (404)"
+localeTitle[ru] = "Страница не найдена (404)"
+localeUrl[en] = "/404"
+localeUrl[ru] = "/404"
+==
+<div class="jumbotron">
+    <div class="container">
+        <h1>404</h1>
+        <p style="font-size: 20px;">{{'Page not found.'|_}}</p>
+        <div class="btn btn-custom-primary margin-top-15">
+            <a href="{{ 'home'|page }}">{{ 'home'|title }}</a>
+        </div>
+    </div>
+</div>";s:5:"mtime";i:1673954718;s:6:"markup";s:299:"<div class="jumbotron">
+    <div class="container">
+        <h1>404</h1>
+        <p style="font-size: 20px;">{{'Page not found.'|_}}</p>
+        <div class="btn btn-custom-primary margin-top-15">
+            <a href="{{ 'home'|page }}">{{ 'home'|title }}</a>
+        </div>
+    </div>
+</div>";s:4:"code";N;s:5:"title";s:20:"Page not found (404)";s:3:"url";s:4:"/404";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:2:{s:2:"en";s:20:"Page not found (404)";s:2:"ru";s:42:"Страница не найдена (404)";}s:9:"localeUrl";a:2:{s:2:"en";s:4:"/404";s:2:"ru";s:4:"/404";}}}}

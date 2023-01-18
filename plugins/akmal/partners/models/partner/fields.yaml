@@ -1,0 +1,14 @@
+fields:
+    name:
+        label: 'Имя партнера'
+        span: left
+        type: text
+    img:
+        label: Изображение
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

@@ -1,0 +1,141 @@
+[viewBag]
+
+[staticMenu]
+code = "useful-links"
+
+[staticMenu staticMenu2]
+code = "additional-links"
+
+==
+<!-- footer area start -->
+<footer class="footer-area footer-style-1 main-bg">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4">
+          <div class="footer-widget widget contact-widget">
+            <a href="/" class="footer-logo">
+              <img src="{{this.theme.logoDark.path}}" alt="footer logo" width="70">
+            </a>
+            {% if this.theme.site_description == true %}
+            {{this.theme.site_description | raw}}
+            {% else %}
+            {% endif %}
+            <ul class="contact_info_list">
+
+              {% for contact in this.theme.contacts %}
+
+              {% if contact.address == true %}
+              <li class="single-info-item">
+                <div class="icon">
+                  <i class="fa fa-envelope"></i>
+                </div>
+                <div class="details">
+                  {% if activeLocale == 'ru' %}
+                  {{contact.address}}
+                  {% else %}
+                  {{contact.addressKg}}
+                  {% endif %}
+                </div>
+              </li>
+              {% else %}
+              {% endif %}
+
+              {% if contact.phone1 == true %}
+              <li class="single-info-item">
+                <div class="icon">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <div class="details">
+                  (+996) {{contact.phone1}}
+                </div>
+              </li>
+              {% else %}
+              {% endif %}
+
+              {% if contact.phone2 == true %}
+              <li class="single-info-item">
+                <div class="icon">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <div class="details">
+                  (+996) {{contact.phone2}}
+                </div>
+              </li>
+              {% else %}
+              {% endif %}
+
+              {% if contact.user_email1 == true %}
+              <li class="single-info-item">
+                <div class="icon">
+                  <i class="fa fa-map-marker"></i>
+                </div>
+                <div class="details">
+                  {{contact.user_email1}}
+                </div>
+              </li>
+              {% else %}
+              {% endif %}
+
+              {% if contact.user_email2 == true %}
+              <li class="single-info-item">
+                <div class="icon">
+                  <i class="fa fa-map-marker"></i>
+                </div>
+                <div class="details">
+                  {{contact.user_email2}}
+                </div>
+              </li>
+              {% else %}
+              {% endif %}
+
+              {% endfor %}
+            </ul>
+            <ul class="footer-social">
+              {% for item in this.theme.social %}
+              <li><a href="{{item.url}}"><i class="{{item.awesome_icon}}"></i></a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-8 margin-xlt-80">
+          <div class="row">
+            <div class="col-lg-3 col-xl-3 offset-xl-1">
+              <div class="footer-widget widget widget_nav_menu">
+                <h4 class="widget-title">{{'Useful links'|_}}</h4>
+                {% if staticMenu.menuItems %}
+                <ul class="footer-useful-links">
+                  {% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
+                </ul>
+                {% endif %}
+
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="footer-widget widget widget_nav_menu">
+                <h4 class="widget-title">{{'Useful links'|_}}</h4>
+                {% if staticMenu.menuItems %}
+                <ul class="footer-useful-links">
+                  {% partial staticMenu2 ~ "::items" items=staticMenu2.menuItems %}
+                </ul>
+                {% endif %}
+              </div>
+            </div>
+            <!-- <div class="col-lg-5">
+              <div class="footer-widget widget">
+                <h4 class="widget-title">{{'Лента Instagram'|_}}</h4>
+                <div id="instagram-feed1"></div>
+              </div>
+            </div> -->
+            <div class="col-xl-11 offset-xl-1">
+              <div class="copyright-area-inner copyright-sm margin-top-35">
+                &copy; {{this.theme.site_name}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- footer area end -->

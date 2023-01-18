@@ -1,0 +1,111 @@
+1674041192a:1:{s:16:"event-detail.htm";a:19:{s:8:"fileName";s:16:"event-detail.htm";s:7:"content";s:2373:"title = "Event"
+url = "/event-detail/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "Событие"
+localeTitle[en] = "Окуя"
+localeUrl[en] = "/event-detail/:slug"
+
+[builderDetails]
+modelClass = "Akmal\Events\Models\Event"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+
+[siteSearchInclude]
+
+[genericForm sidebar]
+rules[email] = "required|email"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_recipients[250296a@gmail.com] = "Tourism"
+mail_resp_field = "250296a@gmail.com"
+mail_resp_from = "250296a@gmail.com"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+<div class="leadership-area margin-top-115">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="leadership-content">
+          <h2>{{record.title}}</h2>
+          {{record.content | raw}}
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 text-center">
+        <div class="ls-date-box">
+          <h4>{{'Date'|_}} & {{'Time'|_}}:</h4>
+          <p> {{record.date | date('d')}} {{record.date | rudate('%BP')}} ,
+            {{record.date | date('Y')}} , {{record.date | date('H:i') }}</p>
+          <hr>
+          <h4>{{'Location'|_}}</h4>
+          <p>{{record.location}}</p>
+        </div>
+        <div class="ls-social-share">
+          <script src="https://yastatic.net/share2/share.js"></script>
+          <div class="ya-share2" data-curtain data-shape="round" data-limit="3"
+            data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+{{ notFoundMessage }}
+{% endif %}";s:5:"mtime";i:1673949043;s:6:"markup";s:1247:"{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+<div class="leadership-area margin-top-115">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="leadership-content">
+          <h2>{{record.title}}</h2>
+          {{record.content | raw}}
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 text-center">
+        <div class="ls-date-box">
+          <h4>{{'Date'|_}} & {{'Time'|_}}:</h4>
+          <p> {{record.date | date('d')}} {{record.date | rudate('%BP')}} ,
+            {{record.date | date('Y')}} , {{record.date | date('H:i') }}</p>
+          <hr>
+          <h4>{{'Location'|_}}</h4>
+          <p>{{record.location}}</p>
+        </div>
+        <div class="ls-social-share">
+          <script src="https://yastatic.net/share2/share.js"></script>
+          <div class="ya-share2" data-curtain data-shape="round" data-limit="3"
+            data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+{{ notFoundMessage }}
+{% endif %}";s:4:"code";N;s:5:"title";s:5:"Event";s:3:"url";s:19:"/event-detail/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:2:{s:2:"ru";s:14:"Событие";s:2:"en";s:8:"Окуя";}s:9:"localeUrl";a:1:{s:2:"en";s:19:"/event-detail/:slug";}}s:14:"builderDetails";a:5:{s:10:"modelClass";s:25:"Akmal\Events\Models\Event";s:15:"identifierValue";s:11:"{{ :slug }}";s:14:"modelKeyColumn";s:4:"slug";s:13:"displayColumn";s:5:"title";s:15:"notFoundMessage";s:16:"Record not found";}s:17:"siteSearchInclude";a:0:{}s:19:"genericForm sidebar";a:15:{s:5:"rules";a:1:{s:5:"email";s:14:"required|email";}s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:12:"mail_enabled";s:1:"1";s:15:"mail_recipients";a:1:{s:17:"250296a@gmail.com";s:7:"Tourism";}s:15:"mail_resp_field";s:17:"250296a@gmail.com";s:14:"mail_resp_from";s:17:"250296a@gmail.com";s:10:"reset_form";s:1:"1";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

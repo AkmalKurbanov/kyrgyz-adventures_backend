@@ -1,0 +1,45 @@
+[viewBag]
+
+[builderList]
+modelClass = "Akmal\Mineslider\Models\MainSlider"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 banner-slider-4">
+      {% for record in records %}
+      <div class="banner-content-style-4 text-center">
+        <h2 class="title" data-animation-in="fadeInLeft">{{record.title}}</h2>
+        <div class="description" data-animation-in="fadeInDown">{{ record.description | raw }}</div>
+        <div class="d-flex justify-content-center margin-top-50">
+          <div class="btn-wrapper mr-3" data-animation-in="fadeInDown">
+            <a class="btn btn-custom-default" href="{{record.link}}">{{'More'|_}}</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="banner4-social">
+  <ul>
+    {% for item in this.theme.social %}
+    <li><a href="{{item.url}}">{{item.social_name}}</a></li>
+    {% endfor %}
+  </ul>
+</div>

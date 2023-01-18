@@ -1,0 +1,6 @@
+plugin:
+    name: 'akmal.members::lang.plugin.name'
+    description: 'akmal.members::lang.plugin.description'
+    author: Akmal
+    icon: oc-icon-graduation-cap
+    homepage: ''

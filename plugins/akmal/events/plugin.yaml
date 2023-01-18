@@ -1,0 +1,11 @@
+plugin:
+    name: 'akmal.events::lang.plugin.name'
+    description: 'akmal.events::lang.plugin.description'
+    author: Akmal
+    icon: oc-icon-scissors
+    homepage: ''
+navigation:
+    Events:
+        label: События
+        url: akmal/events/events
+        icon: icon-scissors

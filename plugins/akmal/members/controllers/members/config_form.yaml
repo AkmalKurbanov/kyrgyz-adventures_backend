@@ -1,0 +1,10 @@
+name: Members
+form: $/akmal/members/models/member/fields.yaml
+modelClass: Akmal\Members\Models\Member
+defaultRedirect: akmal/members/members
+create:
+    redirect: 'akmal/members/members/update/:id'
+    redirectClose: akmal/members/members
+update:
+    redirect: akmal/members/members
+    redirectClose: akmal/members/members

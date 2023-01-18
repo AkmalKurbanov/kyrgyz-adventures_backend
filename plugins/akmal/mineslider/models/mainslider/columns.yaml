@@ -1,0 +1,16 @@
+columns:
+    title:
+        label: Заголовок
+        type: text
+    description:
+        label: Описание
+        type: text
+    link:
+        label: Ссылка
+        type: text
+    created_at:
+        label: создано
+        type: datetime
+    updated_at:
+        label: обновлено
+        type: datetime

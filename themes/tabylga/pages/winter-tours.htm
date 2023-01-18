@@ -1,0 +1,83 @@
+title = "Winter tours"
+url = "/winter-tours"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "Зимние туры"
+
+[records]
+activeOnly = 1
+areaSlug = "tours"
+categorySlug = "{{ :winter-tours }}"
+useMainCategory = 1
+tagSlug = "{{ :tag }}"
+recordPage = "tour-detail"
+recordPageSlug = "{{ :slug }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+==
+
+<div class="upcoming-events-area padding-top-115">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="section-subtitle">{{'List of tours'|_}}</p>
+        <h2 class="title">{{'Tours'|_}}</h2>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      {% for record in records.items %}
+        {% if record.category.name == 'Winter tours' or record.category.name == 'Зимние туры' %}
+      <div class="col-lg-6 tours">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="thumb">
+              <a href="{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}">
+                       
+                  {% if record.preview_image %}
+                                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image.getPath | resize(510, 500, { mode: 'crop', quality: '80', extension: 'jpg' })}}" width="100%" />
+                            {% elseif record.preview_image_media %}
+                                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image_media|media | resize(510, 500, { mode: 'crop', quality: '80', extension: 'jpg' })}}" width="100%" />
+                            {% endif %}   
+              </a>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="up-content-style-01">
+              <div class="date-month">
+                <span class="date">{{record.date | date('d')}}</span>
+                <span class="month">{{record.date | date('M')}}</span>
+              </div>
+              <h6>{{ record.name }}</h6>
+              <ul>
+                <li><a href="#"><i class="fa fa-map-marker"></i> {{record.location}}</a></li>
+                <li><a href="#"><i class="fa fa-bell"></i> {{record.date | date('H:i')}}</a></li>
+              </ul>
+              <div class="btn-wrapper">
+              
+                  <a href="{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}">{{'More'|_}} ➞</a>
+                  
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
+      {% else %}
+      {% endif %}
+       {% endfor %}
+    </div>
+  </div>
+</div> 
+
+

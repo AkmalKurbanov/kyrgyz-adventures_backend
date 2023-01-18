@@ -1,0 +1,132 @@
+title = "Blog post"
+url = "/blog/post/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "Блог пост"
+localeTitle[en] = "Блог-пост"
+localeUrl[en] = "/blog/post/:slug"
+localeUrl[ru] = "/blog-post"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog"
+
+[blogPosts latestPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "blog-category"
+postPage = "post"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "blog-category"
+postPage = "post"
+
+[commentsPost]
+
+[siteSearchInclude]
+
+[genericForm sidebar]
+rules[email] = "required|email"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_recipients[250296a@gmail.com] = "Tourism"
+mail_resp_field = "250296a@gmail.com"
+mail_resp_from = "250296a@gmail.com"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+<div class="blog-area margin-top-120">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        
+        {% set post = blogPost.post %}
+
+
+
+        <div class="blog-details-style-01 margin-bottom-100">
+          <div class="b-img">
+            {% for image in post.featured_images %}
+            <img src="{{image.path | resize(810, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}" alt="">
+            {% endfor %}
+            <div class="blog-date-box">
+              <h4>{{ post.published_at |date('d') }}<br><span>
+                {% if activeLocale == 'ru' %}
+                {{ post.published_at |rudate('%BP') }}
+                {% else %}
+                {{ post.published_at |date('M') }}
+                {% endif %}
+              </span></h4>
+            </div>
+          </div>
+          <div class="b-content">
+            <div class="blog-meta">
+              <span class="causes-tag mr-3">
+                {% for cat in post.categories %}
+                <a href="/blog/category/{{cat.slug}}">{{cat.name}}</a>
+                {%endfor %}
+              </span>
+              <ul>
+                <li><span>{{'Share'|_}}</span></li>
+                <li>
+                  <script src="https://yastatic.net/share2/share.js"></script>
+                  <div class="ya-share2" data-curtain data-size="s" data-shape="round" data-limit="0"
+                    data-more-button-type="short"
+                    data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype"></div>
+                </li>
+              </ul>
+            </div>
+            <h4 class="section-title">{{post.title}}</h4>
+            {{post.content_html | raw }}
+          </div>
+        </div>
+        <div id="comments" class="comments-area comments-area-wrapper">
+          {% set posts = commentsPost.posts %}
+
+          <div class="col-xs-6" id="comments-content">
+            <h4 class="comments-title">
+              ({{ commentsPost.count }}) комментарий
+            </h4>
+            <h6 style="margin-bottom: 30px; color:orange;">{{'Your comment will appear after verification. <br> Thanks for understanding!'|_}}</h6>
+            <div class="comments">
+              <ul>
+                {% partial "commentsPost::list" posts=posts %}
+              </ul>
+            </div>
+            {% if(user or commentsPost.settings.allow_guest) %}
+
+            {% partial "commentsPost::form" %}
+
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        {% partial 'site/sidebar_blog' %}
+      </div>
+    </div>
+  </div>
+</div>

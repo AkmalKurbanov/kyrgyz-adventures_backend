@@ -1,0 +1,166 @@
+1674041192a:1:{s:15:"tour-detail.htm";a:17:{s:8:"fileName";s:15:"tour-detail.htm";s:7:"content";s:2917:"title = "Tour detail"
+url = "/tour-detail/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[en] = "Tour detail"
+localeTitle[ru] = "Тур детально"
+localeUrl[en] = "/tour-detail"
+
+[recordDetail]
+activeOnly = 0
+recordSlug = "{{ :slug }}"
+areaSlug = "tours"
+categorySlug = "{{ :category }}"
+useMainCategory = 1
+setPageMeta = 1
+throw404 = 1
+categoryPage = 0
+categoryPageSlug = "{{ :category }}"
+==
+<div class="leadership-area margin-top-115">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="leadership-content">
+          <h2>{{recordDetail.name}}</h2>
+          {{ recordDetail.content | raw }}
+
+          
+          {% if recordDetail.images|length %}
+
+                <div class="row">
+
+                    {% for image in recordDetail.images %}
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-md-2">
+                        
+                          <img class="thumbnail" style="max-width: 100%; margin-bottom: 10px;" src="{{image.getThumb(300,300)}}" alt="{{image.title ? image.title : recordDetail.name}}">
+                          
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+            {% endif %}
+
+            {% if recordDetail.images_media|length %}
+                
+                <div class="row">
+
+                    {% for mediaImage in recordDetail.images_media %}
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-md-2">
+                          <img class="thumbnail" style="max-width: 100%;" src="{{mediaImage.image|media}}" alt="{{mediaImage.image_title ? mediaImage.image_title : recordDetail.name}}">
+                        
+                            
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+            {% endif %}
+
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 text-center">
+        <div class="ls-date-box">
+          <h4>{{'Date'}} & {{'Time'|_}}:</h4>
+          <p> {{recordDetail.date | date('d')}} {{recordDetail.date | rudate('%BP')}} ,
+            {{recordDetail.date | date('Y')}} , {{recordDetail.date | date('H:i') }}</p>
+          <hr>
+          <h4>{{'Location'|_}}</h4>
+          <p>{{recordDetail.location}}</p>
+        </div>
+        <div class="ls-social-share">
+          <script src="https://yastatic.net/share2/share.js"></script>
+          <div class="ya-share2" data-curtain data-shape="round" data-limit="3"
+            data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>";s:5:"mtime";i:1673949414;s:6:"markup";s:2344:"<div class="leadership-area margin-top-115">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="leadership-content">
+          <h2>{{recordDetail.name}}</h2>
+          {{ recordDetail.content | raw }}
+
+          
+          {% if recordDetail.images|length %}
+
+                <div class="row">
+
+                    {% for image in recordDetail.images %}
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-md-2">
+                        
+                          <img class="thumbnail" style="max-width: 100%; margin-bottom: 10px;" src="{{image.getThumb(300,300)}}" alt="{{image.title ? image.title : recordDetail.name}}">
+                          
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+            {% endif %}
+
+            {% if recordDetail.images_media|length %}
+                
+                <div class="row">
+
+                    {% for mediaImage in recordDetail.images_media %}
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-md-2">
+                          <img class="thumbnail" style="max-width: 100%;" src="{{mediaImage.image|media}}" alt="{{mediaImage.image_title ? mediaImage.image_title : recordDetail.name}}">
+                        
+                            
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+            {% endif %}
+
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 text-center">
+        <div class="ls-date-box">
+          <h4>{{'Date'}} & {{'Time'|_}}:</h4>
+          <p> {{recordDetail.date | date('d')}} {{recordDetail.date | rudate('%BP')}} ,
+            {{recordDetail.date | date('Y')}} , {{recordDetail.date | date('H:i') }}</p>
+          <hr>
+          <h4>{{'Location'|_}}</h4>
+          <p>{{recordDetail.location}}</p>
+        </div>
+        <div class="ls-social-share">
+          <script src="https://yastatic.net/share2/share.js"></script>
+          <div class="ya-share2" data-curtain data-shape="round" data-limit="3"
+            data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>";s:4:"code";N;s:5:"title";s:11:"Tour detail";s:3:"url";s:18:"/tour-detail/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:2:{s:2:"en";s:11:"Tour detail";s:2:"ru";s:23:"Тур детально";}s:9:"localeUrl";a:1:{s:2:"en";s:12:"/tour-detail";}}s:12:"recordDetail";a:9:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:5:"tours";s:12:"categorySlug";s:15:"{{ :category }}";s:15:"useMainCategory";s:1:"1";s:11:"setPageMeta";s:1:"1";s:8:"throw404";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}}}

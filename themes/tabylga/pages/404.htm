@@ -1,0 +1,26 @@
+title = "Page not found (404)"
+url = "/404"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[en] = "Page not found (404)"
+localeTitle[ru] = "Страница не найдена (404)"
+localeUrl[en] = "/404"
+localeUrl[ru] = "/404"
+==
+<div class="jumbotron">
+    <div class="container">
+        <h1>404</h1>
+        <p style="font-size: 20px;">{{'Page not found.'|_}}</p>
+        <div class="btn btn-custom-primary margin-top-15">
+            <a href="{{ 'home'|page }}">{{ 'home'|title }}</a>
+        </div>
+    </div>
+</div>

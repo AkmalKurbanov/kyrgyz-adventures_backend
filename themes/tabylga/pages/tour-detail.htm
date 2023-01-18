@@ -1,0 +1,97 @@
+title = "Tour detail"
+url = "/tour-detail/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[viewBag]
+localeTitle[en] = "Tour detail"
+localeTitle[ru] = "Тур детально"
+localeUrl[en] = "/tour-detail"
+
+[recordDetail]
+activeOnly = 0
+recordSlug = "{{ :slug }}"
+areaSlug = "tours"
+categorySlug = "{{ :category }}"
+useMainCategory = 1
+setPageMeta = 1
+throw404 = 1
+categoryPage = 0
+categoryPageSlug = "{{ :category }}"
+==
+<div class="leadership-area margin-top-115">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="leadership-content">
+          <h2>{{recordDetail.name}}</h2>
+          {{ recordDetail.content | raw }}
+
+          
+          {% if recordDetail.images|length %}
+
+                <div class="row">
+
+                    {% for image in recordDetail.images %}
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-md-2">
+                        
+                          <img class="thumbnail" style="max-width: 100%; margin-bottom: 10px;" src="{{image.getThumb(300,300)}}" alt="{{image.title ? image.title : recordDetail.name}}">
+                          
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+            {% endif %}
+
+            {% if recordDetail.images_media|length %}
+                
+                <div class="row">
+
+                    {% for mediaImage in recordDetail.images_media %}
+
+                        <div class="col-xs-12 col-sm-4 col-md-3 col-md-2">
+                          <img class="thumbnail" style="max-width: 100%;" src="{{mediaImage.image|media}}" alt="{{mediaImage.image_title ? mediaImage.image_title : recordDetail.name}}">
+                        
+                            
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+            {% endif %}
+
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 text-center">
+        <div class="ls-date-box">
+          <h4>{{'Date'}} & {{'Time'|_}}:</h4>
+          <p> {{recordDetail.date | date('d')}} {{recordDetail.date | rudate('%BP')}} ,
+            {{recordDetail.date | date('Y')}} , {{recordDetail.date | date('H:i') }}</p>
+          <hr>
+          <h4>{{'Location'|_}}</h4>
+          <p>{{recordDetail.location}}</p>
+        </div>
+        <div class="ls-social-share">
+          <script src="https://yastatic.net/share2/share.js"></script>
+          <div class="ya-share2" data-curtain data-shape="round" data-limit="3"
+            data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

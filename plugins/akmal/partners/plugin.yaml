@@ -1,0 +1,11 @@
+plugin:
+    name: 'akmal.partners::lang.plugin.name'
+    description: 'akmal.partners::lang.plugin.description'
+    author: Akmal
+    icon: oc-icon-group
+    homepage: ''
+navigation:
+    Partners:
+        label: Партнеры
+        url: akmal/partners/partners
+        icon: icon-group

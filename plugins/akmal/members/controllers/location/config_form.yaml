@@ -1,0 +1,10 @@
+name: Location
+form: $/akmal/members/models/location/fields.yaml
+modelClass: Akmal\Members\Models\Location
+defaultRedirect: akmal/members/location
+create:
+    redirect: 'akmal/members/location/update/:id'
+    redirectClose: akmal/members/location
+update:
+    redirect: akmal/members/location
+    redirectClose: akmal/members/location

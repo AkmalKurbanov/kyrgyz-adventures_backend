@@ -1,0 +1,61 @@
+title = "Guest houses"
+url = "/guest-houses"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[records]
+activeOnly = 1
+areaSlug = "gostevye-doma"
+categorySlug = "{{ :category }}"
+tagSlug = "{{ :tag }}"
+recordPage = "guest-house-detail"
+recordPageSlug = "{{ :slug }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+==
+<br>
+<div class="container">
+  <div class="guesthouses">
+    {% for record in records.items %}
+
+    <div class="news-item-style-03">
+      <div class="thumb">
+        {% if record.preview_image %}
+        <a
+          href="{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}"
+          style="background-image: url('{{ record.preview_image.getPath | resize(450, auto, { mode: 'crop', quality: '80', extension: 'jpg' })}}');"
+        >
+        </a>
+
+        {% elseif record.preview_image_media %}
+        <a
+          href="{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}"
+          style="{{ record.preview_image_media|media | resize(450, auto, { mode: 'crop', quality: '80', extension: 'jpg' })}}');"
+        >
+        </a>
+        {% endif %}
+      </div>
+      <div class="content">
+        <span class="subtitle">{{record.typeHouse}}</span>
+        <h4 class="title">
+          <a
+            href="{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}"
+            >{{ record.name }}</a
+          >
+        </h4>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
