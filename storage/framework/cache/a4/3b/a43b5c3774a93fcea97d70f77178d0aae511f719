@@ -1,0 +1,230 @@
+1675864660a:1:{s:21:"site/inner_banner.htm";a:5:{s:8:"fileName";s:21:"site/inner_banner.htm";s:7:"content";s:3733:"<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="breadcrumb-inner padding-top-240">
+        {% if this.page.url == '/blog/post/:slug' %}
+        <h1 class="page-title">{{post.title}}</h1>
+        {% else %}
+        <h1 class="page-title">{{this.page.title}}</h1>
+        {% endif %}
+
+        {% if breadcrumbs %}
+        <ul class="page-list">
+          <li><a href="{{ 'home'|page }}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+
+          {% if this.page.url == '/tour-detail/:slug' %}
+          <li><a href="{{ 'tours'|page }}">
+  
+            {% if activeLocaleName  == 'ru' %}
+              Туры
+            {% elseif activeLocaleName  == 'en' %} 
+              Tours
+            {% elseif activeLocaleName  == 'de' %} 
+              Touren
+            {% endif %}               
+          </a></li>
+          <li>
+            <a href="{{ 'home'|page }}/{{ recordDetail.category.slug }}">{{ recordDetail.category.name }}</a>
+          </li>
+          {% for breadcrumb in breadcrumbs %}
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{ this.page.title }} </a>
+          </li>
+          {% endfor %}
+          
+          
+        
+
+          {% elseif this.page.url == '/guest-house-detail/:slug' %}
+            <li><a href="/guest-houses">
+              {% if activeLocaleName  == 'ru' %}
+              Гостевые дома
+            {% elseif activeLocaleName  == 'en' %} 
+              Guest houses
+            {% elseif activeLocaleName  == 'de' %} 
+              Gasthäuser
+            {% endif %}  
+            </a></li>
+           {% for breadcrumb in breadcrumbs %}
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{ this.page.title }} </a>
+          </li>
+          {% endfor %}
+
+          {% elseif this.page.url == '/blog/post/:slug' %}
+          
+          <li><a href="{{ 'blog'|page }}">{{ 'blog'|title }}</a></li>
+          <li>
+            {% for cat in post.categories %}
+            <a href="/blog/category/{{cat.slug}}">{{cat.name}}</a>
+            {%endfor %}
+          </li>
+          {% for breadcrumb in breadcrumbs %}
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{ post.title }} </a>
+          </li>
+          {% endfor %}
+
+          {% elseif this.page.url == '/blog/category/:slug/:page?' %}
+          <li><a href="{{ 'blog'|page }}">{{ 'blog'|title }}</a></li>
+          {% for breadcrumb in breadcrumbs %}
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{ this.page.title }} </a>
+          </li>
+          {% endfor %}
+
+          {% elseif this.page.url == '/category/:category' %}
+          <li><a href="{{ 'tours'|page }}">
+            {% if activeLocaleName  == 'ru' %}
+              Туры
+            {% elseif activeLocaleName  == 'en' %} 
+              Tours
+            {% elseif activeLocaleName  == 'de' %} 
+              Touren
+            {% endif %}  
+          </a></li>
+          
+
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{categoryDetail.name}}</a>
+          </li>
+         
+
+
+          {% else %}
+
+          
+          {% for breadcrumb in breadcrumbs %}
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{ this.page.title }} </a>
+          </li>
+          {% endfor %}
+
+
+          {% endif %}
+
+
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="breadcrumb-icon">
+  <i class="flaticon-fireworks"></i>
+</div>
+";s:5:"mtime";i:1675780655;s:6:"markup";s:3732:"<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="breadcrumb-inner padding-top-240">
+        {% if this.page.url == '/blog/post/:slug' %}
+        <h1 class="page-title">{{post.title}}</h1>
+        {% else %}
+        <h1 class="page-title">{{this.page.title}}</h1>
+        {% endif %}
+
+        {% if breadcrumbs %}
+        <ul class="page-list">
+          <li><a href="{{ 'home'|page }}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+
+          {% if this.page.url == '/tour-detail/:slug' %}
+          <li><a href="{{ 'tours'|page }}">
+  
+            {% if activeLocaleName  == 'ru' %}
+              Туры
+            {% elseif activeLocaleName  == 'en' %} 
+              Tours
+            {% elseif activeLocaleName  == 'de' %} 
+              Touren
+            {% endif %}               
+          </a></li>
+          <li>
+            <a href="{{ 'home'|page }}/{{ recordDetail.category.slug }}">{{ recordDetail.category.name }}</a>
+          </li>
+          {% for breadcrumb in breadcrumbs %}
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{ this.page.title }} </a>
+          </li>
+          {% endfor %}
+          
+          
+        
+
+          {% elseif this.page.url == '/guest-house-detail/:slug' %}
+            <li><a href="/guest-houses">
+              {% if activeLocaleName  == 'ru' %}
+              Гостевые дома
+            {% elseif activeLocaleName  == 'en' %} 
+              Guest houses
+            {% elseif activeLocaleName  == 'de' %} 
+              Gasthäuser
+            {% endif %}  
+            </a></li>
+           {% for breadcrumb in breadcrumbs %}
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{ this.page.title }} </a>
+          </li>
+          {% endfor %}
+
+          {% elseif this.page.url == '/blog/post/:slug' %}
+          
+          <li><a href="{{ 'blog'|page }}">{{ 'blog'|title }}</a></li>
+          <li>
+            {% for cat in post.categories %}
+            <a href="/blog/category/{{cat.slug}}">{{cat.name}}</a>
+            {%endfor %}
+          </li>
+          {% for breadcrumb in breadcrumbs %}
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{ post.title }} </a>
+          </li>
+          {% endfor %}
+
+          {% elseif this.page.url == '/blog/category/:slug/:page?' %}
+          <li><a href="{{ 'blog'|page }}">{{ 'blog'|title }}</a></li>
+          {% for breadcrumb in breadcrumbs %}
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{ this.page.title }} </a>
+          </li>
+          {% endfor %}
+
+          {% elseif this.page.url == '/category/:category' %}
+          <li><a href="{{ 'tours'|page }}">
+            {% if activeLocaleName  == 'ru' %}
+              Туры
+            {% elseif activeLocaleName  == 'en' %} 
+              Tours
+            {% elseif activeLocaleName  == 'de' %} 
+              Touren
+            {% endif %}  
+          </a></li>
+          
+
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{categoryDetail.name}}</a>
+          </li>
+         
+
+
+          {% else %}
+
+          
+          {% for breadcrumb in breadcrumbs %}
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{ this.page.title }} </a>
+          </li>
+          {% endfor %}
+
+
+          {% endif %}
+
+
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="breadcrumb-icon">
+  <i class="flaticon-fireworks"></i>
+</div>";s:4:"code";N;}}

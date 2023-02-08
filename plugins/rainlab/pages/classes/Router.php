@@ -100,7 +100,7 @@ class Router
     {
         $key = $this->getCacheKey('static-page-url-map');
 
-        $cacheable = Config::get('cms.enableRoutesCache');
+        $cacheable = Config::get('cms.enableRoutesCache', Config::get('cms.enable_route_cache', false));
         $cached = $cacheable ? Cache::get($key, false) : false;
 
         if (!$cached || ($unserialized = @unserialize($cached)) === false) {
@@ -116,6 +116,10 @@ class Router
                 'titles' => []
             ];
             foreach ($pages as $page) {
+                if (!$page) {
+                    continue;
+                }
+
                 $url = $page->getViewBag()->property('url');
                 if (!$url) {
                     continue;
@@ -132,7 +136,8 @@ class Router
             self::$urlMap = $map;
 
             if ($cacheable) {
-                $expiresAt = now()->addMinutes(Config::get('cms.urlCacheTtl', 1));
+                $comboConfig = Config::get('cms.urlCacheTtl', Config::get('cms.url_cache_ttl', 10));
+                $expiresAt = now()->addMinutes($comboConfig);
                 Cache::put($key, serialize($map), $expiresAt);
             }
 

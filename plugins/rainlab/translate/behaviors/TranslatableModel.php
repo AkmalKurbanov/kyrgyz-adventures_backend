@@ -2,10 +2,7 @@
 
 use Db;
 use DbDongle;
-use RainLab\Translate\Classes\Translator;
 use RainLab\Translate\Classes\TranslatableBehavior;
-use ApplicationException;
-use Exception;
 
 /**
  * Translatable model extension
@@ -29,11 +26,48 @@ class TranslatableModel extends TranslatableBehavior
             'RainLab\Translate\Models\Attribute',
             'name' => 'model'
         ];
+
+        // October v2.0
+        if (class_exists('System')) {
+            $this->extendFileModels('attachOne');
+            $this->extendFileModels('attachMany');
+        }
+
+        // Clean up indexes when this model is deleted
+        $model->bindEvent('model.afterDelete', function() use ($model) {
+            Db::table('rainlab_translate_attributes')
+                ->where('model_id', $model->getKey())
+                ->where('model_type', get_class($model))
+                ->delete();
+
+            Db::table('rainlab_translate_indexes')
+                ->where('model_id', $model->getKey())
+                ->where('model_type', get_class($model))
+                ->delete();
+        });
     }
 
     /**
-     * Applies a translatable index to a basic query. This scope will join the index
-     * table and can be executed neither more than once, nor with scopeTransOrder.
+     * extendFileModels will swap the standard File model with MLFile instead
+     */
+    protected function extendFileModels(string $relationGroup)
+    {
+        foreach ($this->model->$relationGroup as $relationName => $relationObj) {
+            $relationClass = is_array($relationObj) ? $relationObj[0] : $relationObj;
+            if ($relationClass === \System\Models\File::class) {
+                if (is_array($relationObj)) {
+                    $this->model->$relationGroup[$relationName][0] = \RainLab\Translate\Models\MLFile::class;
+                }
+                else {
+                    $this->model->$relationGroup[$relationName] = \RainLab\Translate\Models\MLFile::class;
+                }
+            }
+        }
+    }
+
+    /**
+     * scopeTransWhere applies a translatable index to a basic query. This scope will join the
+     * index table and can be executed neither more than once, nor with scopeTransOrder.
      * @param  Builder $query
      * @param  string $index
      * @param  string $value
@@ -42,22 +76,60 @@ class TranslatableModel extends TranslatableBehavior
      */
     public function scopeTransWhere($query, $index, $value, $locale = null, $operator = '=')
     {
+        return $this->transWhereInternal($query, $index, $value, [
+            'locale' => $locale,
+            'operator' => $operator
+        ]);
+    }
+
+    /**
+     * scopeTransWhereNoFallback is identical to scopeTransWhere except it will not
+     * use a fallback query when there are no indexes found.
+     * @see scopeTransWhere
+     */
+    public function scopeTransWhereNoFallback($query, $index, $value, $locale = null, $operator = '=')
+    {
+        // Ignore translatable indexes in default locale context
+        if(($locale ?: $this->translatableContext) === $this->translatableDefault) {
+            return $query->where($index, $operator, $value);
+        }
+        
+        return $this->transWhereInternal($query, $index, $value, [
+            'locale' => $locale,
+            'operator' => $operator,
+            'noFallback' => true
+        ]);
+    }
+
+    /**
+     * transWhereInternal
+     * @link https://github.com/rainlab/translate-plugin/pull/623
+     */
+    protected function transWhereInternal($query, $index, $value, $options = [])
+    {
+        extract(array_merge([
+            'locale' => null,
+            'operator' => '=',
+            'noFallback' => false
+        ], $options));
+
         if (!$locale) {
             $locale = $this->translatableContext;
         }
 
         // Separate query into two separate queries for improved performance
-        // @see https://github.com/rainlab/translate-plugin/pull/623
         $translateIndexes = Db::table('rainlab_translate_indexes')
             ->where('rainlab_translate_indexes.model_type', '=', $this->getClass())
             ->where('rainlab_translate_indexes.locale', '=', $locale)
             ->where('rainlab_translate_indexes.item', $index)
             ->where('rainlab_translate_indexes.value', $operator, $value)
-            ->pluck('model_id');
+            ->pluck('model_id')
+        ;
 
-        if ($translateIndexes->count()) {
+        if ($translateIndexes->count() || $noFallback) {
             $query->whereIn($this->model->getQualifiedKeyName(), $translateIndexes);
-        } else {
+        }
+        else {
             $query->where($index, $operator, $value);
         }
 

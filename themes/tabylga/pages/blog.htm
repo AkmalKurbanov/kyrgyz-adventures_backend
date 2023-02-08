@@ -12,6 +12,8 @@ crumb_disabled = 0
 [viewBag]
 localeTitle[ru] = "Блог"
 localeTitle[en] = "Блог"
+localeTitle[de] = "Bloggen"
+localeTitle[rus] = "Блог"
 localeUrl[en] = "/blog/:page?"
 
 [siteSearchInclude]
@@ -65,7 +67,7 @@ emails_date_format = "Y-m-d"
                 </a>
                 <div class="blog-date-box">
                   <h4>{{ post.published_at |date('d') }}<br><span>
-                    {% if activeLocale == 'ru' %}
+                    {% if activeLocale == 'rus' %}
                     {{ post.published_at |rudate('%BP') }}
                     {% else %}
                     {{ post.published_at |date('M') }}

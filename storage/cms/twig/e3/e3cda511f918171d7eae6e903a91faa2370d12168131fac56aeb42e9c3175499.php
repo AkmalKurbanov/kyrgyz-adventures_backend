@@ -30,13 +30,13 @@ class __TwigTemplate_93ee737a2b0e163737ce730439415e451b4d55a8148b4ed0e7fb59f9cf1
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array();
-        $filters = array("_" => 4);
+        $filters = array("_" => 4, "page" => 6, "escape" => 6, "title" => 6);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
                 [],
-                ['_'],
+                ['_', 'page', 'escape', 'title'],
                 []
             );
         } catch (SecurityError $e) {
@@ -64,12 +64,14 @@ class __TwigTemplate_93ee737a2b0e163737ce730439415e451b4d55a8148b4ed0e7fb59f9cf1
         <h1>404</h1>
         <p style=\"font-size: 20px;\">";
         // line 4
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Сожалеем, но запрошенная вами страница не может быть найдена."]);
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Page not found."]);
         echo "</p>
         <div class=\"btn btn-custom-primary margin-top-15\">
-            <a href=\"/\">";
+            <a href=\"";
         // line 6
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Главная"]);
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("home");
+        echo "\">";
+        echo twig_escape_filter($this->env, twig_title_string_filter($this->env, "home"), "html", null, true);
         echo "</a>
         </div>
     </div>
@@ -96,9 +98,9 @@ class __TwigTemplate_93ee737a2b0e163737ce730439415e451b4d55a8148b4ed0e7fb59f9cf1
         return new Source("<div class=\"jumbotron\">
     <div class=\"container\">
         <h1>404</h1>
-        <p style=\"font-size: 20px;\">{{'Сожалеем, но запрошенная вами страница не может быть найдена.'|_}}</p>
+        <p style=\"font-size: 20px;\">{{'Page not found.'|_}}</p>
         <div class=\"btn btn-custom-primary margin-top-15\">
-            <a href=\"/\">{{ 'home'|title }}</a>
+            <a href=\"{{ 'home'|page }}\">{{ 'home'|title }}</a>
         </div>
     </div>
 </div>", "C:\\work\\OSPanel\\domains\\tabylga/themes/tabylga/pages/404.htm", "");

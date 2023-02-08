@@ -98,7 +98,7 @@ class __TwigTemplate_94d304add8122e79a8dd785fe91e06dbf83c518bd538b17b61de0a96611
             // line 19
             echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "link", [], "any", false, false, true, 19), 19, $this->source), "html", null, true);
             echo "\">";
-            echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Подробнее"]);
+            echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["More"]);
             echo "</a>
           </div>
         </div>
@@ -114,7 +114,7 @@ class __TwigTemplate_94d304add8122e79a8dd785fe91e06dbf83c518bd538b17b61de0a96611
 </div>
 <div class=\"banner4-social\">
   <ul>
-    ";
+    <!-- ";
         // line 29
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 29), "social", [], "any", false, false, true, 29));
@@ -130,7 +130,25 @@ class __TwigTemplate_94d304add8122e79a8dd785fe91e06dbf83c518bd538b17b61de0a96611
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 31
+        echo " -->
+       ";
         // line 32
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 32), "social", [], "any", false, false, true, 32));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 33
+            echo "              <li><a href=\"";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, true, 33), 33, $this->source), "html", null, true);
+            echo "\" target=\"_blank\"><i class=\"";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "awesome_icon", [], "any", false, false, true, 33), 33, $this->source), "html", null, true);
+            echo "\"></i></a></li>
+              ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 35
         echo "  </ul>
 </div>";
     }
@@ -147,7 +165,7 @@ class __TwigTemplate_94d304add8122e79a8dd785fe91e06dbf83c518bd538b17b61de0a96611
 
     public function getDebugInfo()
     {
-        return array (  134 => 32,  123 => 30,  119 => 29,  112 => 24,  99 => 19,  93 => 16,  89 => 15,  86 => 14,  82 => 13,  74 => 7,  72 => 6,  70 => 5,  68 => 4,  66 => 3,  64 => 2,  62 => 1,);
+        return array (  152 => 35,  141 => 33,  137 => 32,  134 => 31,  123 => 30,  119 => 29,  112 => 24,  99 => 19,  93 => 16,  89 => 15,  86 => 14,  82 => 13,  74 => 7,  72 => 6,  70 => 5,  68 => 4,  66 => 3,  64 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -170,7 +188,7 @@ class __TwigTemplate_94d304add8122e79a8dd785fe91e06dbf83c518bd538b17b61de0a96611
         <div class=\"description\" data-animation-in=\"fadeInDown\">{{ record.description | raw }}</div>
         <div class=\"d-flex justify-content-center margin-top-50\">
           <div class=\"btn-wrapper mr-3\" data-animation-in=\"fadeInDown\">
-            <a class=\"btn btn-custom-default\" href=\"{{record.link}}\">{{'Подробнее'|_}}</a>
+            <a class=\"btn btn-custom-default\" href=\"{{record.link}}\">{{'More'|_}}</a>
           </div>
         </div>
       </div>
@@ -180,9 +198,12 @@ class __TwigTemplate_94d304add8122e79a8dd785fe91e06dbf83c518bd538b17b61de0a96611
 </div>
 <div class=\"banner4-social\">
   <ul>
-    {% for item in this.theme.social %}
+    <!-- {% for item in this.theme.social %}
     <li><a href=\"{{item.url}}\">{{item.social_name}}</a></li>
-    {% endfor %}
+    {% endfor %} -->
+       {% for item in this.theme.social %}
+              <li><a href=\"{{item.url}}\" target=\"_blank\"><i class=\"{{item.awesome_icon}}\"></i></a></li>
+              {% endfor %}
   </ul>
 </div>", "C:\\work\\OSPanel\\domains\\tabylga/themes/tabylga/partials/site/banner_mine.htm", "");
     }

@@ -1,4 +1,4 @@
-1674041192a:1:{s:17:"blog-category.htm";a:19:{s:8:"fileName";s:17:"blog-category.htm";s:7:"content";s:2712:"title = "Blog categories"
+1675864659a:1:{s:17:"blog-category.htm";a:19:{s:8:"fileName";s:17:"blog-category.htm";s:7:"content";s:2874:"title = "Blog categories"
 url = "/blog/category/:slug/:page?"
 layout = "default"
 is_hidden = 0
@@ -12,7 +12,11 @@ crumb_disabled = 0
 [viewBag]
 localeTitle[ru] = "Категории блога"
 localeTitle[en] = "Блог категориялары"
+localeTitle[de] = "Blog-Kategorien"
+localeTitle[rus] = "Категории блога"
 localeUrl[en] = "/blog/category/:slug/:page?"
+localeUrl[de] = "/blog-kategorien"
+localeUrl[rus] = "/kategorii-bloga"
 
 [siteSearchInclude]
 
@@ -84,7 +88,7 @@ emails_date_format = "Y-m-d"
       </div>
     </div>
   </div>
-</div>";s:5:"mtime";i:1673969879;s:6:"markup";s:1468:"<div class="blog-area margin-top-80">
+</div>";s:5:"mtime";i:1674064061;s:6:"markup";s:1468:"<div class="blog-area margin-top-80">
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
@@ -126,4 +130,4 @@ emails_date_format = "Y-m-d"
       </div>
     </div>
   </div>
-</div>";s:4:"code";N;s:5:"title";s:15:"Blog categories";s:3:"url";s:27:"/blog/category/:slug/:page?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:2:{s:2:"ru";s:29:"Категории блога";s:2:"en";s:35:"Блог категориялары";}s:9:"localeUrl";a:1:{s:2:"en";s:27:"/blog/category/:slug/:page?";}}s:17:"siteSearchInclude";a:0:{}s:9:"blogPosts";a:7:{s:10:"pageNumber";s:11:"{{ :page }}";s:14:"categoryFilter";s:11:"{{ :slug }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:34:"Записей не найдено";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:13:"blog-category";s:8:"postPage";s:4:"post";}s:19:"genericForm sidebar";a:15:{s:5:"rules";a:1:{s:5:"email";s:14:"required|email";}s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:12:"mail_enabled";s:1:"1";s:15:"mail_recipients";a:1:{s:17:"250296a@gmail.com";s:7:"Tourism";}s:15:"mail_resp_field";s:17:"250296a@gmail.com";s:14:"mail_resp_from";s:17:"250296a@gmail.com";s:10:"reset_form";s:1:"1";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}
+</div>";s:4:"code";N;s:5:"title";s:15:"Blog categories";s:3:"url";s:27:"/blog/category/:slug/:page?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:4:{s:2:"ru";s:29:"Категории блога";s:2:"en";s:35:"Блог категориялары";s:2:"de";s:15:"Blog-Kategorien";s:3:"rus";s:29:"Категории блога";}s:9:"localeUrl";a:3:{s:2:"en";s:27:"/blog/category/:slug/:page?";s:2:"de";s:16:"/blog-kategorien";s:3:"rus";s:16:"/kategorii-bloga";}}s:17:"siteSearchInclude";a:0:{}s:9:"blogPosts";a:7:{s:10:"pageNumber";s:11:"{{ :page }}";s:14:"categoryFilter";s:11:"{{ :slug }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:34:"Записей не найдено";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:13:"blog-category";s:8:"postPage";s:4:"post";}s:19:"genericForm sidebar";a:15:{s:5:"rules";a:1:{s:5:"email";s:14:"required|email";}s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:12:"mail_enabled";s:1:"1";s:15:"mail_recipients";a:1:{s:17:"250296a@gmail.com";s:7:"Tourism";}s:15:"mail_resp_field";s:17:"250296a@gmail.com";s:14:"mail_resp_from";s:17:"250296a@gmail.com";s:10:"reset_form";s:1:"1";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

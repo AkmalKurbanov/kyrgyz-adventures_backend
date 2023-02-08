@@ -9,6 +9,12 @@ hide_crumb = 0
 remove_crumb_trail = 0
 crumb_disabled = 0
 
+[viewBag]
+localeTitle[ru] = "Туры"
+localeTitle[de] = "Touren"
+localeTitle[rus] = "Туры"
+localeUrl[ru] = "/tury"
+
 [records]
 activeOnly = 1
 areaSlug = "tours"
@@ -20,10 +26,6 @@ limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
-
-[viewBag]
-localeTitle[ru] = "Туры"
-localeUrl[ru] = "/tury"
 ==
 <div class="upcoming-events-area padding-top-115">
   <div class="container">
@@ -54,13 +56,23 @@ localeUrl[ru] = "/tury"
             <div class="up-content-style-01">
               <div class="date-month">
                 <span class="date">{{record.date | date('d')}}</span>
-                <span class="month">{{record.date | date('M')}}</span>
+                <span class="month">
+
+                  {% if activeLocale == 'rus'  %}
+              {{record.date | rudate('%BP')}}
+              {% elseif activeLocale == 'de'  %}
+              {{record.date | rudate('%BP')}}
+              {% else %}
+              {{record.date | date('M')}}
+              {% endif %}
+
+                </span>
               </div>
               <h6>{{ record.name }}</h6>
               <ul>
                 <li><a href="#"><i class="fa fa-map-marker"></i> {{record.location}}</a></li>
                 <li><a href="#"><i class="fa fa-bell"></i> {{record.date | date('H:i')}}</a></li>
-                <li><a href="{{ 'home'|page }}/{{record.category.slug}}" style="pointer-events: inherit;  display: -webkit-box;
+                <li><a href="{{ 'home'|page }}/category/{{record.category.slug}}" style="pointer-events: inherit;  display: -webkit-box;
  display: -ms-flexbox;
  display: flex;
       -webkit-box-align: center;
@@ -104,4 +116,4 @@ localeUrl[ru] = "/tury"
        {% endfor %}
     </div>
   </div>
-</div> 
+</div>

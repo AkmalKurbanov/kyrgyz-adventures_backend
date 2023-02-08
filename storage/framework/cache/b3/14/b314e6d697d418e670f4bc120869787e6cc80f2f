@@ -1,4 +1,4 @@
-1674041192a:1:{s:20:"site/banner_mine.htm";a:7:{s:8:"fileName";s:20:"site/banner_mine.htm";s:7:"content";s:1448:"[viewBag]
+1675864806a:1:{s:20:"site/banner_mine.htm";a:7:{s:8:"fileName";s:20:"site/banner_mine.htm";s:7:"content";s:1631:"[viewBag]
 
 [builderList]
 modelClass = "Akmal\Mineslider\Models\MainSlider"
@@ -38,11 +38,14 @@ pageNumber = "{{ :page }}"
 </div>
 <div class="banner4-social">
   <ul>
-    {% for item in this.theme.social %}
+    <!-- {% for item in this.theme.social %}
     <li><a href="{{item.url}}">{{item.social_name}}</a></li>
-    {% endfor %}
+    {% endfor %} -->
+       {% for item in this.theme.social %}
+              <li><a href="{{item.url}}" target="_blank"><i class="{{item.awesome_icon}}"></i></a></li>
+              {% endfor %}
   </ul>
-</div>";s:5:"mtime";i:1673949557;s:6:"markup";s:1196:"{% set records = builderList.records %}
+</div>";s:5:"mtime";i:1675783059;s:6:"markup";s:1379:"{% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
 {% set noRecordsMessage = builderList.noRecordsMessage %}
 {% set detailsPage = builderList.detailsPage %}
@@ -70,8 +73,11 @@ pageNumber = "{{ :page }}"
 </div>
 <div class="banner4-social">
   <ul>
-    {% for item in this.theme.social %}
+    <!-- {% for item in this.theme.social %}
     <li><a href="{{item.url}}">{{item.social_name}}</a></li>
-    {% endfor %}
+    {% endfor %} -->
+       {% for item in this.theme.social %}
+              <li><a href="{{item.url}}" target="_blank"><i class="{{item.awesome_icon}}"></i></a></li>
+              {% endfor %}
   </ul>
 </div>";s:4:"code";N;s:7:"viewBag";a:0:{}s:11:"builderList";a:8:{s:10:"modelClass";s:34:"Akmal\Mineslider\Models\MainSlider";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:5:"title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}}}

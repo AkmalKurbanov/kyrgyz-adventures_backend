@@ -3835,7 +3835,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   width: 100%;
   height: 100%;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .banner-style-4 .title {
@@ -4026,7 +4026,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .banner4-social ul li a {
   color: #fff;
   font-family: var(--secondary-font);
-  font-size: 14px;
+  font-size: 20px;
   text-transform: uppercase;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
@@ -4034,9 +4034,9 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   -webkit-writing-mode: vertical-lr;
   -ms-writing-mode: tb-lr;
   writing-mode: vertical-lr;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+  /* -webkit-transform: rotate(180deg); */
+  /* -ms-transform: rotate(180deg); */
+  /* transform: rotate(180deg); */
 }
 
 .banner4-social ul li a:hover {
@@ -12032,3 +12032,22 @@ ul.wp-block-latest-posts.is-grid.alignwide {
         }
 }
 /* guest houses end */
+
+
+
+
+/* footer contacts form */
+footer .contact-form{
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+footer .contact-form input{
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 15px;
+  padding: 0 10px;
+  height: 35px;
+}
+
+/* footer contacts form end */

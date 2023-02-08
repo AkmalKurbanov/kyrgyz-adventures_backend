@@ -33,7 +33,7 @@ categoryPage = "blog-category"
       <div class="content-part">
         <p><a href="{{ post.url }}">{{ post.title }}</a>
         </p>
-        <span class="text">{{ post.published_at | date('d') }} {% if activeLocale == 'ru' %}{{ post.published_at | rudate('%BP') }}{% else %}{{ post.published_at | date('M') }}{% endif %} {{ post.published_at | date('Y') }}</span>
+        <span class="text">{{ post.published_at | date('d') }} {% if activeLocale == 'rus' %}{{ post.published_at | rudate('%BP') }}{% else %}{{ post.published_at | date('M') }}{% endif %} {{ post.published_at | date('Y') }}</span>
       </div>
     </div>
     {% endfor %}

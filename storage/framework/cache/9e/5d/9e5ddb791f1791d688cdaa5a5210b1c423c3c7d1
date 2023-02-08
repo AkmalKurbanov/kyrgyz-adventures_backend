@@ -1,4 +1,4 @@
-1674041192a:1:{s:15:"site/header.htm";a:7:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1813:"[viewBag]
+1675864660a:1:{s:15:"site/header.htm";a:7:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1816:"[viewBag]
 
 [staticMenu]
 code = "menu-header"
@@ -24,6 +24,7 @@ code = "menu-header"
       <div class="collapse navbar-collapse" id="billatrail_main_menu">
         {% if staticMenu.menuItems %}
         <ul class="navbar-nav menu-open">
+  
           {% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
         </ul>
         {% endif %}
@@ -51,7 +52,7 @@ code = "menu-header"
     </div>
   </nav>
 </div>
-<!-- navbar end -->";s:5:"mtime";i:1673974666;s:6:"markup";s:1765:"<!-- navbar start -->
+<!-- navbar end -->";s:5:"mtime";i:1675764811;s:6:"markup";s:1768:"<!-- navbar start -->
 <div class="politix-navbar">
   <nav class="navbar navbar-area navbar-expand-lg nav-style-02">
     <div class="container nav-container">
@@ -72,6 +73,7 @@ code = "menu-header"
       <div class="collapse navbar-collapse" id="billatrail_main_menu">
         {% if staticMenu.menuItems %}
         <ul class="navbar-nav menu-open">
+  
           {% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
         </ul>
         {% endif %}

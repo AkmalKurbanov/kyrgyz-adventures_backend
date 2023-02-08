@@ -1,0 +1,122 @@
+1675783122a:1:{s:21:"site/sidebar_blog.htm";a:8:{s:8:"fileName";s:21:"site/sidebar_blog.htm";s:7:"content";s:2089:"[viewBag]
+
+[blogPosts latestPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "blog-category"
+postPage = "post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 1
+categoryPage = "blog-category"
+==
+<div class="blog-right-content widget-area sidebar">
+  <!-- <div class="widget widget_search">
+    <form class="search-form">
+      <div class="form-group">
+        <input type="text" name="search" class="form-control" placeholder="Type something">
+      </div>
+      <button class="submit-btn" type="submit">Search</button>
+    </form>
+  </div> -->
+  <div class="widget latest-post-widget">
+    <div class="widget-title">
+      <h4>{{'Latest posts'|_}}</h4>
+    </div>
+    {% set posts = latestPosts.posts %}
+
+    {% for post in posts %}
+    <div class="latest-item">
+      <div class="content-part">
+        <p><a href="{{ post.url }}">{{ post.title }}</a>
+        </p>
+        <span class="text">{{ post.published_at | date('d') }} {% if activeLocale == 'rus' %}{{ post.published_at | rudate('%BP') }}{% else %}{{ post.published_at | date('M') }}{% endif %} {{ post.published_at | date('Y') }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="widget widget_categories">
+    <h4 class="widget-title">{{'Categories'|_}}</h4>
+    <ul class="cat-menu">
+      {% if blogCategories.categories|length > 0 %}
+
+      {% partial blogCategories ~ "::items"
+      categories = blogCategories.categories
+      currentCategorySlug = blogCategories.currentCategorySlug
+  %}
+
+      {% else %}
+      <p>No categories were found.</p>
+      {% endif %}
+    </ul>
+  </div>
+  <!-- <div class="widget">
+    <div class="blog-sidebar-thumb">
+      <div class="thumb">
+        <img src="assets/img/blog/sidebar-img.png" alt="">
+      </div>
+      <div class="thumb-content">
+        <h4>Become a volunteer</h4>
+        <div class="btn-wrapper align-self-center">
+          <a class="btn btn-custom-white" href="#">Join now</a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>";s:5:"mtime";i:1674060359;s:6:"markup";s:1785:"<div class="blog-right-content widget-area sidebar">
+  <!-- <div class="widget widget_search">
+    <form class="search-form">
+      <div class="form-group">
+        <input type="text" name="search" class="form-control" placeholder="Type something">
+      </div>
+      <button class="submit-btn" type="submit">Search</button>
+    </form>
+  </div> -->
+  <div class="widget latest-post-widget">
+    <div class="widget-title">
+      <h4>{{'Latest posts'|_}}</h4>
+    </div>
+    {% set posts = latestPosts.posts %}
+
+    {% for post in posts %}
+    <div class="latest-item">
+      <div class="content-part">
+        <p><a href="{{ post.url }}">{{ post.title }}</a>
+        </p>
+        <span class="text">{{ post.published_at | date('d') }} {% if activeLocale == 'rus' %}{{ post.published_at | rudate('%BP') }}{% else %}{{ post.published_at | date('M') }}{% endif %} {{ post.published_at | date('Y') }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="widget widget_categories">
+    <h4 class="widget-title">{{'Categories'|_}}</h4>
+    <ul class="cat-menu">
+      {% if blogCategories.categories|length > 0 %}
+
+      {% partial blogCategories ~ "::items"
+      categories = blogCategories.categories
+      currentCategorySlug = blogCategories.currentCategorySlug
+  %}
+
+      {% else %}
+      <p>No categories were found.</p>
+      {% endif %}
+    </ul>
+  </div>
+  <!-- <div class="widget">
+    <div class="blog-sidebar-thumb">
+      <div class="thumb">
+        <img src="assets/img/blog/sidebar-img.png" alt="">
+      </div>
+      <div class="thumb-content">
+        <h4>Become a volunteer</h4>
+        <div class="btn-wrapper align-self-center">
+          <a class="btn btn-custom-white" href="#">Join now</a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}s:21:"blogPosts latestPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"3";s:14:"noPostsMessage";s:34:"Записей не найдено";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:13:"blog-category";s:8:"postPage";s:4:"post";}s:14:"blogCategories";a:3:{s:4:"slug";s:11:"{{ :slug }}";s:12:"displayEmpty";s:1:"1";s:12:"categoryPage";s:13:"blog-category";}}}

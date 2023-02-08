@@ -1,4 +1,4 @@
-1674041192a:1:{s:9:"tours.htm";a:17:{s:8:"fileName";s:9:"tours.htm";s:7:"content";s:15827:"title = "Tours"
+1675864659a:1:{s:9:"tours.htm";a:17:{s:8:"fileName";s:9:"tours.htm";s:7:"content";s:16180:"title = "Tours"
 url = "/tours"
 layout = "default"
 is_hidden = 0
@@ -8,6 +8,12 @@ child_of = "mey_no_parent"
 hide_crumb = 0
 remove_crumb_trail = 0
 crumb_disabled = 0
+
+[viewBag]
+localeTitle[ru] = "Туры"
+localeTitle[de] = "Touren"
+localeTitle[rus] = "Туры"
+localeUrl[ru] = "/tury"
 
 [records]
 activeOnly = 1
@@ -20,10 +26,6 @@ limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
-
-[viewBag]
-localeTitle[ru] = "Туры"
-localeUrl[ru] = "/tury"
 ==
 <div class="upcoming-events-area padding-top-115">
   <div class="container">
@@ -54,13 +56,23 @@ localeUrl[ru] = "/tury"
             <div class="up-content-style-01">
               <div class="date-month">
                 <span class="date">{{record.date | date('d')}}</span>
-                <span class="month">{{record.date | date('M')}}</span>
+                <span class="month">
+
+                  {% if activeLocale == 'rus'  %}
+              {{record.date | rudate('%BP')}}
+              {% elseif activeLocale == 'de'  %}
+              {{record.date | rudate('%BP')}}
+              {% else %}
+              {{record.date | date('M')}}
+              {% endif %}
+
+                </span>
               </div>
               <h6>{{ record.name }}</h6>
               <ul>
                 <li><a href="#"><i class="fa fa-map-marker"></i> {{record.location}}</a></li>
                 <li><a href="#"><i class="fa fa-bell"></i> {{record.date | date('H:i')}}</a></li>
-                <li><a href="{{ 'home'|page }}/{{record.category.slug}}" style="pointer-events: inherit;  display: -webkit-box;
+                <li><a href="{{ 'home'|page }}/category/{{record.category.slug}}" style="pointer-events: inherit;  display: -webkit-box;
  display: -ms-flexbox;
  display: flex;
       -webkit-box-align: center;
@@ -104,7 +116,7 @@ localeUrl[ru] = "/tury"
        {% endfor %}
     </div>
   </div>
-</div> ";s:5:"mtime";i:1673949473;s:6:"markup";s:15301:"<div class="upcoming-events-area padding-top-115">
+</div>";s:5:"mtime";i:1675780443;s:6:"markup";s:15596:"<div class="upcoming-events-area padding-top-115">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -133,13 +145,23 @@ localeUrl[ru] = "/tury"
             <div class="up-content-style-01">
               <div class="date-month">
                 <span class="date">{{record.date | date('d')}}</span>
-                <span class="month">{{record.date | date('M')}}</span>
+                <span class="month">
+
+                  {% if activeLocale == 'rus'  %}
+              {{record.date | rudate('%BP')}}
+              {% elseif activeLocale == 'de'  %}
+              {{record.date | rudate('%BP')}}
+              {% else %}
+              {{record.date | date('M')}}
+              {% endif %}
+
+                </span>
               </div>
               <h6>{{ record.name }}</h6>
               <ul>
                 <li><a href="#"><i class="fa fa-map-marker"></i> {{record.location}}</a></li>
                 <li><a href="#"><i class="fa fa-bell"></i> {{record.date | date('H:i')}}</a></li>
-                <li><a href="{{ 'home'|page }}/{{record.category.slug}}" style="pointer-events: inherit;  display: -webkit-box;
+                <li><a href="{{ 'home'|page }}/category/{{record.category.slug}}" style="pointer-events: inherit;  display: -webkit-box;
  display: -ms-flexbox;
  display: flex;
       -webkit-box-align: center;
@@ -183,4 +205,4 @@ localeUrl[ru] = "/tury"
        {% endfor %}
     </div>
   </div>
-</div>";s:4:"code";N;s:5:"title";s:5:"Tours";s:3:"url";s:6:"/tours";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"records";a:10:{s:10:"activeOnly";s:1:"1";s:8:"areaSlug";s:5:"tours";s:12:"categorySlug";s:15:"{{ :category }}";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:7:"viewBag";a:2:{s:11:"localeTitle";a:1:{s:2:"ru";s:8:"Туры";}s:9:"localeUrl";a:1:{s:2:"ru";s:5:"/tury";}}}}
+</div>";s:4:"code";N;s:5:"title";s:5:"Tours";s:3:"url";s:6:"/tours";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:3:{s:2:"ru";s:8:"Туры";s:2:"de";s:6:"Touren";s:3:"rus";s:8:"Туры";}s:9:"localeUrl";a:1:{s:2:"ru";s:5:"/tury";}}s:7:"records";a:10:{s:10:"activeOnly";s:1:"1";s:8:"areaSlug";s:5:"tours";s:12:"categorySlug";s:15:"{{ :category }}";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}

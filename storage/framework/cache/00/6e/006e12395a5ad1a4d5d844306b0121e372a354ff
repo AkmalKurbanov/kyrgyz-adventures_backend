@@ -1,4 +1,4 @@
-1674041192a:1:{s:14:"all-events.htm";a:19:{s:8:"fileName";s:14:"all-events.htm";s:7:"content";s:3180:"title = "All events"
+1675864659a:1:{s:14:"all-events.htm";a:19:{s:8:"fileName";s:14:"all-events.htm";s:7:"content";s:3365:"title = "All events"
 url = "/all-events"
 layout = "default"
 is_hidden = 0
@@ -12,6 +12,8 @@ crumb_disabled = 0
 [viewBag]
 localeTitle[ru] = "Все события"
 localeTitle[en] = "Бардык окуялар"
+localeTitle[de] = "Alle Veranstaltungen"
+localeTitle[rus] = "Все события"
 localeUrl[en] = "/all-events"
 
 [builderList]
@@ -78,7 +80,9 @@ emails_date_format = "Y-m-d"
           <div class="date-box">
             <span class="date">{{record.date | date('d')}}</span>
             <span class="month">
-              {% if activeLocale == 'ru' %}
+              {% if activeLocale == 'rus'  %}
+              {{record.date | rudate('%BP')}}
+              {% elseif activeLocale == 'de'  %}
               {{record.date | rudate('%BP')}}
               {% else %}
               {{record.date | date('M')}}
@@ -101,7 +105,7 @@ emails_date_format = "Y-m-d"
       {% endfor %}
     </div>
   </div>
-</div>";s:5:"mtime";i:1673948826;s:6:"markup";s:1898:"{% set records = builderList.records %}
+</div>";s:5:"mtime";i:1674064132;s:6:"markup";s:1997:"{% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
 {% set noRecordsMessage = builderList.noRecordsMessage %}
 {% set detailsPage = builderList.detailsPage %}
@@ -133,7 +137,9 @@ emails_date_format = "Y-m-d"
           <div class="date-box">
             <span class="date">{{record.date | date('d')}}</span>
             <span class="month">
-              {% if activeLocale == 'ru' %}
+              {% if activeLocale == 'rus'  %}
+              {{record.date | rudate('%BP')}}
+              {% elseif activeLocale == 'de'  %}
               {{record.date | rudate('%BP')}}
               {% else %}
               {{record.date | date('M')}}
@@ -156,4 +162,4 @@ emails_date_format = "Y-m-d"
       {% endfor %}
     </div>
   </div>
-</div>";s:4:"code";N;s:5:"title";s:10:"All events";s:3:"url";s:11:"/all-events";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:2:{s:2:"ru";s:21:"Все события";s:2:"en";s:27:"Бардык окуялар";}s:9:"localeUrl";a:1:{s:2:"en";s:11:"/all-events";}}s:11:"builderList";a:11:{s:10:"modelClass";s:25:"Akmal\Events\Models\Event";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:5:"title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:12:"event-detail";s:16:"detailsKeyColumn";s:4:"slug";s:19:"detailsUrlParameter";s:4:"slug";s:10:"pageNumber";s:11:"{{ :page }}";s:10:"sortColumn";s:4:"date";s:13:"sortDirection";s:3:"asc";}s:17:"siteSearchInclude";a:0:{}s:19:"genericForm sidebar";a:15:{s:5:"rules";a:1:{s:5:"email";s:14:"required|email";}s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:12:"mail_enabled";s:1:"1";s:15:"mail_recipients";a:1:{s:17:"250296a@gmail.com";s:7:"Tourism";}s:15:"mail_resp_field";s:17:"250296a@gmail.com";s:14:"mail_resp_from";s:17:"250296a@gmail.com";s:10:"reset_form";s:1:"1";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}
+</div>";s:4:"code";N;s:5:"title";s:10:"All events";s:3:"url";s:11:"/all-events";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:4:{s:2:"ru";s:21:"Все события";s:2:"en";s:27:"Бардык окуялар";s:2:"de";s:20:"Alle Veranstaltungen";s:3:"rus";s:21:"Все события";}s:9:"localeUrl";a:1:{s:2:"en";s:11:"/all-events";}}s:11:"builderList";a:11:{s:10:"modelClass";s:25:"Akmal\Events\Models\Event";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:5:"title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:12:"event-detail";s:16:"detailsKeyColumn";s:4:"slug";s:19:"detailsUrlParameter";s:4:"slug";s:10:"pageNumber";s:11:"{{ :page }}";s:10:"sortColumn";s:4:"date";s:13:"sortDirection";s:3:"asc";}s:17:"siteSearchInclude";a:0:{}s:19:"genericForm sidebar";a:15:{s:5:"rules";a:1:{s:5:"email";s:14:"required|email";}s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:12:"mail_enabled";s:1:"1";s:15:"mail_recipients";a:1:{s:17:"250296a@gmail.com";s:7:"Tourism";}s:15:"mail_resp_field";s:17:"250296a@gmail.com";s:14:"mail_resp_from";s:17:"250296a@gmail.com";s:10:"reset_form";s:1:"1";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

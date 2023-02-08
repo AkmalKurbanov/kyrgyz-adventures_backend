@@ -1,0 +1,58 @@
+fields:
+    deploy_section:
+        label: Deploy settings
+        type: section
+
+    api_key:
+        label: 'Cloudways API Key'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+
+    email:
+        label: 'Cloudways account email'
+        span: auto
+        type: text
+
+    server_id:
+        label: 'Server id'
+        span: auto
+        type: text
+
+    app_id:
+        label: 'App id'
+        span: auto
+        type: text
+
+    git_url:
+        label: 'GitHub url'
+        span: auto
+        type: text
+        default: 'git@github.com:username/reponame.git'
+
+    branch_name:
+        label: 'Branch name'
+        span: auto
+        type: text
+        default: 'master'
+
+    webhook:
+        label: 'WebHook URL'
+        span: full
+        type: text
+        readOnly: true
+
+    advanced_section:
+        label: Advanced settings
+        type: section
+
+    api_url:
+        label: 'API Url'
+        span: auto
+        type: text
+        default: 'https://api.cloudways.com/api/v1'
+
+    webhook_token:
+        label: 'Token used for limit access to deploy URL'
+        span: auto
+        type: text

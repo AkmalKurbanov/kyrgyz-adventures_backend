@@ -15,7 +15,7 @@ code = "additional-links"
         <div class="col-xl-4">
           <div class="footer-widget widget contact-widget">
             <a href="/" class="footer-logo">
-              <img src="{{this.theme.logoDark.path}}" alt="footer logo" width="70">
+              <img src="{{this.theme.logoDark.path}}" alt="footer logo" width="100">
             </a>
             {% if this.theme.site_description == true %}
             {{this.theme.site_description | raw}}
@@ -31,7 +31,7 @@ code = "additional-links"
                   <i class="fa fa-envelope"></i>
                 </div>
                 <div class="details">
-                  {% if activeLocale == 'ru' %}
+                  {% if activeLocale == 'rus' %}
                   {{contact.address}}
                   {% else %}
                   {{contact.addressKg}}
@@ -121,12 +121,17 @@ code = "additional-links"
                 {% endif %}
               </div>
             </div>
-            <!-- <div class="col-lg-5">
-              <div class="footer-widget widget">
-                <h4 class="widget-title">{{'Лента Instagram'|_}}</h4>
-                <div id="instagram-feed1"></div>
-              </div>
-            </div> -->
+            <div class="col-lg-5">
+              <h4 style="color:#fff">{{'Contact us'|_}}</h4>
+              <form class="contact-form" data-request="{{ sidebar }}::onFormSubmit">
+                <div id="{{ sidebar }}_forms_flash"></div>
+                {{ form_token() }}
+                <input type="text" id="name" name="Имя" placeholder="{{'Name'|_}}">
+                <input type="text" id="email" name="email" placeholder="{{'Email'|_}}" >
+                <input type="text" id="number" name="телефон" placeholder="{{'Phone'|_}}" >
+                <button class="btn" id="simpleContactSubmitButton" type="submit"><i class="fa fa-envelope-o"></i></button>
+              </form>
+            </div>
             <div class="col-xl-11 offset-xl-1">
               <div class="copyright-area-inner copyright-sm margin-top-35">
                 &copy; {{this.theme.site_name}}

@@ -73,10 +73,12 @@ The component injects the `breadcrumbs` page variable that contains an array of 
 
 In some cases you might want to mark a specific menu item as active explicitly. You can do that in the page's [`onInit()`](http://octobercms.com/docs/cms/pages#dynamic-pages) function with assigning the `activeMenuItem` page variable a value matching the menu item code you want to make active. Menu item codes are managed in the Edit Menu Item popup.
 
-    function onInit()
-    {
-        $this['activeMenuItem'] = 'blog';
-    }
+```php
+function onInit()
+{
+    $this['activeMenuItem'] = 'blog';
+}
+```
 
 ##### Linking to static pages
 
@@ -84,15 +86,51 @@ When a static page is first created it will be assigned a file name based on the
 
 To create a link to a static page, use the `|staticPage` filter:
 
-    <a href="{{ 'chairs'|staticPage }}">Go to Chairs</a>
+```twig
+<a href="{{ 'chairs'|staticPage }}">Go to Chairs</a>
+```
 
 This filter translates to PHP code as:
 
-    echo RainLab\Pages\Classes\Page::url('chairs');
+```php
+echo RainLab\Pages\Classes\Page::url('chairs');
+```
 
 If you want to link to the static page by its URL, simply use the `|app` filter:
 
-    <a href="{{ '/chairs'|app }}">Go to Chairs</a>
+```twig
+<a href="{{ '/chairs'|app }}">Go to Chairs</a>
+```
+
+Linking to the current page, if the component name is called `staticPage`:
+
+```twig
+​{{ staticPage.page.baseFileName|staticPage }}
+```
+
+##### Manually displaying a static menu
+
+When a static menu is first created it will be assigned a file name based on the menu name (menu code can also be manually defined). For example, a menu with the name **Primary Nav** will create a meta file called **menus/primary-nav.yaml** in the theme. This file will not change even if the menu name is changed at a later time.
+
+To render a static menu based on a menu code from the `staticmenupicker` dropdown form widget:
+
+You can either define the code property on the staticMenu component.
+
+```twig
+{% component 'staticMenu' code=this.theme.primary_menu %}
+```
+
+Or, use the resetMenu method on the staticMenu component, so we can manually control the menu output without having to create a staticMenu partial override.
+
+```twig
+{% set menuItems = staticMenu.resetMenu(this.theme.primary_menu) %}
+
+<ul>
+{% for item in menuItems %}
+    <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+{% endfor %}
+</ul>
+```
 
 ##### Backend forms
 
@@ -105,6 +143,15 @@ If you need to select from a list of static pages in your own backend forms, you
 
 The field's assigned value will be the static page's file name, which can be used to link to the page as described above.
 
+If you need to select from a list of static menus in your own backend forms, you can use the `staticmenupicker` widget:
+
+    fields:
+        field_name:
+            label: Static Menu
+            type: staticmenupicker
+
+The field's assigned value will be the static menu's code, which can be used to link to the menu as described above.
+
 ### Placeholders
 
 [Placeholders](https://octobercms.com/docs/cms/layouts#placeholders) defined in the layout are automatically detected by the Static Pages plugin. The Edit Static Page form displays a tab for each placeholder defined in the layout used by the page. Placeholders are defined in the layout in the usual way:
@@ -114,8 +161,7 @@ The field's assigned value will be the static page's file name, which can be use
 The `placeholder` tag accepts some optional attributes:
 
 - `title`: manages the tab title in the Static Page editor.
-- `type`: manages the placeholder type. There are two types supported at the moment - **text** and **html**.
-- `ignore`: if set to true, will be ignored by the Static Page editor.
+- `type`: manages the placeholder type. The following values are supported - **text**,  **html** and **hidden**.
 
 The content of text placeholders is escaped before it's displayed. Text placeholders are edited with a regular (non-WYSIWYG) text editor. The title and type attributes should be defined after the placeholder code:
 
@@ -127,9 +173,9 @@ They should also appear after the `default` attribute, if it's presented.
         There is no ordering information for this product.
     {% endplaceholder %}
 
-To prevent a placeholder from appearing in the editor set the `ignore` attribute.
+To prevent a placeholder from appearing in the editor set the `type` attribute to **hidden**.
 
-    {% placeholder systemInfo ignore=true %}
+    {% placeholder systemInfo type="hidden" %}
 
 ### Creating new menu item types
 
@@ -344,6 +390,24 @@ Any component can be registered as a snippet and be used in Static Pages. To reg
     }
 
 A same component can be registered with registerPageSnippets() and registerComponents() and used in CMS pages and Static Pages.
+
+###### Extending the list of snippets
+
+If you want to dynamically extend the list of the snippets you can bind to the `pages.snippets.listSnippets` event.
+
+An example usage to add a snippet to the list:
+
+    Event::listen('pages.snippets.listSnippets', function($manager) {
+        $snippet = new \RainLab\Pages\Classes\Snippet();
+        $snippet->initFromComponentInfo('\Example\Plugin\Components\ComponentClass', 'snippetCode');
+        $manager->addSnippet($snippet);
+    });
+
+An example usage to remove a snippet from the list:
+
+    Event::listen('pages.snippets.listSnippets', function($manager) {
+        $manager->removeSnippet('snippetCode');
+    });
 
 ##### Custom page fields
 

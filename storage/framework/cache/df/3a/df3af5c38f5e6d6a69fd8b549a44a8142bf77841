@@ -1,0 +1,336 @@
+1675783122a:1:{s:17:"static-layout.htm";a:10:{s:8:"fileName";s:17:"static-layout.htm";s:7:"content";s:5795:"description = "Static layout"
+
+[staticPage]
+useContent = 1
+default = 0
+
+[staticBreadcrumbs]
+
+[SeoStaticPage]
+
+[localePicker]
+forceUrl = 0
+==
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.png'|theme }}">
+  <!-- animate -->
+  <link rel="stylesheet" href="{{ 'assets/css/animate.css' | theme }}">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="{{ 'assets/css/bootstrap.min.css' | theme }}">
+  <!-- magnific popup -->
+  <link rel="stylesheet" href="{{ 'assets/css/magnific-popup.css' | theme }}">
+  <!-- Slick -->
+  <link rel="stylesheet" href="{{ 'assets/css/slick.css' | theme }}">
+  <link rel="stylesheet" href="{{ 'assets/css/slick-theme.css' | theme }}">
+  <!-- nice select -->
+  <link rel="stylesheet" href="{{ 'assets/css/nice-select.css' | theme }}">
+  <!-- swiper -->
+  <link rel="stylesheet" href="{{ 'assets/css/swiper.min.css' | theme }}">
+  <!-- animated css -->
+  <link rel="stylesheet" href="{{ 'assets/css/animated-slider.css' | theme }}">
+  <!-- owl carousel -->
+  <link rel="stylesheet" href="{{ 'assets/css/owl.carousel.min.css' | theme }}">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="{{ 'assets/css/font-awesome.min.css' | theme }}">
+  <!-- flaticon -->
+  <link rel="stylesheet" href="{{ 'assets/css/flaticon.css' | theme }}">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{ 'assets/css/style.css' | theme }}">
+  <!-- responsive Stylesheet -->
+  <link rel="stylesheet" href="{{ 'assets/css/responsive.css' | theme }}">
+  {% styles %}
+  {% component 'SeoStaticPage' %}
+</head>
+
+<body>
+  <!-- preloader area start -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+      </div>
+    </div>
+  </div>
+  <!-- preloader area end -->
+
+  <!-- search Popup -->
+  <div class="body-overlay" id="body-overlay"></div>
+  <div class="search-popup" id="search-popup">
+    <form action="{{ 'search' | page }}" method="get" class="search-form">
+      <div class="form-group">
+        <input name="q" type="text" class="form-control" placeholder="{{'Search'|_}}....." autocomplete="off">
+      </div>
+      <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <!-- //. search Popup -->
+
+  <!--sidebar menu start-->
+  <div class="sidebar-menu" id="sidebar-menu">
+    {% partial 'site/sidebar' %}
+  </div>
+  <!--sidebar menu end-->
+
+  <!-- Header -->
+  <header id="layout-header">
+    {% partial 'site/header' %}
+  </header>
+  <!-- breadcrumb-area start -->
+  <div class="breadcrumb-area breadcrumb-style-02 main-bg">
+    {% partial 'site/inner_banner' %}
+  </div>
+  <!-- breadcrumb-area end -->
+
+  <!-- Content -->
+  <section id="layout-content">
+    <div class="container">
+      {% page %}
+    </div>
+  </section>
+
+  <!-- party-box-area start -->
+  <div class="party-box-area padding-top-80">
+    <div class="container">
+      <div
+        class="col-lg-12 party-box-wrapper d-flex flex-lg-row flex-column justify-content-lg-between justify-content-center text-lg-left text-center">
+        <div class="party-box-content">
+          <h4>{{'Join a partnership'|_}}</h4>
+        </div>
+        <div class="btn-wrapper align-self-center">
+          <a class="btn btn-custom-primary" href="/join">{{'Join'|_}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- party-box-area end -->
+
+  <!-- brand-area start -->
+  <div class="brand-area margin-top-105 margin-bottom-165">
+    {% partial 'site/partners' %}
+  </div>
+  <!-- brand-area end -->
+
+  <!-- Footer -->
+  <footer id="layout-footer">
+    {% partial 'site/footer' %}
+  </footer>
+
+  <!-- back to top area start -->
+  <div class="back-to-top">
+    <span class="back-top"><i class="fa fa-angle-up"></i></span>
+  </div>
+  <!-- back to top area end -->
+
+  <!-- Scripts -->
+  <!-- jquery -->
+  <script src="{{ 'assets/vendor/jquery-2.2.4.min.js'|theme }}"></script>
+  <!-- popper -->
+  <script src="{{ 'assets/vendor/popper.min.js'|theme }}"></script>
+  <!-- bootstrap -->
+  <script src="{{ 'assets/vendor/bootstrap.min.js'|theme }}"></script>
+  <!-- magnific popup -->
+  <script src="{{ 'assets/vendor/jquery.magnific-popup.js'|theme }}"></script>
+  <!-- wow -->
+  <script src="{{ 'assets/vendor/wow.min.js'|theme }}"></script>
+  <!-- animated slider -->
+  <script src="{{ 'assets/vendor/animated-slider.js'|theme }}"></script>
+  <!-- nice select -->
+  <script src="{{ 'assets/vendor/nice-select.js'|theme }}"></script>
+  <!-- owl carousel -->
+  <script src="{{ 'assets/vendor/owl.carousel.min.js'|theme }}"></script>
+  <!-- Slick -->
+  <script src="{{ 'assets/vendor/slick.min.js'|theme }}"></script>
+  <!-- Slick Animation -->
+  <script src="{{ 'assets/vendor/slick-animation.js'|theme }}"></script>
+  <!-- counterup -->
+  <script src="{{ 'assets/vendor/jquery.counterup.min.js'|theme }}"></script>
+  <!-- waypoint -->
+  <script src="{{ 'assets/vendor/waypoints.min.js'|theme }}"></script>
+  <!-- imageloaded -->
+  <script src="{{ 'assets/vendor/imagesloaded.pkgd.min.js'|theme }}"></script>
+  <!-- swiper -->
+  <script src="{{ 'assets/vendor/swiper.min.js'|theme }}"></script>
+  <!-- isotope -->
+  <script src="{{ 'assets/vendor/isotope.pkgd.min.js'|theme }}"></script>
+
+  <script src="{{ 'assets/vendor/jquery.classyloader.js'|theme }}"></script>
+  <!-- instafeeds -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/InstagramFeed/3.0.2/InstagramFeed.min.js"></script>
+
+  <script src="{{ 'assets/javascript/script.js'|theme }}"></script>
+  <script src="{{ 'assets/javascript/main.js'|theme }}"></script>
+
+  {% framework extras %}
+  {% scripts %}
+
+</body>
+
+</html>";s:5:"mtime";i:1673947195;s:6:"markup";s:5654:"<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.png'|theme }}">
+  <!-- animate -->
+  <link rel="stylesheet" href="{{ 'assets/css/animate.css' | theme }}">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="{{ 'assets/css/bootstrap.min.css' | theme }}">
+  <!-- magnific popup -->
+  <link rel="stylesheet" href="{{ 'assets/css/magnific-popup.css' | theme }}">
+  <!-- Slick -->
+  <link rel="stylesheet" href="{{ 'assets/css/slick.css' | theme }}">
+  <link rel="stylesheet" href="{{ 'assets/css/slick-theme.css' | theme }}">
+  <!-- nice select -->
+  <link rel="stylesheet" href="{{ 'assets/css/nice-select.css' | theme }}">
+  <!-- swiper -->
+  <link rel="stylesheet" href="{{ 'assets/css/swiper.min.css' | theme }}">
+  <!-- animated css -->
+  <link rel="stylesheet" href="{{ 'assets/css/animated-slider.css' | theme }}">
+  <!-- owl carousel -->
+  <link rel="stylesheet" href="{{ 'assets/css/owl.carousel.min.css' | theme }}">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="{{ 'assets/css/font-awesome.min.css' | theme }}">
+  <!-- flaticon -->
+  <link rel="stylesheet" href="{{ 'assets/css/flaticon.css' | theme }}">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{ 'assets/css/style.css' | theme }}">
+  <!-- responsive Stylesheet -->
+  <link rel="stylesheet" href="{{ 'assets/css/responsive.css' | theme }}">
+  {% styles %}
+  {% component 'SeoStaticPage' %}
+</head>
+
+<body>
+  <!-- preloader area start -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+      </div>
+    </div>
+  </div>
+  <!-- preloader area end -->
+
+  <!-- search Popup -->
+  <div class="body-overlay" id="body-overlay"></div>
+  <div class="search-popup" id="search-popup">
+    <form action="{{ 'search' | page }}" method="get" class="search-form">
+      <div class="form-group">
+        <input name="q" type="text" class="form-control" placeholder="{{'Search'|_}}....." autocomplete="off">
+      </div>
+      <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <!-- //. search Popup -->
+
+  <!--sidebar menu start-->
+  <div class="sidebar-menu" id="sidebar-menu">
+    {% partial 'site/sidebar' %}
+  </div>
+  <!--sidebar menu end-->
+
+  <!-- Header -->
+  <header id="layout-header">
+    {% partial 'site/header' %}
+  </header>
+  <!-- breadcrumb-area start -->
+  <div class="breadcrumb-area breadcrumb-style-02 main-bg">
+    {% partial 'site/inner_banner' %}
+  </div>
+  <!-- breadcrumb-area end -->
+
+  <!-- Content -->
+  <section id="layout-content">
+    <div class="container">
+      {% page %}
+    </div>
+  </section>
+
+  <!-- party-box-area start -->
+  <div class="party-box-area padding-top-80">
+    <div class="container">
+      <div
+        class="col-lg-12 party-box-wrapper d-flex flex-lg-row flex-column justify-content-lg-between justify-content-center text-lg-left text-center">
+        <div class="party-box-content">
+          <h4>{{'Join a partnership'|_}}</h4>
+        </div>
+        <div class="btn-wrapper align-self-center">
+          <a class="btn btn-custom-primary" href="/join">{{'Join'|_}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- party-box-area end -->
+
+  <!-- brand-area start -->
+  <div class="brand-area margin-top-105 margin-bottom-165">
+    {% partial 'site/partners' %}
+  </div>
+  <!-- brand-area end -->
+
+  <!-- Footer -->
+  <footer id="layout-footer">
+    {% partial 'site/footer' %}
+  </footer>
+
+  <!-- back to top area start -->
+  <div class="back-to-top">
+    <span class="back-top"><i class="fa fa-angle-up"></i></span>
+  </div>
+  <!-- back to top area end -->
+
+  <!-- Scripts -->
+  <!-- jquery -->
+  <script src="{{ 'assets/vendor/jquery-2.2.4.min.js'|theme }}"></script>
+  <!-- popper -->
+  <script src="{{ 'assets/vendor/popper.min.js'|theme }}"></script>
+  <!-- bootstrap -->
+  <script src="{{ 'assets/vendor/bootstrap.min.js'|theme }}"></script>
+  <!-- magnific popup -->
+  <script src="{{ 'assets/vendor/jquery.magnific-popup.js'|theme }}"></script>
+  <!-- wow -->
+  <script src="{{ 'assets/vendor/wow.min.js'|theme }}"></script>
+  <!-- animated slider -->
+  <script src="{{ 'assets/vendor/animated-slider.js'|theme }}"></script>
+  <!-- nice select -->
+  <script src="{{ 'assets/vendor/nice-select.js'|theme }}"></script>
+  <!-- owl carousel -->
+  <script src="{{ 'assets/vendor/owl.carousel.min.js'|theme }}"></script>
+  <!-- Slick -->
+  <script src="{{ 'assets/vendor/slick.min.js'|theme }}"></script>
+  <!-- Slick Animation -->
+  <script src="{{ 'assets/vendor/slick-animation.js'|theme }}"></script>
+  <!-- counterup -->
+  <script src="{{ 'assets/vendor/jquery.counterup.min.js'|theme }}"></script>
+  <!-- waypoint -->
+  <script src="{{ 'assets/vendor/waypoints.min.js'|theme }}"></script>
+  <!-- imageloaded -->
+  <script src="{{ 'assets/vendor/imagesloaded.pkgd.min.js'|theme }}"></script>
+  <!-- swiper -->
+  <script src="{{ 'assets/vendor/swiper.min.js'|theme }}"></script>
+  <!-- isotope -->
+  <script src="{{ 'assets/vendor/isotope.pkgd.min.js'|theme }}"></script>
+
+  <script src="{{ 'assets/vendor/jquery.classyloader.js'|theme }}"></script>
+  <!-- instafeeds -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/InstagramFeed/3.0.2/InstagramFeed.min.js"></script>
+
+  <script src="{{ 'assets/javascript/script.js'|theme }}"></script>
+  <script src="{{ 'assets/javascript/main.js'|theme }}"></script>
+
+  {% framework extras %}
+  {% scripts %}
+
+</body>
+
+</html>";s:4:"code";N;s:11:"description";s:13:"Static layout";s:10:"staticPage";a:2:{s:10:"useContent";s:1:"1";s:7:"default";s:1:"0";}s:17:"staticBreadcrumbs";a:0:{}s:13:"SeoStaticPage";a:0:{}s:12:"localePicker";a:1:{s:8:"forceUrl";s:1:"0";}}}

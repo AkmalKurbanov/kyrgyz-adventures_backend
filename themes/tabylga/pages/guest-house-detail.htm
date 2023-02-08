@@ -19,6 +19,10 @@ setPageMeta = 1
 throw404 = 1
 categoryPage = 0
 categoryPageSlug = "{{ :category }}"
+
+[viewBag]
+localeTitle[de] = "Gästehaus-Detail"
+localeTitle[rus] = "Гостевой дом детально"
 ==
 <div class="leadership-area margin-top-115">
   <div class="container">
@@ -37,8 +41,11 @@ categoryPageSlug = "{{ :category }}"
                     {% for image in recordDetail.images %}
 
                         <div class="col-xs-12 col-sm-4 col-md-3 col-md-2">
-                        
-                          <img class="thumbnail" style="max-width: 100%; margin-bottom: 10px;" src="{{image.getThumb(300,300)}}" alt="{{image.title ? image.title : recordDetail.name}}">
+                          <a href="{{image.getThumb(1200,1200)}}" class="gallery-link">
+                            <div style="width: 150px;height: 100px; border-radius: 10px; overflow: hidden;margin-bottom: 10px; position: relative;">
+                              <img class="thumbnail" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src="{{image.getThumb(300,auto)}}" alt="{{image.title ? image.title : recordDetail.name}}">
+                            </div>
+                          </a>
                           
 
                         </div>
@@ -51,25 +58,7 @@ categoryPageSlug = "{{ :category }}"
 
             {% endif %}
 
-            {% if recordDetail.images_media|length %}
-                
-                <div class="row">
-
-                    {% for mediaImage in recordDetail.images_media %}
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-md-2">
-                          <img class="thumbnail" style="max-width: 100%;" src="{{mediaImage.image|media}}" alt="{{mediaImage.image_title ? mediaImage.image_title : recordDetail.name}}">
-                        
-                            
-                        </div>
-
-                    {% endfor %}
-
-                </div>
-
-            {% else %}
-
-            {% endif %}
+          
 
         </div>
       </div>

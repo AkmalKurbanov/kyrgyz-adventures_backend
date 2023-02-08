@@ -1,4 +1,4 @@
-1674041192a:1:{s:10:"search.htm";a:18:{s:8:"fileName";s:10:"search.htm";s:7:"content";s:1697:"title = "Search"
+1675864659a:1:{s:10:"search.htm";a:18:{s:8:"fileName";s:10:"search.htm";s:7:"content";s:1757:"title = "Search"
 url = "/search"
 layout = "static-layout"
 is_hidden = 0
@@ -12,6 +12,8 @@ crumb_disabled = 0
 [viewBag]
 localeTitle[ru] = "Поиск"
 localeTitle[en] = "Издөө"
+localeTitle[de] = "Suche"
+localeTitle[rus] = "Поиск"
 localeUrl[en] = "/search"
 
 [searchResults]
@@ -55,7 +57,7 @@ emails_date_format = "Y-m-d"
       <a class="btn btn-custom-primary" href="/">{{ 'home'|title }}</a>
     </div>
   </div>
-</div>";s:5:"mtime";i:1673947461;s:6:"markup";s:584:"<div class="search-results">
+</div>";s:5:"mtime";i:1674064535;s:6:"markup";s:584:"<div class="search-results">
   <div class="container">
     {% set results = searchResults.results %}
 
@@ -73,4 +75,4 @@ emails_date_format = "Y-m-d"
       <a class="btn btn-custom-primary" href="/">{{ 'home'|title }}</a>
     </div>
   </div>
-</div>";s:4:"code";N;s:5:"title";s:6:"Search";s:3:"url";s:7:"/search";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:2:{s:2:"ru";s:10:"Поиск";s:2:"en";s:10:"Издөө";}s:9:"localeUrl";a:1:{s:2:"en";s:7:"/search";}}s:13:"searchResults";a:4:{s:14:"resultsPerPage";s:2:"10";s:17:"showProviderBadge";s:1:"1";s:16:"noResultsMessage";s:89:"К сожалению, по вашему запросу ничего не найдено.";s:16:"visitPageMessage";s:14:"Перейти";}s:19:"genericForm sidebar";a:15:{s:5:"rules";a:1:{s:5:"email";s:14:"required|email";}s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:12:"mail_enabled";s:1:"1";s:15:"mail_recipients";a:1:{s:17:"250296a@gmail.com";s:7:"Tourism";}s:15:"mail_resp_field";s:17:"250296a@gmail.com";s:14:"mail_resp_from";s:17:"250296a@gmail.com";s:10:"reset_form";s:1:"1";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}
+</div>";s:4:"code";N;s:5:"title";s:6:"Search";s:3:"url";s:7:"/search";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:4:{s:2:"ru";s:10:"Поиск";s:2:"en";s:10:"Издөө";s:2:"de";s:5:"Suche";s:3:"rus";s:10:"Поиск";}s:9:"localeUrl";a:1:{s:2:"en";s:7:"/search";}}s:13:"searchResults";a:4:{s:14:"resultsPerPage";s:2:"10";s:17:"showProviderBadge";s:1:"1";s:16:"noResultsMessage";s:89:"К сожалению, по вашему запросу ничего не найдено.";s:16:"visitPageMessage";s:14:"Перейти";}s:19:"genericForm sidebar";a:15:{s:5:"rules";a:1:{s:5:"email";s:14:"required|email";}s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:12:"mail_enabled";s:1:"1";s:15:"mail_recipients";a:1:{s:17:"250296a@gmail.com";s:7:"Tourism";}s:15:"mail_resp_field";s:17:"250296a@gmail.com";s:14:"mail_resp_from";s:17:"250296a@gmail.com";s:10:"reset_form";s:1:"1";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

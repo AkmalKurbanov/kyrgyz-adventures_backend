@@ -38,8 +38,11 @@ pageNumber = "{{ :page }}"
 </div>
 <div class="banner4-social">
   <ul>
-    {% for item in this.theme.social %}
+    <!-- {% for item in this.theme.social %}
     <li><a href="{{item.url}}">{{item.social_name}}</a></li>
-    {% endfor %}
+    {% endfor %} -->
+       {% for item in this.theme.social %}
+              <li><a href="{{item.url}}" target="_blank"><i class="{{item.awesome_icon}}"></i></a></li>
+              {% endfor %}
   </ul>
 </div>

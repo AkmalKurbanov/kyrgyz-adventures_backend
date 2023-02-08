@@ -1,4 +1,4 @@
-1674041192a:1:{s:16:"guest-houses.htm";a:16:{s:8:"fileName";s:16:"guest-houses.htm";s:7:"content";s:1834:"title = "Guest houses"
+1675864659a:1:{s:16:"guest-houses.htm";a:17:{s:8:"fileName";s:16:"guest-houses.htm";s:7:"content";s:1920:"title = "Guest houses"
 url = "/guest-houses"
 layout = "default"
 is_hidden = 0
@@ -8,6 +8,10 @@ child_of = "mey_no_parent"
 hide_crumb = 0
 remove_crumb_trail = 0
 crumb_disabled = 0
+
+[viewBag]
+localeTitle[de] = "Gasthäuser"
+localeTitle[rus] = "Гостевые дома"
 
 [records]
 activeOnly = 1
@@ -55,11 +59,7 @@ orderByDirection = "ASC"
     </div>
     {% endfor %}
   </div>
-</div>
-
-
-
-";s:5:"mtime";i:1673877305;s:6:"markup";s:1340:"<br>
+</div>";s:5:"mtime";i:1675780660;s:6:"markup";s:1340:"<br>
 <div class="container">
   <div class="guesthouses">
     {% for record in records.items %}
@@ -93,4 +93,4 @@ orderByDirection = "ASC"
     </div>
     {% endfor %}
   </div>
-</div>";s:4:"code";N;s:5:"title";s:12:"Guest houses";s:3:"url";s:13:"/guest-houses";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"records";a:10:{s:10:"activeOnly";s:1:"1";s:8:"areaSlug";s:13:"gostevye-doma";s:12:"categorySlug";s:15:"{{ :category }}";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:18:"guest-house-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}
+</div>";s:4:"code";N;s:5:"title";s:12:"Guest houses";s:3:"url";s:13:"/guest-houses";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:1:{s:11:"localeTitle";a:2:{s:2:"de";s:11:"Gasthäuser";s:3:"rus";s:25:"Гостевые дома";}}s:7:"records";a:10:{s:10:"activeOnly";s:1:"1";s:8:"areaSlug";s:13:"gostevye-doma";s:12:"categorySlug";s:15:"{{ :category }}";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:18:"guest-house-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}

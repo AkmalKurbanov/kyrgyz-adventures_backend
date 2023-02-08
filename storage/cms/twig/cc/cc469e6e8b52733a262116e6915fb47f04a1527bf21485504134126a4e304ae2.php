@@ -174,7 +174,7 @@ class __TwigTemplate_651fe8c07a9407ec272c3a96626ab5767c8e3486d43ef7960a64663ec6b
       <div class=\"form-group\">
         <input name=\"q\" type=\"text\" class=\"form-control\" placeholder=\"";
         // line 58
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Поиск"]);
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Search"]);
         echo ".....\" autocomplete=\"off\">
       </div>
       <button type=\"submit\" class=\"submit-btn\"><i class=\"fa fa-search\"></i></button>
@@ -263,13 +263,13 @@ class __TwigTemplate_651fe8c07a9407ec272c3a96626ab5767c8e3486d43ef7960a64663ec6b
         <div class=\"party-box-content\">
           <h4>";
             // line 106
-            echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Присоединиться к партнерству"]);
+            echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Join a partnership"]);
             echo "</h4>
         </div>
         <div class=\"btn-wrapper align-self-center\">
           <a class=\"btn btn-custom-primary\" href=\"/join\">";
             // line 109
-            echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Присоединиться"]);
+            echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Join"]);
             echo "</a>
         </div>
       </div>
@@ -394,7 +394,7 @@ class __TwigTemplate_651fe8c07a9407ec272c3a96626ab5767c8e3486d43ef7960a64663ec6b
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.classyloader.js");
         echo "\"></script>
   <!-- instafeeds -->
-  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/InstagramFeed/3.0.2/InstagramFeed.min.js\"></script>
+  <!-- <script src=\"https://cdnjs.cloudflare.com/ajax/libs/InstagramFeed/3.0.2/InstagramFeed.min.js\"></script> -->
 
   <script src=\"";
         // line 172
@@ -500,7 +500,7 @@ class __TwigTemplate_651fe8c07a9407ec272c3a96626ab5767c8e3486d43ef7960a64663ec6b
   <div class=\"search-popup\" id=\"search-popup\">
     <form action=\"{{ 'search' | page }}\" method=\"get\" class=\"search-form\">
       <div class=\"form-group\">
-        <input name=\"q\" type=\"text\" class=\"form-control\" placeholder=\"{{'Поиск'|_}}.....\" autocomplete=\"off\">
+        <input name=\"q\" type=\"text\" class=\"form-control\" placeholder=\"{{'Search'|_}}.....\" autocomplete=\"off\">
       </div>
       <button type=\"submit\" class=\"submit-btn\"><i class=\"fa fa-search\"></i></button>
     </form>
@@ -548,10 +548,10 @@ class __TwigTemplate_651fe8c07a9407ec272c3a96626ab5767c8e3486d43ef7960a64663ec6b
       <div
         class=\"col-lg-12 party-box-wrapper d-flex flex-lg-row flex-column justify-content-lg-between justify-content-center text-lg-left text-center\">
         <div class=\"party-box-content\">
-          <h4>{{'Присоединиться к партнерству'|_}}</h4>
+          <h4>{{'Join a partnership'|_}}</h4>
         </div>
         <div class=\"btn-wrapper align-self-center\">
-          <a class=\"btn btn-custom-primary\" href=\"/join\">{{'Присоединиться'|_}}</a>
+          <a class=\"btn btn-custom-primary\" href=\"/join\">{{'Join'|_}}</a>
         </div>
       </div>
     </div>
@@ -612,7 +612,7 @@ class __TwigTemplate_651fe8c07a9407ec272c3a96626ab5767c8e3486d43ef7960a64663ec6b
   <script src=\"{{ 'assets/vendor/jquery-ui.js'|theme }}\"></script>
   <script src=\"{{ 'assets/vendor/jquery.classyloader.js'|theme }}\"></script>
   <!-- instafeeds -->
-  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/InstagramFeed/3.0.2/InstagramFeed.min.js\"></script>
+  <!-- <script src=\"https://cdnjs.cloudflare.com/ajax/libs/InstagramFeed/3.0.2/InstagramFeed.min.js\"></script> -->
 
   <script src=\"{{ 'assets/javascript/script.js'|theme }}\"></script>
   <script src=\"{{ 'assets/javascript/main.js'|theme }}\"></script>

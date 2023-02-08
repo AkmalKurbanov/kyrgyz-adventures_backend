@@ -1,38 +1,90 @@
 items:
     -
         title: Home
+        nesting: null
         type: cms-page
+        url: null
         code: ''
         reference: home
+        cmsPage: null
+        replace: null
         viewBag:
+            locale:
+                de:
+                    title: Startseite
+                    url: ''
+                rus:
+                    title: Главная
+                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Tours
+        nesting: null
         type: cms-page
+        url: null
         code: ''
         reference: tours
+        cmsPage: null
+        replace: null
         viewBag:
+            locale:
+                de:
+                    title: Touren
+                    url: ''
+                rus:
+                    title: Туры
+                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
         items:
             -
-                title: 'Summer tours'
-                type: cms-page
+                title: 'Winter tours'
+                type: url
+                url: /category/winter-tours
                 code: ''
-                reference: summer-tours
                 viewBag:
+                    locale:
+                        de:
+                            title: Wintertouren
+                            url: ''
+                        rus:
+                            title: 'Зимние туры'
+                            url: ''
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
-                title: 'Winter tours'
-                type: cms-page
+                title: 'Summer tours'
+                type: url
+                url: /category/summer-tours
                 code: ''
-                reference: winter-tours
                 viewBag:
+                    locale:
+                        de:
+                            title: Sommertouren
+                            url: ''
+                        rus:
+                            title: 'Летние туры'
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Photo tours'
+                type: url
+                url: /category/photo-tour
+                code: ''
+                viewBag:
+                    locale:
+                        de:
+                            title: Fototouren
+                            url: ''
+                        rus:
+                            title: 'Фото туры'
+                            url: ''
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
@@ -40,46 +92,120 @@ items:
         title: About
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: about
+        cmsPage: null
         replace: 0
         viewBag:
+            locale:
+                de:
+                    title: 'Über uns'
+                    url: ''
+                rus:
+                    title: 'О нас'
+                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+        items:
+            -
+                title: 'Our mission'
+                nesting: 0
+                type: static-page
+                url: null
+                code: ''
+                reference: about-our-mission
+                cmsPage: null
+                replace: 0
+                viewBag:
+                    locale:
+                        de:
+                            title: 'Unsere Aufgabe'
+                            url: ''
+                        rus:
+                            title: 'Наша миссия'
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: Blog
+        nesting: null
         type: cms-page
+        url: null
         code: ''
         reference: blog
+        cmsPage: null
+        replace: null
         viewBag:
+            locale:
+                de:
+                    title: Bloggen
+                    url: ''
+                rus:
+                    title: Блог
+                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Events
+        nesting: null
         type: cms-page
+        url: null
         code: ''
         reference: events
+        cmsPage: null
+        replace: null
         viewBag:
+            locale:
+                de:
+                    title: Veranstaltungen
+                    url: ''
+                rus:
+                    title: События
+                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Contacts
+        nesting: null
         type: cms-page
+        url: null
         code: ''
         reference: contacts
+        cmsPage: null
+        replace: null
         viewBag:
+            locale:
+                de:
+                    title: Kontakte
+                    url: ''
+                rus:
+                    title: Контакты
+                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'Guest houses'
+        nesting: null
         type: cms-page
+        url: null
         code: ''
         reference: guest-houses
+        cmsPage: null
+        replace: null
         viewBag:
+            locale:
+                de:
+                    title: Gasthäuser
+                    url: ''
+                rus:
+                    title: 'Гостевые дома'
+                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'

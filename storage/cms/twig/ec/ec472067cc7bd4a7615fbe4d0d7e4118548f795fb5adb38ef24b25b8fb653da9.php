@@ -29,9 +29,9 @@ class __TwigTemplate_66203cfbb889514aab528781d8bc70c774184953cf7f4de5a4fb1aa1126
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("if" => 16, "partial" => 26, "for" => 41);
-        $filters = array("escape" => 17);
-        $functions = array("form_open" => 39, "form_close" => 46);
+        $tags = array("if" => 20, "partial" => 23, "for" => 38);
+        $filters = array("escape" => 16);
+        $functions = array("form_open" => 36, "form_close" => 43);
 
         try {
             $this->sandbox->checkSecurity(
@@ -74,41 +74,30 @@ class __TwigTemplate_66203cfbb889514aab528781d8bc70c774184953cf7f4de5a4fb1aa1126
       </div>
       <div class=\"logo\">
         <a href=\"/\">
-          ";
+          <img src=\"";
         // line 16
-        if ((($context["activeLocale"] ?? null) == "ru")) {
-            // line 17
-            echo "          <img src=\"";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 17), "logoHeaderRu", [], "any", false, false, true, 17), "path", [], "any", false, false, true, 17), 17, $this->source), "html", null, true);
-            echo "\" alt=\"logo\">
-          ";
-        } else {
-            // line 19
-            echo "          <img src=\"";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 19), "logoHeaderKg", [], "any", false, false, true, 19), "path", [], "any", false, false, true, 19), 19, $this->source), "html", null, true);
-            echo "\" alt=\"logo\">
-          ";
-        }
-        // line 21
-        echo "        </a>
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 16), "logoLight", [], "any", false, false, true, 16), "path", [], "any", false, false, true, 16), 16, $this->source), "html", null, true);
+        echo "\" alt=\"logo\" width=\"70\">
+        </a>
       </div>
       <div class=\"collapse navbar-collapse\" id=\"billatrail_main_menu\">
         ";
-        // line 24
-        if (twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 24)) {
-            // line 25
+        // line 20
+        if (twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 20)) {
+            // line 21
             echo "        <ul class=\"navbar-nav menu-open\">
+  
           ";
-            // line 26
+            // line 23
             $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['items'] = twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 26)            ;
+            $context['__cms_partial_params']['items'] = twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 23)            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["staticMenu"] ?? null) . "::items")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 27
+            // line 24
             echo "        </ul>
         ";
         }
-        // line 29
+        // line 26
         echo "      </div>
       <div class=\"nav-right-part\">
         <ul>
@@ -120,33 +109,33 @@ class __TwigTemplate_66203cfbb889514aab528781d8bc70c774184953cf7f4de5a4fb1aa1126
           </li>
           <li class=\"localization\">
             ";
-        // line 39
+        // line 36
         echo call_user_func_array($this->env->getFunction('form_open')->getCallable(), ["open"]);
         echo "
             <select name=\"locale\" data-request=\"onSwitchLocale\" class=\"form-control\">
               ";
-        // line 41
+        // line 38
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["locales"] ?? null));
         foreach ($context['_seq'] as $context["code"] => $context["name"]) {
-            // line 42
+            // line 39
             echo "              <option value=\"";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["code"], 42, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["code"], 39, $this->source), "html", null, true);
             echo "\" ";
             echo ((($context["code"] == ($context["activeLocale"] ?? null))) ? ("selected") : (""));
             echo ">";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["name"], 42, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["name"], 39, $this->source), "html", null, true);
             echo "</option>
               ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['code'], $context['name'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
+        // line 41
         echo "            </select>
 
             ";
-        // line 46
+        // line 43
         echo call_user_func_array($this->env->getFunction('form_close')->getCallable(), ["close"]);
         echo "
           </li>
@@ -170,7 +159,7 @@ class __TwigTemplate_66203cfbb889514aab528781d8bc70c774184953cf7f4de5a4fb1aa1126
 
     public function getDebugInfo()
     {
-        return array (  150 => 46,  146 => 44,  133 => 42,  129 => 41,  124 => 39,  112 => 29,  108 => 27,  103 => 26,  100 => 25,  98 => 24,  93 => 21,  87 => 19,  81 => 17,  79 => 16,  62 => 1,);
+        return array (  139 => 43,  135 => 41,  122 => 39,  118 => 38,  113 => 36,  101 => 26,  97 => 24,  92 => 23,  88 => 21,  86 => 20,  79 => 16,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -190,16 +179,13 @@ class __TwigTemplate_66203cfbb889514aab528781d8bc70c774184953cf7f4de5a4fb1aa1126
       </div>
       <div class=\"logo\">
         <a href=\"/\">
-          {% if activeLocale == 'ru' %}
-          <img src=\"{{this.theme.logoHeaderRu.path}}\" alt=\"logo\">
-          {% else %}
-          <img src=\"{{this.theme.logoHeaderKg.path}}\" alt=\"logo\">
-          {% endif %}
+          <img src=\"{{this.theme.logoLight.path}}\" alt=\"logo\" width=\"70\">
         </a>
       </div>
       <div class=\"collapse navbar-collapse\" id=\"billatrail_main_menu\">
         {% if staticMenu.menuItems %}
         <ul class=\"navbar-nav menu-open\">
+  
           {% partial staticMenu ~ \"::items\" items=staticMenu.menuItems %}
         </ul>
         {% endif %}

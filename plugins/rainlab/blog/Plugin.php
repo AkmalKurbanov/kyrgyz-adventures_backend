@@ -128,7 +128,7 @@ class Plugin extends PluginBase
             return preg_replace('|\<img src="image" alt="([0-9]+)"([^>]*)\/>|m',
                 '<span class="image-placeholder" data-index="$1">
                     <span class="upload-dropzone">
-                        <span class="label">Click or drop an image...</span>
+                        <span class="label">'. trans('rainlab.blog::lang.post.dropzone') .'</span>
                         <span class="indicator"></span>
                     </span>
                 </span>',
@@ -141,6 +141,16 @@ class Plugin extends PluginBase
         /*
          * Register menu items for the RainLab.Pages plugin
          */
+        Event::listen('cms.pageLookup.listTypes', function() {
+            return [
+                'blog-category'       => 'rainlab.blog::lang.menuitem.blog_category',
+                'all-blog-categories' => ['rainlab.blog::lang.menuitem.all_blog_categories', true],
+                'blog-post'           => 'rainlab.blog::lang.menuitem.blog_post',
+                'all-blog-posts'      => ['rainlab.blog::lang.menuitem.all_blog_posts', true],
+                'category-blog-posts' => ['rainlab.blog::lang.menuitem.category_blog_posts', true],
+            ];
+        });
+
         Event::listen('pages.menuitem.listTypes', function() {
             return [
                 'blog-category'       => 'rainlab.blog::lang.menuitem.blog_category',
@@ -151,7 +161,7 @@ class Plugin extends PluginBase
             ];
         });
 
-        Event::listen('pages.menuitem.getTypeInfo', function($type) {
+        Event::listen(['cms.pageLookup.getTypeInfo', 'pages.menuitem.getTypeInfo'], function($type) {
             if ($type == 'blog-category' || $type == 'all-blog-categories') {
                 return Category::getMenuTypeInfo($type);
             }
@@ -160,7 +170,7 @@ class Plugin extends PluginBase
             }
         });
 
-        Event::listen('pages.menuitem.resolveItem', function($type, $item, $url, $theme) {
+        Event::listen(['cms.pageLookup.resolveItem', 'pages.menuitem.resolveItem'], function($type, $item, $url, $theme) {
             if ($type == 'blog-category' || $type == 'all-blog-categories') {
                 return Category::resolveMenuItem($item, $url, $theme);
             }

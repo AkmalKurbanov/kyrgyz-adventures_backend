@@ -12,6 +12,8 @@ crumb_disabled = 0
 [viewBag]
 localeTitle[ru] = "Событие"
 localeTitle[en] = "Окуя"
+localeTitle[de] = "Veranstaltung"
+localeTitle[rus] = "Событие"
 localeUrl[en] = "/event-detail/:slug"
 
 [builderDetails]
@@ -57,7 +59,16 @@ emails_date_format = "Y-m-d"
       <div class="col-lg-4 offset-lg-1 text-center">
         <div class="ls-date-box">
           <h4>{{'Date'|_}} & {{'Time'|_}}:</h4>
-          <p> {{record.date | date('d')}} {{record.date | rudate('%BP')}} ,
+          <p> {{record.date | date('d')}} 
+            
+              {% if activeLocale == 'rus'  %}
+              {{record.date | rudate('%BP')}}
+              {% elseif activeLocale == 'de'  %}
+              {{record.date | rudate('%BP')}}
+              {% else %}
+              {{record.date | date('M')}}
+              {% endif %}
+            ,
             {{record.date | date('Y')}} , {{record.date | date('H:i') }}</p>
           <hr>
           <h4>{{'Location'|_}}</h4>

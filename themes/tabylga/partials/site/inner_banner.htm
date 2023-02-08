@@ -10,10 +10,19 @@
 
         {% if breadcrumbs %}
         <ul class="page-list">
-          <li><a href="{{ 'home'|page }}">{{ 'home'|title }}</a></li>
+          <li><a href="{{ 'home'|page }}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
 
           {% if this.page.url == '/tour-detail/:slug' %}
-          <li><a href="{{ 'tours'|page }}">{{ 'tours'|title }}</a></li>
+          <li><a href="{{ 'tours'|page }}">
+  
+            {% if activeLocaleName  == 'ru' %}
+              Туры
+            {% elseif activeLocaleName  == 'en' %} 
+              Tours
+            {% elseif activeLocaleName  == 'de' %} 
+              Touren
+            {% endif %}               
+          </a></li>
           <li>
             <a href="{{ 'home'|page }}/{{ recordDetail.category.slug }}">{{ recordDetail.category.name }}</a>
           </li>
@@ -24,16 +33,18 @@
           {% endfor %}
           
           
-          {% elseif this.page.url == '/summer-tours' or this.page.url == '/winter-tours' %}
-          <li><a href="{{ 'tours'|page }}">{{ 'tours'|title }}</a></li>
-          {% for breadcrumb in breadcrumbs %}
-          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
-            <a href="{{ breadcrumb.url }}">{{ this.page.title }} </a>
-          </li>
-          {% endfor %}
+        
 
           {% elseif this.page.url == '/guest-house-detail/:slug' %}
-            <li><a href="{{ 'guest houses'|page }}">{{ 'guest houses'|title }}</a></li>
+            <li><a href="/guest-houses">
+              {% if activeLocaleName  == 'ru' %}
+              Гостевые дома
+            {% elseif activeLocaleName  == 'en' %} 
+              Guest houses
+            {% elseif activeLocaleName  == 'de' %} 
+              Gasthäuser
+            {% endif %}  
+            </a></li>
            {% for breadcrumb in breadcrumbs %}
           <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
             <a href="{{ breadcrumb.url }}">{{ this.page.title }} </a>
@@ -61,6 +72,25 @@
             <a href="{{ breadcrumb.url }}">{{ this.page.title }} </a>
           </li>
           {% endfor %}
+
+          {% elseif this.page.url == '/category/:category' %}
+          <li><a href="{{ 'tours'|page }}">
+            {% if activeLocaleName  == 'ru' %}
+              Туры
+            {% elseif activeLocaleName  == 'en' %} 
+              Tours
+            {% elseif activeLocaleName  == 'de' %} 
+              Touren
+            {% endif %}  
+          </a></li>
+          
+
+          <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <a href="{{ breadcrumb.url }}">{{categoryDetail.name}}</a>
+          </li>
+         
+
+
           {% else %}
 
           

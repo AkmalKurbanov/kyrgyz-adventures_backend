@@ -427,4 +427,7 @@
   'backend\\Controllers\\accesslogs' => 'modules\\backend\\controllers\\accesslogs.php',
   'backend\\Controllers\\users' => 'modules\\backend\\controllers\\users.php',
   'system\\Controllers\\eventlogs' => 'modules\\system\\controllers\\eventlogs.php',
+  'inetis\\cloudwaysdeploy\\Plugin' => 'plugins\\inetis\\cloudwaysdeploy\\Plugin.php',
+  'rainlab\\deploy\\Plugin' => 'plugins\\rainlab\\deploy\\Plugin.php',
+  'Inetis\\CloudwaysDeploy\\Models\\Settings' => 'plugins\\inetis\\cloudwaysdeploy\\models\\Settings.php',
 );

@@ -1,26 +1,27 @@
-<?php namespace Samuell\ContentEditor\Http\Controllers;
+<?php
 
-use ApplicationException;
-use Exception;
-use Response;
+namespace Samuell\ContentEditor\Http\Controllers;
+
 use File;
+use Lang;
 use Input;
+use Response;
+use Exception;
+use SystemException;
+use ApplicationException;
+use Media\Classes\MediaLibrary;
+use October\Rain\Resize\Resizer;
 use Illuminate\Routing\Controller;
-use October\Rain\Database\Attach\Resizer;
-use Cms\Classes\MediaLibrary;
-use Cms\Helpers\File as FileHelper;
 use Samuell\ContentEditor\Models\Settings;
-use Samuell\ContentEditor\Http\Middleware\EditorPermissionsMiddleware;
-use October\Rain\Support\Facades\Str;
+use October\Rain\Filesystem\Definitions as FileDefinitions;
 
+/**
+ * ImageController
+ *
+ * Handle content editor image upload
+ */
 class ImageController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('web');
-        $this->middleware(EditorPermissionsMiddleware::class);
-    }
-
     public function upload()
     {
         try {
@@ -31,46 +32,54 @@ class ImageController extends Controller
             $uploadedFile = Input::file('image');
             $fileName = $uploadedFile->getClientOriginalName();
 
-            // Convert uppcare case file extensions to lower case
+            /*
+             * Convert uppcare case file extensions to lower case
+             */
             $extension = strtolower($uploadedFile->getClientOriginalExtension());
-            $fileName = File::name($fileName).'.'.$extension;
+            $fileName = File::name($fileName) . '.' . $extension;
 
-            // File name contains non-latin characters, attempt to slug the value
-            if (!FileHelper::validateName($fileName)) {
-                $fileNameSlug = Str::slug(File::name($fileName), '-');
-                $fileName = $fileNameSlug.'.'.$extension;
+            /*
+             * File name contains non-latin characters, attempt to slug the value
+             */
+            if (!$this->validateFileName($fileName)) {
+                $fileNameClean = $this->cleanFileName(File::name($fileName));
+                $fileName = $fileNameClean . '.' . $extension;
             }
+
             if (!$uploadedFile->isValid()) {
                 throw new ApplicationException($uploadedFile->getErrorMessage());
+            }
+
+            if (!$this->validateFileType($fileName)) {
+                throw new ApplicationException(Lang::get('backend::lang.media.type_blocked'));
             }
 
             $path = Settings::get('image_folder', 'contenteditor');
             $path = MediaLibrary::validatePath($path);
 
             $realPath = empty(trim($uploadedFile->getRealPath()))
-               ? $uploadedFile->getPath() . DIRECTORY_SEPARATOR . $uploadedFile->getFileName()
-               : $uploadedFile->getRealPath();
+                ? $uploadedFile->getPath() . DIRECTORY_SEPARATOR . $uploadedFile->getFileName()
+                : $uploadedFile->getRealPath();
 
             MediaLibrary::instance()->put(
-                $path.'/'.$fileName,
+                $path . '/' . $fileName,
                 File::get($realPath)
             );
 
             list($width, $height) = getimagesize($uploadedFile);
 
             return Response::json([
-                'url'      => MediaLibrary::instance()->getPathUrl($path.'/'.$fileName),
-                'filePath' => $path.'/'.$fileName,
+                'url'      => MediaLibrary::instance()->getPathUrl($path . '/' . $fileName),
+                'filePath' => $path . '/' . $fileName,
                 'filename' => $fileName,
                 'size'     => [
-                   $width,
-                   $height
-               ]
+                    $width,
+                    $height
+                ]
             ]);
         } catch (Exception $ex) {
             throw new ApplicationException($ex);
         }
-
     }
 
     public function save()
@@ -80,14 +89,14 @@ class ImageController extends Controller
         $width = post('width');
         $height = post('height');
         $filePath = post('filePath');
-        $relativeFilePath = config('cms.storage.media.path').$filePath;
+        $relativeFilePath = config('cms.storage.media.path', config('system.storage.media.path')) . $filePath;
 
         if ($crop && $crop != '0,0,1,1') {
             $crop = explode(',', $crop);
 
             $file = MediaLibrary::instance()->get(post('filePath'));
-            $tempDirectory = temp_path().'/contenteditor';
-            $tempFilePath = temp_path().post('filePath');
+            $tempDirectory = temp_path() . '/contenteditor';
+            $tempFilePath = temp_path() . post('filePath');
             File::makeDirectory($tempDirectory, 0777, true, true);
 
             if (!File::put($tempFilePath, $file)) {
@@ -125,5 +134,43 @@ class ImageController extends Controller
                 $height
             ]
         ]);
+    }
+
+    /**
+     * Check for blocked / unsafe file extensions
+     *
+     * @param string
+     * @return bool
+     */
+    protected function validateFileType($name)
+    {
+        $extension = strtolower(File::extension($name));
+
+        $allowedFileTypes = FileDefinitions::get('imageExtensions');
+
+        if (!in_array($extension, $allowedFileTypes)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Validate a proposed media item file name.
+     *
+     * @param string
+     * @return bool
+     */
+    protected function validateFileName($name)
+    {
+        if (!preg_match('/^[\w@\.\s_\-]+$/iu', $name)) {
+            return false;
+        }
+
+        if (strpos($name, '..') !== false) {
+            return false;
+        }
+
+        return true;
     }
 }

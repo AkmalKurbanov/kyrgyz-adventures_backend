@@ -65,11 +65,11 @@ class __TwigTemplate_c56f64587d2535d6e121927c8c3f3c24f1fbb3ee0f477cb7d5b40d2cfc9
       <div class=\"col-md-12\">
         <p class=\"section-subtitle\">";
         // line 5
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Присоединиться"]);
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Join"]);
         echo "</p>
         <h2 class=\"title\">";
         // line 6
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Присоединиться к партнерству"]);
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Join a partnership"]);
         echo "</h2>
       </div>
     </div>
@@ -94,30 +94,29 @@ class __TwigTemplate_c56f64587d2535d6e121927c8c3f3c24f1fbb3ee0f477cb7d5b40d2cfc9
                 value=\"Присоединиться к партнерству\">
               <input type=\"text\" class=\"form-control\" id=\"name\" name=\"Имя\" placeholder=\"";
         // line 19
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Ваше имя"]);
-        echo "\" required>
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Name"]);
+        echo "\">
             </div>
             <div class=\"col\">
               <input type=\"text\" class=\"form-control\" id=\"email\" name=\"email\" placeholder=\"";
         // line 22
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Ваш email"]);
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Email"]);
         echo "\"
-                required>
+                >
             </div>
           </div>
           <div class=\"row\">
             <div class=\"col\">
-              <input type=\"text\" class=\"form-control\" id=\"number\" name=\"телефон\"
-                placeholder=\"";
-        // line 29
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Ваш телефон"]);
-        echo "\" required>
+              <input type=\"text\" class=\"form-control\" id=\"number\" name=\"телефон\" placeholder=\"";
+        // line 28
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Phone"]);
+        echo "\" >
             </div>
             <div class=\"col\">
               <button class=\"btn btn-custom-primary\" id=\"simpleContactSubmitButton\" type=\"submit\"
                 style=\"width: 100%; border: 1px solid rgba(4, 51, 129, 0.2)\">";
-        // line 33
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Отправить"]);
+        // line 32
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Send"]);
         echo "</button>
             </div>
           </div>
@@ -140,7 +139,7 @@ class __TwigTemplate_c56f64587d2535d6e121927c8c3f3c24f1fbb3ee0f477cb7d5b40d2cfc9
 
     public function getDebugInfo()
     {
-        return array (  120 => 33,  113 => 29,  103 => 22,  97 => 19,  89 => 14,  85 => 13,  81 => 12,  72 => 6,  68 => 5,  62 => 1,);
+        return array (  119 => 32,  112 => 28,  103 => 22,  97 => 19,  89 => 14,  85 => 13,  81 => 12,  72 => 6,  68 => 5,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -149,8 +148,8 @@ class __TwigTemplate_c56f64587d2535d6e121927c8c3f3c24f1fbb3ee0f477cb7d5b40d2cfc9
   <div class=\"container\">
     <div class=\"row\">
       <div class=\"col-md-12\">
-        <p class=\"section-subtitle\">{{'Присоединиться'|_}}</p>
-        <h2 class=\"title\">{{'Присоединиться к партнерству'|_}}</h2>
+        <p class=\"section-subtitle\">{{'Join'|_}}</p>
+        <h2 class=\"title\">{{'Join a partnership'|_}}</h2>
       </div>
     </div>
     <div class=\"row\">
@@ -163,21 +162,20 @@ class __TwigTemplate_c56f64587d2535d6e121927c8c3f3c24f1fbb3ee0f477cb7d5b40d2cfc9
             <div class=\"col\">
               <input type=\"hidden\" class=\"form-control\" id=\"joinPartners\" name=\"Заявка по партнерству\"
                 value=\"Присоединиться к партнерству\">
-              <input type=\"text\" class=\"form-control\" id=\"name\" name=\"Имя\" placeholder=\"{{'Ваше имя'|_}}\" required>
+              <input type=\"text\" class=\"form-control\" id=\"name\" name=\"Имя\" placeholder=\"{{'Name'|_}}\">
             </div>
             <div class=\"col\">
-              <input type=\"text\" class=\"form-control\" id=\"email\" name=\"email\" placeholder=\"{{'Ваш email'|_}}\"
-                required>
+              <input type=\"text\" class=\"form-control\" id=\"email\" name=\"email\" placeholder=\"{{'Email'|_}}\"
+                >
             </div>
           </div>
           <div class=\"row\">
             <div class=\"col\">
-              <input type=\"text\" class=\"form-control\" id=\"number\" name=\"телефон\"
-                placeholder=\"{{'Ваш телефон'|_}}\" required>
+              <input type=\"text\" class=\"form-control\" id=\"number\" name=\"телефон\" placeholder=\"{{'Phone'|_}}\" >
             </div>
             <div class=\"col\">
               <button class=\"btn btn-custom-primary\" id=\"simpleContactSubmitButton\" type=\"submit\"
-                style=\"width: 100%; border: 1px solid rgba(4, 51, 129, 0.2)\">{{'Отправить'|_}}</button>
+                style=\"width: 100%; border: 1px solid rgba(4, 51, 129, 0.2)\">{{'Send'|_}}</button>
             </div>
           </div>
         </form>

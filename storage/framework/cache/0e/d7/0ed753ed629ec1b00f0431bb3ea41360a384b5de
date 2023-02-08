@@ -1,0 +1,59 @@
+1675771397a:1:{s:21:"commentspost/list.htm";a:5:{s:8:"fileName";s:21:"commentspost/list.htm";s:7:"content";s:892:"{% for post in posts %}
+<li>
+  <div class="comment" id="comment-{{post.id}}">
+    <div class="comment-wrapper">
+      <div class="comment-avatar">
+        <img src="{{ 'assets/images/avatar.jpg'|theme }}">
+      </div>
+      <div class="comment-content">
+        <div class="comment-header">
+          <span class="comment-name">{{post.name}}</span>
+          <a class="comment-date" href="#comment-{{post.id}}">
+            {{post.created_at.diffForHumans}}
+          </a>
+        </div>
+        <div>{{post.content|raw}}</div>
+        <div class="comment-footer">
+          <a class="comment-reply" onclick="Comment.replay(event,'{{post.id}}')"><i class="fa fa-reply"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+  {% if post.children %}
+  <ul>
+    {% partial "commentsPost::list" posts=post.children %}
+  </ul>
+  {% endif %}
+</li>
+{% endfor %}";s:5:"mtime";i:1671596000;s:6:"markup";s:892:"{% for post in posts %}
+<li>
+  <div class="comment" id="comment-{{post.id}}">
+    <div class="comment-wrapper">
+      <div class="comment-avatar">
+        <img src="{{ 'assets/images/avatar.jpg'|theme }}">
+      </div>
+      <div class="comment-content">
+        <div class="comment-header">
+          <span class="comment-name">{{post.name}}</span>
+          <a class="comment-date" href="#comment-{{post.id}}">
+            {{post.created_at.diffForHumans}}
+          </a>
+        </div>
+        <div>{{post.content|raw}}</div>
+        <div class="comment-footer">
+          <a class="comment-reply" onclick="Comment.replay(event,'{{post.id}}')"><i class="fa fa-reply"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+  {% if post.children %}
+  <ul>
+    {% partial "commentsPost::list" posts=post.children %}
+  </ul>
+  {% endif %}
+</li>
+{% endfor %}";s:4:"code";N;}}

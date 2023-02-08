@@ -29,9 +29,9 @@ class __TwigTemplate_00aed02634ad1c5f23994890feadb57d97b9ee49f890d77b7b85d44a6d0
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("if" => 4, "for" => 22);
-        $filters = array("escape" => 5, "raw" => 12, "_" => 19);
-        $functions = array("form_token" => 64);
+        $tags = array("if" => 6, "for" => 18);
+        $filters = array("escape" => 4, "raw" => 8, "_" => 15);
+        $functions = array("form_token" => 56);
 
         try {
             $this->sandbox->checkSecurity(
@@ -62,146 +62,122 @@ class __TwigTemplate_00aed02634ad1c5f23994890feadb57d97b9ee49f890d77b7b85d44a6d0
         echo "<button class=\"sidebar-menu-close\"><i class=\"flaticon-close\"></i></button>
    <div class=\"sidebar-inner\">
      <div class=\"sidebar-logo\">
-       ";
+       <img src=\"";
         // line 4
-        if ((($context["activeLocale"] ?? null) == "ru")) {
-            // line 5
-            echo "       <img src=\"";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 5), "logoSidebarRu", [], "any", false, false, true, 5), "path", [], "any", false, false, true, 5), 5, $this->source), "html", null, true);
-            echo "\" alt=\"logo\" />
-       ";
-        } else {
-            // line 7
-            echo "       <img src=\"";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 7), "logoSidebarKg", [], "any", false, false, true, 7), "path", [], "any", false, false, true, 7), 7, $this->source), "html", null, true);
-            echo "\" alt=\"logo\" />
-       ";
-        }
-        // line 9
-        echo "     </div>
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 4), "logoDark", [], "any", false, false, true, 4), "path", [], "any", false, false, true, 4), 4, $this->source), "html", null, true);
+        echo "\" alt=\"logo\" width=\"70\"/>
+     </div>
      ";
-        // line 10
-        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 10), "site_description", [], "any", false, false, true, 10) == true)) {
-            // line 11
+        // line 6
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 6), "site_description", [], "any", false, false, true, 6) == true)) {
+            // line 7
             echo "     <div class=\"sidemenu-text\">
        ";
-            // line 12
-            echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 12), "site_description", [], "any", false, false, true, 12), 12, $this->source);
+            // line 8
+            echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 8), "site_description", [], "any", false, false, true, 8), 8, $this->source);
             echo "
      </div>
      ";
         } else {
-            // line 15
+            // line 11
             echo "     ";
         }
-        // line 16
+        // line 12
         echo "
 
      <div class=\"sidebar-contact\">
        <h4>";
-        // line 19
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Свяжитесь с нами"]);
+        // line 15
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Contact us"]);
         echo "</h4>
        <ul>
 
          ";
-        // line 22
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 22), "contacts", [], "any", false, false, true, 22));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 18), "contacts", [], "any", false, false, true, 18));
         foreach ($context['_seq'] as $context["_key"] => $context["contact"]) {
-            // line 23
+            // line 19
             echo "
          ";
-            // line 24
-            if ((twig_get_attribute($this->env, $this->source, $context["contact"], "address", [], "any", false, false, true, 24) == true)) {
-                // line 25
+            // line 20
+            if ((twig_get_attribute($this->env, $this->source, $context["contact"], "address", [], "any", false, false, true, 20) == true)) {
+                // line 21
                 echo "         <li><i class=\"fa fa-map-marker\"></i>
-           ";
-                // line 26
-                if ((($context["activeLocale"] ?? null) == "ru")) {
-                    // line 27
-                    echo "           ";
-                    echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["contact"], "address", [], "any", false, false, true, 27), 27, $this->source), "html", null, true);
-                    echo "
-           ";
-                } else {
-                    // line 29
-                    echo "           ";
-                    echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["contact"], "addressKg", [], "any", false, false, true, 29), 29, $this->source), "html", null, true);
-                    echo "
-           ";
-                }
-                // line 31
-                echo "         </li>
+          ";
+                // line 22
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["contact"], "address", [], "any", false, false, true, 22), 22, $this->source), "html", null, true);
+                echo "           
+         </li>
          ";
             } else {
+                // line 25
+                echo "         ";
+            }
+            // line 26
+            echo "
+         ";
+            // line 27
+            if ((twig_get_attribute($this->env, $this->source, $context["contact"], "phone1", [], "any", false, false, true, 27) == true)) {
+                // line 28
+                echo "         <li><i class=\"fa fa-phone\"></i>(+996) ";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["contact"], "phone1", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
+                echo "</li>
+         ";
+            } else {
+                // line 30
+                echo "         ";
+            }
+            // line 31
+            echo "
+         ";
+            // line 32
+            if ((twig_get_attribute($this->env, $this->source, $context["contact"], "phone2", [], "any", false, false, true, 32) == true)) {
                 // line 33
-                echo "         ";
-            }
-            // line 34
-            echo "
-         ";
-            // line 35
-            if ((twig_get_attribute($this->env, $this->source, $context["contact"], "phone1", [], "any", false, false, true, 35) == true)) {
-                // line 36
                 echo "         <li><i class=\"fa fa-phone\"></i>(+996) ";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["contact"], "phone1", [], "any", false, false, true, 36), 36, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["contact"], "phone2", [], "any", false, false, true, 33), 33, $this->source), "html", null, true);
                 echo "</li>
          ";
             } else {
+                // line 35
+                echo "         ";
+            }
+            // line 36
+            echo "
+         ";
+            // line 37
+            if ((twig_get_attribute($this->env, $this->source, $context["contact"], "user_email1", [], "any", false, false, true, 37) == true)) {
                 // line 38
-                echo "         ";
-            }
-            // line 39
-            echo "
-         ";
-            // line 40
-            if ((twig_get_attribute($this->env, $this->source, $context["contact"], "phone2", [], "any", false, false, true, 40) == true)) {
-                // line 41
-                echo "         <li><i class=\"fa fa-phone\"></i>(+996) ";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["contact"], "phone2", [], "any", false, false, true, 41), 41, $this->source), "html", null, true);
+                echo "         <li><i class=\"fa fa-envelope\"></i>";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["contact"], "user_email1", [], "any", false, false, true, 38), 38, $this->source), "html", null, true);
                 echo "</li>
          ";
             } else {
+                // line 40
+                echo "         ";
+            }
+            // line 41
+            echo "
+         ";
+            // line 42
+            if ((twig_get_attribute($this->env, $this->source, $context["contact"], "user_email2", [], "any", false, false, true, 42) == true)) {
                 // line 43
-                echo "         ";
-            }
-            // line 44
-            echo "
-         ";
-            // line 45
-            if ((twig_get_attribute($this->env, $this->source, $context["contact"], "user_email1", [], "any", false, false, true, 45) == true)) {
-                // line 46
                 echo "         <li><i class=\"fa fa-envelope\"></i>";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["contact"], "user_email1", [], "any", false, false, true, 46), 46, $this->source), "html", null, true);
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["contact"], "user_email2", [], "any", false, false, true, 43), 43, $this->source), "html", null, true);
                 echo "</li>
          ";
             } else {
-                // line 48
+                // line 45
                 echo "         ";
             }
-            // line 49
-            echo "
-         ";
-            // line 50
-            if ((twig_get_attribute($this->env, $this->source, $context["contact"], "user_email2", [], "any", false, false, true, 50) == true)) {
-                // line 51
-                echo "         <li><i class=\"fa fa-envelope\"></i>";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["contact"], "user_email2", [], "any", false, false, true, 51), 51, $this->source), "html", null, true);
-                echo "</li>
-         ";
-            } else {
-                // line 53
-                echo "         ";
-            }
-            // line 54
+            // line 46
             echo "
          ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['contact'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
+        // line 48
         echo "
        </ul>
      </div>
@@ -209,51 +185,51 @@ class __TwigTemplate_00aed02634ad1c5f23994890feadb57d97b9ee49f890d77b7b85d44a6d0
 
      <div class=\"sidebar-subscribe\">
        <form class=\"contact-form\" data-request=\"";
-        // line 62
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["genericForm"] ?? null), 62, $this->source), "html", null, true);
+        // line 54
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["sidebar"] ?? null), 54, $this->source), "html", null, true);
         echo "::onFormSubmit\">
          <div id=\"";
-        // line 63
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["genericForm"] ?? null), 63, $this->source), "html", null, true);
+        // line 55
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["sidebar"] ?? null), 55, $this->source), "html", null, true);
         echo "_forms_flash\"></div>
          ";
-        // line 64
+        // line 56
         echo call_user_func_array($this->env->getFunction('form_token')->getCallable(), ["token"]);
         echo "
          <input type=\"text\" id=\"name\" name=\"Имя\" placeholder=\"";
-        // line 65
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Ваше имя"]);
-        echo "\" required>
+        // line 57
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Name"]);
+        echo "\">
          <input type=\"text\" id=\"email\" name=\"email\" placeholder=\"";
-        // line 66
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Ваш email"]);
-        echo "\" required>
+        // line 58
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Email"]);
+        echo "\" >
          <input type=\"text\" id=\"number\" name=\"телефон\" placeholder=\"";
-        // line 67
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Ваш телефон"]);
-        echo "\" required>
+        // line 59
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Phone"]);
+        echo "\" >
          <button class=\"btn\" id=\"simpleContactSubmitButton\" type=\"submit\"><i class=\"fa fa-envelope-o\"></i></button>
        </form>
      </div>
      <div class=\"social-link\">
        <ul>
          ";
-        // line 73
+        // line 65
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 73), "social", [], "any", false, false, true, 73));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 65), "social", [], "any", false, false, true, 65));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 74
+            // line 66
             echo "         <li><a href=\"";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, true, 74), 74, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, true, 66), 66, $this->source), "html", null, true);
             echo "\"><i class=\"";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "awesome_icon", [], "any", false, false, true, 74), 74, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "awesome_icon", [], "any", false, false, true, 66), 66, $this->source), "html", null, true);
             echo "\"></i></a></li>
          ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 76
+        // line 68
         echo "       </ul>
      </div>
    </div>";
@@ -271,7 +247,7 @@ class __TwigTemplate_00aed02634ad1c5f23994890feadb57d97b9ee49f890d77b7b85d44a6d0
 
     public function getDebugInfo()
     {
-        return array (  257 => 76,  246 => 74,  242 => 73,  233 => 67,  229 => 66,  225 => 65,  221 => 64,  217 => 63,  213 => 62,  205 => 56,  198 => 54,  195 => 53,  189 => 51,  187 => 50,  184 => 49,  181 => 48,  175 => 46,  173 => 45,  170 => 44,  167 => 43,  161 => 41,  159 => 40,  156 => 39,  153 => 38,  147 => 36,  145 => 35,  142 => 34,  139 => 33,  135 => 31,  129 => 29,  123 => 27,  121 => 26,  118 => 25,  116 => 24,  113 => 23,  109 => 22,  103 => 19,  98 => 16,  95 => 15,  89 => 12,  86 => 11,  84 => 10,  81 => 9,  75 => 7,  69 => 5,  67 => 4,  62 => 1,);
+        return array (  233 => 68,  222 => 66,  218 => 65,  209 => 59,  205 => 58,  201 => 57,  197 => 56,  193 => 55,  189 => 54,  181 => 48,  174 => 46,  171 => 45,  165 => 43,  163 => 42,  160 => 41,  157 => 40,  151 => 38,  149 => 37,  146 => 36,  143 => 35,  137 => 33,  135 => 32,  132 => 31,  129 => 30,  123 => 28,  121 => 27,  118 => 26,  115 => 25,  109 => 22,  106 => 21,  104 => 20,  101 => 19,  97 => 18,  91 => 15,  86 => 12,  83 => 11,  77 => 8,  74 => 7,  72 => 6,  67 => 4,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -279,11 +255,7 @@ class __TwigTemplate_00aed02634ad1c5f23994890feadb57d97b9ee49f890d77b7b85d44a6d0
         return new Source("<button class=\"sidebar-menu-close\"><i class=\"flaticon-close\"></i></button>
    <div class=\"sidebar-inner\">
      <div class=\"sidebar-logo\">
-       {% if activeLocale == 'ru' %}
-       <img src=\"{{this.theme.logoSidebarRu.path}}\" alt=\"logo\" />
-       {% else %}
-       <img src=\"{{this.theme.logoSidebarKg.path}}\" alt=\"logo\" />
-       {% endif %}
+       <img src=\"{{this.theme.logoDark.path}}\" alt=\"logo\" width=\"70\"/>
      </div>
      {% if this.theme.site_description == true %}
      <div class=\"sidemenu-text\">
@@ -294,18 +266,14 @@ class __TwigTemplate_00aed02634ad1c5f23994890feadb57d97b9ee49f890d77b7b85d44a6d0
 
 
      <div class=\"sidebar-contact\">
-       <h4>{{'Свяжитесь с нами'|_}}</h4>
+       <h4>{{'Contact us'|_}}</h4>
        <ul>
 
          {% for contact in this.theme.contacts %}
 
          {% if contact.address == true %}
          <li><i class=\"fa fa-map-marker\"></i>
-           {% if activeLocale == 'ru' %}
-           {{contact.address}}
-           {% else %}
-           {{contact.addressKg}}
-           {% endif %}
+          {{contact.address}}           
          </li>
          {% else %}
          {% endif %}
@@ -337,12 +305,12 @@ class __TwigTemplate_00aed02634ad1c5f23994890feadb57d97b9ee49f890d77b7b85d44a6d0
 
 
      <div class=\"sidebar-subscribe\">
-       <form class=\"contact-form\" data-request=\"{{ genericForm }}::onFormSubmit\">
-         <div id=\"{{ genericForm }}_forms_flash\"></div>
+       <form class=\"contact-form\" data-request=\"{{ sidebar }}::onFormSubmit\">
+         <div id=\"{{ sidebar }}_forms_flash\"></div>
          {{ form_token() }}
-         <input type=\"text\" id=\"name\" name=\"Имя\" placeholder=\"{{'Ваше имя'|_}}\" required>
-         <input type=\"text\" id=\"email\" name=\"email\" placeholder=\"{{'Ваш email'|_}}\" required>
-         <input type=\"text\" id=\"number\" name=\"телефон\" placeholder=\"{{'Ваш телефон'|_}}\" required>
+         <input type=\"text\" id=\"name\" name=\"Имя\" placeholder=\"{{'Name'|_}}\">
+         <input type=\"text\" id=\"email\" name=\"email\" placeholder=\"{{'Email'|_}}\" >
+         <input type=\"text\" id=\"number\" name=\"телефон\" placeholder=\"{{'Phone'|_}}\" >
          <button class=\"btn\" id=\"simpleContactSubmitButton\" type=\"submit\"><i class=\"fa fa-envelope-o\"></i></button>
        </form>
      </div>

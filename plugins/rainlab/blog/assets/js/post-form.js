@@ -77,20 +77,21 @@
             })
             dropzone.on('success', function(file, data){
                 if (data.error)
-                    alert(data.error)
+                    alert(data.error);
                 else {
-                    self.pauseUpdates()
-                    var $img = $('<img src="'+data.path+'">')
-                    $img.load(function(){
-                        self.updateScroll()
-                    })
+                    self.pauseUpdates();
+                    var $img = $('<img src="'+data.path+'" />');
+                    $img.one('load', function(){
+                        self.updateScroll();
+                    });
 
-                    $placeholder.replaceWith($img)
+                    $placeholder.replaceWith($img);
 
                     self.codeEditor.replace('!['+data.file+']('+data.path+')', {
                         needle: '!['+placeholderIndex+'](image)'
-                    })
-                    self.resumeUpdates()
+                    });
+
+                    self.resumeUpdates();
                 }
             })
             dropzone.on('complete', function(){
@@ -159,6 +160,7 @@
 
     PostForm.prototype.initLayout = function() {
         $('#Form-secondaryTabs .tab-pane.layout-cell:not(:first-child)').addClass('padded-pane')
+        $('#Form-secondaryTabs .nav-tabs > li:not(:first-child)').addClass('tab-content-bg')
     }
 
     PostForm.prototype.replacePlaceholder = function(placeholder, placeholderHtmlReplacement, mdCodePlaceholder, mdCodeReplacement) {

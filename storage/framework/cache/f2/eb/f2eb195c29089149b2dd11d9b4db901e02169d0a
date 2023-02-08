@@ -1,4 +1,4 @@
-1674041192a:1:{s:16:"event-detail.htm";a:19:{s:8:"fileName";s:16:"event-detail.htm";s:7:"content";s:2373:"title = "Event"
+1675864659a:1:{s:16:"event-detail.htm";a:19:{s:8:"fileName";s:16:"event-detail.htm";s:7:"content";s:2728:"title = "Event"
 url = "/event-detail/:slug"
 layout = "default"
 is_hidden = 0
@@ -12,6 +12,8 @@ crumb_disabled = 0
 [viewBag]
 localeTitle[ru] = "Событие"
 localeTitle[en] = "Окуя"
+localeTitle[de] = "Veranstaltung"
+localeTitle[rus] = "Событие"
 localeUrl[en] = "/event-detail/:slug"
 
 [builderDetails]
@@ -57,7 +59,16 @@ emails_date_format = "Y-m-d"
       <div class="col-lg-4 offset-lg-1 text-center">
         <div class="ls-date-box">
           <h4>{{'Date'|_}} & {{'Time'|_}}:</h4>
-          <p> {{record.date | date('d')}} {{record.date | rudate('%BP')}} ,
+          <p> {{record.date | date('d')}} 
+            
+              {% if activeLocale == 'rus'  %}
+              {{record.date | rudate('%BP')}}
+              {% elseif activeLocale == 'de'  %}
+              {{record.date | rudate('%BP')}}
+              {% else %}
+              {{record.date | date('M')}}
+              {% endif %}
+            ,
             {{record.date | date('Y')}} , {{record.date | date('H:i') }}</p>
           <hr>
           <h4>{{'Location'|_}}</h4>
@@ -74,7 +85,7 @@ emails_date_format = "Y-m-d"
 </div>
 {% else %}
 {{ notFoundMessage }}
-{% endif %}";s:5:"mtime";i:1673949043;s:6:"markup";s:1247:"{% set record = builderDetails.record %}
+{% endif %}";s:5:"mtime";i:1674064271;s:6:"markup";s:1530:"{% set record = builderDetails.record %}
 {% set displayColumn = builderDetails.displayColumn %}
 {% set notFoundMessage = builderDetails.notFoundMessage %}
 
@@ -91,7 +102,16 @@ emails_date_format = "Y-m-d"
       <div class="col-lg-4 offset-lg-1 text-center">
         <div class="ls-date-box">
           <h4>{{'Date'|_}} & {{'Time'|_}}:</h4>
-          <p> {{record.date | date('d')}} {{record.date | rudate('%BP')}} ,
+          <p> {{record.date | date('d')}} 
+            
+              {% if activeLocale == 'rus'  %}
+              {{record.date | rudate('%BP')}}
+              {% elseif activeLocale == 'de'  %}
+              {{record.date | rudate('%BP')}}
+              {% else %}
+              {{record.date | date('M')}}
+              {% endif %}
+            ,
             {{record.date | date('Y')}} , {{record.date | date('H:i') }}</p>
           <hr>
           <h4>{{'Location'|_}}</h4>
@@ -108,4 +128,4 @@ emails_date_format = "Y-m-d"
 </div>
 {% else %}
 {{ notFoundMessage }}
-{% endif %}";s:4:"code";N;s:5:"title";s:5:"Event";s:3:"url";s:19:"/event-detail/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:2:{s:2:"ru";s:14:"Событие";s:2:"en";s:8:"Окуя";}s:9:"localeUrl";a:1:{s:2:"en";s:19:"/event-detail/:slug";}}s:14:"builderDetails";a:5:{s:10:"modelClass";s:25:"Akmal\Events\Models\Event";s:15:"identifierValue";s:11:"{{ :slug }}";s:14:"modelKeyColumn";s:4:"slug";s:13:"displayColumn";s:5:"title";s:15:"notFoundMessage";s:16:"Record not found";}s:17:"siteSearchInclude";a:0:{}s:19:"genericForm sidebar";a:15:{s:5:"rules";a:1:{s:5:"email";s:14:"required|email";}s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:12:"mail_enabled";s:1:"1";s:15:"mail_recipients";a:1:{s:17:"250296a@gmail.com";s:7:"Tourism";}s:15:"mail_resp_field";s:17:"250296a@gmail.com";s:14:"mail_resp_from";s:17:"250296a@gmail.com";s:10:"reset_form";s:1:"1";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}
+{% endif %}";s:4:"code";N;s:5:"title";s:5:"Event";s:3:"url";s:19:"/event-detail/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:7:"viewBag";a:2:{s:11:"localeTitle";a:4:{s:2:"ru";s:14:"Событие";s:2:"en";s:8:"Окуя";s:2:"de";s:13:"Veranstaltung";s:3:"rus";s:14:"Событие";}s:9:"localeUrl";a:1:{s:2:"en";s:19:"/event-detail/:slug";}}s:14:"builderDetails";a:5:{s:10:"modelClass";s:25:"Akmal\Events\Models\Event";s:15:"identifierValue";s:11:"{{ :slug }}";s:14:"modelKeyColumn";s:4:"slug";s:13:"displayColumn";s:5:"title";s:15:"notFoundMessage";s:16:"Record not found";}s:17:"siteSearchInclude";a:0:{}s:19:"genericForm sidebar";a:15:{s:5:"rules";a:1:{s:5:"email";s:14:"required|email";}s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:12:"mail_enabled";s:1:"1";s:15:"mail_recipients";a:1:{s:17:"250296a@gmail.com";s:7:"Tourism";}s:15:"mail_resp_field";s:17:"250296a@gmail.com";s:14:"mail_resp_from";s:17:"250296a@gmail.com";s:10:"reset_form";s:1:"1";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

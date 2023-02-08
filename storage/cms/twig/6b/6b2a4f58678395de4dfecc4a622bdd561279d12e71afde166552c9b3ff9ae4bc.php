@@ -168,7 +168,7 @@ class __TwigTemplate_96dea78d3b2efbafe8b36d8d9d300d52ecdccecd2e175855c8934030ac2
       <div class=\"form-group\">
         <input name=\"q\" type=\"text\" class=\"form-control\" placeholder=\"";
         // line 55
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Поиск"]);
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Search"]);
         echo ".....\" autocomplete=\"off\">
       </div>
       <button type=\"submit\" class=\"submit-btn\"><i class=\"fa fa-search\"></i></button>
@@ -225,13 +225,13 @@ class __TwigTemplate_96dea78d3b2efbafe8b36d8d9d300d52ecdccecd2e175855c8934030ac2
         <div class=\"party-box-content\">
           <h4>";
         // line 91
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Присоединиться к партнерству"]);
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Join a partnership"]);
         echo "</h4>
         </div>
         <div class=\"btn-wrapper align-self-center\">
           <a class=\"btn btn-custom-primary\" href=\"/join\">";
         // line 94
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Присоединиться"]);
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Join"]);
         echo "</a>
         </div>
       </div>
@@ -453,7 +453,7 @@ class __TwigTemplate_96dea78d3b2efbafe8b36d8d9d300d52ecdccecd2e175855c8934030ac2
   <div class=\"search-popup\" id=\"search-popup\">
     <form action=\"{{ 'search' | page }}\" method=\"get\" class=\"search-form\">
       <div class=\"form-group\">
-        <input name=\"q\" type=\"text\" class=\"form-control\" placeholder=\"{{'Поиск'|_}}.....\" autocomplete=\"off\">
+        <input name=\"q\" type=\"text\" class=\"form-control\" placeholder=\"{{'Search'|_}}.....\" autocomplete=\"off\">
       </div>
       <button type=\"submit\" class=\"submit-btn\"><i class=\"fa fa-search\"></i></button>
     </form>
@@ -489,10 +489,10 @@ class __TwigTemplate_96dea78d3b2efbafe8b36d8d9d300d52ecdccecd2e175855c8934030ac2
       <div
         class=\"col-lg-12 party-box-wrapper d-flex flex-lg-row flex-column justify-content-lg-between justify-content-center text-lg-left text-center\">
         <div class=\"party-box-content\">
-          <h4>{{'Присоединиться к партнерству'|_}}</h4>
+          <h4>{{'Join a partnership'|_}}</h4>
         </div>
         <div class=\"btn-wrapper align-self-center\">
-          <a class=\"btn btn-custom-primary\" href=\"/join\">{{'Присоединиться'|_}}</a>
+          <a class=\"btn btn-custom-primary\" href=\"/join\">{{'Join'|_}}</a>
         </div>
       </div>
     </div>

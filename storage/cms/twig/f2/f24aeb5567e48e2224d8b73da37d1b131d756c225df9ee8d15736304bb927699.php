@@ -47,7 +47,7 @@ class __TwigTemplate_9461271e370dac27a25e6d7ad730edbbf3f059f839cc0ef9dcd2c7fc583
               <img src=\"";
         // line 9
         echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 9), "logoDark", [], "any", false, false, true, 9), "path", [], "any", false, false, true, 9), 9, $this->source), "html", null, true);
-        echo "\" alt=\"footer logo\" width=\"70\">
+        echo "\" alt=\"footer logo\" width=\"100\">
             </a>
             ";
         // line 11
@@ -82,7 +82,7 @@ class __TwigTemplate_9461271e370dac27a25e6d7ad730edbbf3f059f839cc0ef9dcd2c7fc583
                 <div class=\"details\">
                   ";
                 // line 25
-                if ((($context["activeLocale"] ?? null) == "ru")) {
+                if ((($context["activeLocale"] ?? null) == "rus")) {
                     // line 26
                     echo "                  ";
                     echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["contact"], "address", [], "any", false, false, true, 26), 26, $this->source), "html", null, true);
@@ -272,20 +272,43 @@ class __TwigTemplate_9461271e370dac27a25e6d7ad730edbbf3f059f839cc0ef9dcd2c7fc583
         // line 113
         echo "              </div>
             </div>
-            <!-- <div class=\"col-lg-5\">
-              <div class=\"footer-widget widget\">
-                <h4 class=\"widget-title\">";
-        // line 117
-        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Лента Instagram"]);
+            <div class=\"col-lg-5\">
+              <h4 style=\"color:#fff\">";
+        // line 116
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Contact us"]);
         echo "</h4>
-                <div id=\"instagram-feed1\"></div>
-              </div>
-            </div> -->
+              <form class=\"contact-form\" data-request=\"";
+        // line 117
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["sidebar"] ?? null), 117, $this->source), "html", null, true);
+        echo "::onFormSubmit\">
+                <div id=\"";
+        // line 118
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["sidebar"] ?? null), 118, $this->source), "html", null, true);
+        echo "_forms_flash\"></div>
+                ";
+        // line 119
+        echo call_user_func_array($this->env->getFunction('form_token')->getCallable(), ["token"]);
+        echo "
+                <input type=\"text\" id=\"name\" name=\"Имя\" placeholder=\"";
+        // line 120
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Name"]);
+        echo "\">
+                <input type=\"text\" id=\"email\" name=\"email\" placeholder=\"";
+        // line 121
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Email"]);
+        echo "\" >
+                <input type=\"text\" id=\"number\" name=\"телефон\" placeholder=\"";
+        // line 122
+        echo call_user_func_array($this->env->getFilter('_')->getCallable(), ["Phone"]);
+        echo "\" >
+                <button class=\"btn\" id=\"simpleContactSubmitButton\" type=\"submit\"><i class=\"fa fa-envelope-o\"></i></button>
+              </form>
+            </div>
             <div class=\"col-xl-11 offset-xl-1\">
               <div class=\"copyright-area-inner copyright-sm margin-top-35\">
                 &copy; ";
-        // line 123
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 123), "site_name", [], "any", false, false, true, 123), 123, $this->source), "html", null, true);
+        // line 128
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 128), "site_name", [], "any", false, false, true, 128), 128, $this->source), "html", null, true);
         echo "
               </div>
             </div>
@@ -310,7 +333,7 @@ class __TwigTemplate_9461271e370dac27a25e6d7ad730edbbf3f059f839cc0ef9dcd2c7fc583
 
     public function getDebugInfo()
     {
-        return array (  288 => 123,  279 => 117,  273 => 113,  269 => 111,  264 => 110,  261 => 109,  259 => 108,  255 => 107,  248 => 102,  244 => 100,  239 => 99,  236 => 98,  234 => 97,  230 => 96,  221 => 89,  210 => 87,  206 => 86,  202 => 84,  195 => 82,  192 => 81,  185 => 77,  178 => 72,  176 => 71,  173 => 70,  170 => 69,  163 => 65,  156 => 60,  154 => 59,  151 => 58,  148 => 57,  141 => 53,  134 => 48,  132 => 47,  129 => 46,  126 => 45,  119 => 41,  112 => 36,  110 => 35,  107 => 34,  104 => 33,  99 => 30,  93 => 28,  87 => 26,  85 => 25,  78 => 20,  76 => 19,  73 => 18,  69 => 17,  65 => 15,  62 => 14,  56 => 12,  54 => 11,  49 => 9,  39 => 1,);
+        return array (  311 => 128,  302 => 122,  298 => 121,  294 => 120,  290 => 119,  286 => 118,  282 => 117,  278 => 116,  273 => 113,  269 => 111,  264 => 110,  261 => 109,  259 => 108,  255 => 107,  248 => 102,  244 => 100,  239 => 99,  236 => 98,  234 => 97,  230 => 96,  221 => 89,  210 => 87,  206 => 86,  202 => 84,  195 => 82,  192 => 81,  185 => 77,  178 => 72,  176 => 71,  173 => 70,  170 => 69,  163 => 65,  156 => 60,  154 => 59,  151 => 58,  148 => 57,  141 => 53,  134 => 48,  132 => 47,  129 => 46,  126 => 45,  119 => 41,  112 => 36,  110 => 35,  107 => 34,  104 => 33,  99 => 30,  93 => 28,  87 => 26,  85 => 25,  78 => 20,  76 => 19,  73 => 18,  69 => 17,  65 => 15,  62 => 14,  56 => 12,  54 => 11,  49 => 9,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -323,7 +346,7 @@ class __TwigTemplate_9461271e370dac27a25e6d7ad730edbbf3f059f839cc0ef9dcd2c7fc583
         <div class=\"col-xl-4\">
           <div class=\"footer-widget widget contact-widget\">
             <a href=\"/\" class=\"footer-logo\">
-              <img src=\"{{this.theme.logoDark.path}}\" alt=\"footer logo\" width=\"70\">
+              <img src=\"{{this.theme.logoDark.path}}\" alt=\"footer logo\" width=\"100\">
             </a>
             {% if this.theme.site_description == true %}
             {{this.theme.site_description | raw}}
@@ -339,7 +362,7 @@ class __TwigTemplate_9461271e370dac27a25e6d7ad730edbbf3f059f839cc0ef9dcd2c7fc583
                   <i class=\"fa fa-envelope\"></i>
                 </div>
                 <div class=\"details\">
-                  {% if activeLocale == 'ru' %}
+                  {% if activeLocale == 'rus' %}
                   {{contact.address}}
                   {% else %}
                   {{contact.addressKg}}
@@ -429,12 +452,17 @@ class __TwigTemplate_9461271e370dac27a25e6d7ad730edbbf3f059f839cc0ef9dcd2c7fc583
                 {% endif %}
               </div>
             </div>
-            <!-- <div class=\"col-lg-5\">
-              <div class=\"footer-widget widget\">
-                <h4 class=\"widget-title\">{{'Лента Instagram'|_}}</h4>
-                <div id=\"instagram-feed1\"></div>
-              </div>
-            </div> -->
+            <div class=\"col-lg-5\">
+              <h4 style=\"color:#fff\">{{'Contact us'|_}}</h4>
+              <form class=\"contact-form\" data-request=\"{{ sidebar }}::onFormSubmit\">
+                <div id=\"{{ sidebar }}_forms_flash\"></div>
+                {{ form_token() }}
+                <input type=\"text\" id=\"name\" name=\"Имя\" placeholder=\"{{'Name'|_}}\">
+                <input type=\"text\" id=\"email\" name=\"email\" placeholder=\"{{'Email'|_}}\" >
+                <input type=\"text\" id=\"number\" name=\"телефон\" placeholder=\"{{'Phone'|_}}\" >
+                <button class=\"btn\" id=\"simpleContactSubmitButton\" type=\"submit\"><i class=\"fa fa-envelope-o\"></i></button>
+              </form>
+            </div>
             <div class=\"col-xl-11 offset-xl-1\">
               <div class=\"copyright-area-inner copyright-sm margin-top-35\">
                 &copy; {{this.theme.site_name}}
@@ -453,13 +481,13 @@ class __TwigTemplate_9461271e370dac27a25e6d7ad730edbbf3f059f839cc0ef9dcd2c7fc583
     {
         static $tags = array("if" => 11, "for" => 17, "partial" => 99);
         static $filters = array("escape" => 9, "raw" => 12, "_" => 96);
-        static $functions = array();
+        static $functions = array("form_token" => 119);
 
         try {
             $this->sandbox->checkSecurity(
                 ['if', 'for', 'partial'],
                 ['escape', 'raw', '_'],
-                []
+                ['form_token']
             );
         } catch (SecurityError $e) {
             $e->setSourceContext($this->source);

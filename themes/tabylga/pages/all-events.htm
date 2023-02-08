@@ -12,6 +12,8 @@ crumb_disabled = 0
 [viewBag]
 localeTitle[ru] = "Все события"
 localeTitle[en] = "Бардык окуялар"
+localeTitle[de] = "Alle Veranstaltungen"
+localeTitle[rus] = "Все события"
 localeUrl[en] = "/all-events"
 
 [builderList]
@@ -78,7 +80,9 @@ emails_date_format = "Y-m-d"
           <div class="date-box">
             <span class="date">{{record.date | date('d')}}</span>
             <span class="month">
-              {% if activeLocale == 'ru' %}
+              {% if activeLocale == 'rus'  %}
+              {{record.date | rudate('%BP')}}
+              {% elseif activeLocale == 'de'  %}
               {{record.date | rudate('%BP')}}
               {% else %}
               {{record.date | date('M')}}

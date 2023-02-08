@@ -1,4 +1,4 @@
-1674041192a:1:{s:22:"guest-house-detail.htm";a:16:{s:8:"fileName";s:22:"guest-house-detail.htm";s:7:"content";s:2890:"title = "Guest house detail"
+1675864659a:1:{s:22:"guest-house-detail.htm";a:17:{s:8:"fileName";s:22:"guest-house-detail.htm";s:7:"content";s:2682:"title = "Guest house detail"
 url = "/guest-house-detail/:slug"
 layout = "default"
 is_hidden = 0
@@ -19,6 +19,10 @@ setPageMeta = 1
 throw404 = 1
 categoryPage = 0
 categoryPageSlug = "{{ :category }}"
+
+[viewBag]
+localeTitle[de] = "Gästehaus-Detail"
+localeTitle[rus] = "Гостевой дом детально"
 ==
 <div class="leadership-area margin-top-115">
   <div class="container">
@@ -37,8 +41,11 @@ categoryPageSlug = "{{ :category }}"
                     {% for image in recordDetail.images %}
 
                         <div class="col-xs-12 col-sm-4 col-md-3 col-md-2">
-                        
-                          <img class="thumbnail" style="max-width: 100%; margin-bottom: 10px;" src="{{image.getThumb(300,300)}}" alt="{{image.title ? image.title : recordDetail.name}}">
+                          <a href="{{image.getThumb(1200,1200)}}" class="gallery-link">
+                            <div style="width: 150px;height: 100px; border-radius: 10px; overflow: hidden;margin-bottom: 10px; position: relative;">
+                              <img class="thumbnail" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src="{{image.getThumb(300,auto)}}" alt="{{image.title ? image.title : recordDetail.name}}">
+                            </div>
+                          </a>
                           
 
                         </div>
@@ -51,25 +58,7 @@ categoryPageSlug = "{{ :category }}"
 
             {% endif %}
 
-            {% if recordDetail.images_media|length %}
-                
-                <div class="row">
-
-                    {% for mediaImage in recordDetail.images_media %}
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-md-2">
-                          <img class="thumbnail" style="max-width: 100%;" src="{{mediaImage.image|media}}" alt="{{mediaImage.image_title ? mediaImage.image_title : recordDetail.name}}">
-                        
-                            
-                        </div>
-
-                    {% endfor %}
-
-                </div>
-
-            {% else %}
-
-            {% endif %}
+          
 
         </div>
       </div>
@@ -92,7 +81,7 @@ categoryPageSlug = "{{ :category }}"
       </div>
     </div>
   </div>
-</div>";s:5:"mtime";i:1673944343;s:6:"markup";s:2418:"<div class="leadership-area margin-top-115">
+</div>";s:5:"mtime";i:1674067268;s:6:"markup";s:2095:"<div class="leadership-area margin-top-115">
   <div class="container">
     <div class="row">
       <div class="col-lg-7">
@@ -109,8 +98,11 @@ categoryPageSlug = "{{ :category }}"
                     {% for image in recordDetail.images %}
 
                         <div class="col-xs-12 col-sm-4 col-md-3 col-md-2">
-                        
-                          <img class="thumbnail" style="max-width: 100%; margin-bottom: 10px;" src="{{image.getThumb(300,300)}}" alt="{{image.title ? image.title : recordDetail.name}}">
+                          <a href="{{image.getThumb(1200,1200)}}" class="gallery-link">
+                            <div style="width: 150px;height: 100px; border-radius: 10px; overflow: hidden;margin-bottom: 10px; position: relative;">
+                              <img class="thumbnail" style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src="{{image.getThumb(300,auto)}}" alt="{{image.title ? image.title : recordDetail.name}}">
+                            </div>
+                          </a>
                           
 
                         </div>
@@ -123,25 +115,7 @@ categoryPageSlug = "{{ :category }}"
 
             {% endif %}
 
-            {% if recordDetail.images_media|length %}
-                
-                <div class="row">
-
-                    {% for mediaImage in recordDetail.images_media %}
-
-                        <div class="col-xs-12 col-sm-4 col-md-3 col-md-2">
-                          <img class="thumbnail" style="max-width: 100%;" src="{{mediaImage.image|media}}" alt="{{mediaImage.image_title ? mediaImage.image_title : recordDetail.name}}">
-                        
-                            
-                        </div>
-
-                    {% endfor %}
-
-                </div>
-
-            {% else %}
-
-            {% endif %}
+          
 
         </div>
       </div>
@@ -164,4 +138,4 @@ categoryPageSlug = "{{ :category }}"
       </div>
     </div>
   </div>
-</div>";s:4:"code";N;s:5:"title";s:18:"Guest house detail";s:3:"url";s:25:"/guest-house-detail/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:12:"recordDetail";a:9:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:13:"gostevye-doma";s:12:"categorySlug";s:15:"{{ :category }}";s:15:"useMainCategory";s:1:"0";s:11:"setPageMeta";s:1:"1";s:8:"throw404";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}}}
+</div>";s:4:"code";N;s:5:"title";s:18:"Guest house detail";s:3:"url";s:25:"/guest-house-detail/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:8:"child_of";s:13:"mey_no_parent";s:10:"hide_crumb";s:1:"0";s:18:"remove_crumb_trail";s:1:"0";s:14:"crumb_disabled";s:1:"0";s:12:"recordDetail";a:9:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:13:"gostevye-doma";s:12:"categorySlug";s:15:"{{ :category }}";s:15:"useMainCategory";s:1:"0";s:11:"setPageMeta";s:1:"1";s:8:"throw404";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:7:"viewBag";a:1:{s:11:"localeTitle";a:2:{s:2:"de";s:17:"Gästehaus-Detail";s:3:"rus";s:40:"Гостевой дом детально";}}}}

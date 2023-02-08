@@ -63,17 +63,18 @@ class __TwigTemplate_ad8335b7d97950127fd28ab2165ddee9869f5607ed32b7c382be9016019
         if (twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 20)) {
             // line 21
             echo "        <ul class=\"navbar-nav menu-open\">
+  
           ";
-            // line 22
+            // line 23
             $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['items'] = twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 22)            ;
+            $context['__cms_partial_params']['items'] = twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 23)            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["staticMenu"] ?? null) . "::items")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 23
+            // line 24
             echo "        </ul>
         ";
         }
-        // line 25
+        // line 26
         echo "      </div>
       <div class=\"nav-right-part\">
         <ul>
@@ -85,33 +86,33 @@ class __TwigTemplate_ad8335b7d97950127fd28ab2165ddee9869f5607ed32b7c382be9016019
           </li>
           <li class=\"localization\">
             ";
-        // line 35
+        // line 36
         echo call_user_func_array($this->env->getFunction('form_open')->getCallable(), ["open"]);
         echo "
             <select name=\"locale\" data-request=\"onSwitchLocale\" class=\"form-control\">
               ";
-        // line 37
+        // line 38
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["locales"] ?? null));
         foreach ($context['_seq'] as $context["code"] => $context["name"]) {
-            // line 38
+            // line 39
             echo "              <option value=\"";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["code"], 38, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["code"], 39, $this->source), "html", null, true);
             echo "\" ";
             echo ((($context["code"] == ($context["activeLocale"] ?? null))) ? ("selected") : (""));
             echo ">";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["name"], 38, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["name"], 39, $this->source), "html", null, true);
             echo "</option>
               ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['code'], $context['name'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
+        // line 41
         echo "            </select>
 
             ";
-        // line 42
+        // line 43
         echo call_user_func_array($this->env->getFunction('form_close')->getCallable(), ["close"]);
         echo "
           </li>
@@ -135,7 +136,7 @@ class __TwigTemplate_ad8335b7d97950127fd28ab2165ddee9869f5607ed32b7c382be9016019
 
     public function getDebugInfo()
     {
-        return array (  115 => 42,  111 => 40,  98 => 38,  94 => 37,  89 => 35,  77 => 25,  73 => 23,  68 => 22,  65 => 21,  63 => 20,  56 => 16,  39 => 1,);
+        return array (  116 => 43,  112 => 41,  99 => 39,  95 => 38,  90 => 36,  78 => 26,  74 => 24,  69 => 23,  65 => 21,  63 => 20,  56 => 16,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -161,6 +162,7 @@ class __TwigTemplate_ad8335b7d97950127fd28ab2165ddee9869f5607ed32b7c382be9016019
       <div class=\"collapse navbar-collapse\" id=\"billatrail_main_menu\">
         {% if staticMenu.menuItems %}
         <ul class=\"navbar-nav menu-open\">
+  
           {% partial staticMenu ~ \"::items\" items=staticMenu.menuItems %}
         </ul>
         {% endif %}
@@ -193,9 +195,9 @@ class __TwigTemplate_ad8335b7d97950127fd28ab2165ddee9869f5607ed32b7c382be9016019
     
     public function checkSecurity()
     {
-        static $tags = array("if" => 20, "partial" => 22, "for" => 37);
+        static $tags = array("if" => 20, "partial" => 23, "for" => 38);
         static $filters = array("escape" => 16);
-        static $functions = array("form_open" => 35, "form_close" => 42);
+        static $functions = array("form_open" => 36, "form_close" => 43);
 
         try {
             $this->sandbox->checkSecurity(

@@ -81,75 +81,7 @@ class __TwigTemplate_33e2a3a83106cad0cf19fe65c3f3cec431bdcf67f62b16dbaf72cb1fdbd
             echo "div";
         }
         echo ">
-
 ";
-        // line 10
-        if ((twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "renderCount", [], "any", false, false, true, 10) == 1)) {
-            // line 11
-            echo "    ";
-            echo $this->env->getExtension('Cms\Twig\Extension')->startBlock('scripts'            );
-            // line 12
-            echo "    <script type=\"text/javascript\">
-    /* CONTENT EDITOR SCRIPT START */
-    ContentTools.StylePalette.add([
-        ";
-            // line 15
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "palettes", [], "any", false, false, true, 15));
-            foreach ($context['_seq'] as $context["_key"] => $context["style"]) {
-                // line 16
-                echo "            new ContentTools.Style('";
-                echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["style"], "name", [], "any", false, false, true, 16)) ? (twig_get_attribute($this->env, $this->source, $context["style"], "name", [], "any", false, false, true, 16)) : (twig_get_attribute($this->env, $this->source, $context["style"], "class", [], "any", false, false, true, 16))), "html", null, true);
-                echo "', '";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["style"], "class", [], "any", false, false, true, 16), 16, $this->source), "html", null, true);
-                echo "', ";
-                echo json_encode($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["style"], "allowed_tags", [], "any", false, false, true, 16), 16, $this->source));
-                echo "),
-        ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['style'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 18
-            echo "    ]);
-    editor.toolbox().tools([
-                                [
-                                ";
-            // line 21
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "buttons", [], "any", false, false, true, 21));
-            foreach ($context['_seq'] as $context["_key"] => $context["value"]) {
-                // line 22
-                echo "                                    '";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed($context["value"], 22, $this->source), "html", null, true);
-                echo "',
-                                ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['value'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 24
-            echo "                                ],
-                                [
-                                    'undo',
-                                    'redo',
-                                    'remove'
-                                ]
-                            ]);
-    /* CONTENT EDITOR SCRIPT END */
-    </script>
-    ";
-            // line 11
-            echo $this->env->getExtension('Cms\Twig\Extension')->endBlock(true            );
-            // line 34
-            echo "    ";
-            echo $this->env->getExtension('Cms\Twig\Extension')->startBlock('styles'            );
-            // line 35
-            echo "        <link rel=\"stylesheet\" href=\"/contenteditor/styles\">
-    ";
-            // line 34
-            echo $this->env->getExtension('Cms\Twig\Extension')->endBlock(true            );
-        }
     }
 
     public function getTemplateName()
@@ -164,7 +96,7 @@ class __TwigTemplate_33e2a3a83106cad0cf19fe65c3f3cec431bdcf67f62b16dbaf72cb1fdbd
 
     public function getDebugInfo()
     {
-        return array (  151 => 34,  148 => 35,  145 => 34,  143 => 11,  132 => 24,  123 => 22,  119 => 21,  114 => 18,  101 => 16,  97 => 15,  92 => 12,  89 => 11,  87 => 10,  78 => 8,  74 => 7,  66 => 6,  62 => 5,  58 => 4,  53 => 3,  46 => 2,  39 => 1,);
+        return array (  78 => 8,  74 => 7,  66 => 6,  62 => 5,  58 => 4,  53 => 3,  46 => 2,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -177,48 +109,19 @@ class __TwigTemplate_33e2a3a83106cad0cf19fe65c3f3cec431bdcf67f62b16dbaf72cb1fdbd
     {% if __SELF__.class %}class=\"{{ __SELF__.class }}\"{% endif %}>
     {{ __SELF__.content|raw }}
 </{% if __SELF__.fixture %}{{ __SELF__.fixture }}{% else %}div{% endif %}>
-
-{% if __SELF__.renderCount == 1 %}
-    {% put scripts %}
-    <script type=\"text/javascript\">
-    /* CONTENT EDITOR SCRIPT START */
-    ContentTools.StylePalette.add([
-        {% for style in __SELF__.palettes %}
-            new ContentTools.Style('{{ style.name ? style.name : style.class }}', '{{ style.class }}', {{ style.allowed_tags|json_encode()|raw }}),
-        {% endfor %}
-    ]);
-    editor.toolbox().tools([
-                                [
-                                {% for value in __SELF__.buttons %}
-                                    '{{ value }}',
-                                {% endfor %}
-                                ],
-                                [
-                                    'undo',
-                                    'redo',
-                                    'remove'
-                                ]
-                            ]);
-    /* CONTENT EDITOR SCRIPT END */
-    </script>
-    {% endput %}
-    {% put styles  %}
-        <link rel=\"stylesheet\" href=\"/contenteditor/styles\">
-    {% endput %}
-{% endif %}
 ", "C:\\work\\OSPanel\\domains\\tabylga/plugins/samuell/contenteditor/components/contenteditor/default.htm", "");
     }
     
     public function checkSecurity()
     {
-        static $tags = array("if" => 1, "put" => 11, "for" => 15);
-        static $filters = array("escape" => 1, "raw" => 7, "json_encode" => 16);
+        static $tags = array("if" => 1);
+        static $filters = array("escape" => 1, "raw" => 7);
         static $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
-                ['if', 'put', 'for'],
-                ['escape', 'raw', 'json_encode'],
+                ['if'],
+                ['escape', 'raw'],
                 []
             );
         } catch (SecurityError $e) {
